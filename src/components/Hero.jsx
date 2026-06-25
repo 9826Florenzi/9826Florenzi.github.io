@@ -6,7 +6,7 @@ export default function Hero() {
       <section className="hero">
   <div className="hero-badge"><span></span> Available for work</div>
   <h1>9826.Florenzi</h1>
-  <p className="hero-sub">Hi, I'm <strong>Nguyễn Hữu Nghĩa</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing data to life.</p>
+  <p className="hero-sub">Hi, I'm <strong>Nguyễn Hữu Nghĩa</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing AI to life.</p>
   <div className="hero-ctas">
     <a href="#contact" className="btn btn-accent btn-lg">Contact Me</a>
     <a href="#skills" className="btn btn-outline btn-lg">View Skills</a>
