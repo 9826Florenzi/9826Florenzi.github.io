@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9826.Florenzi — Business Management for Founders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --gray-50: #f9f9f9;
+    --gray-100: #f3f3f3;
+    --gray-200: #e8e8e8;
+    --gray-400: #a0a0a0;
+    --gray-600: #6b6b6b;
+    --accent: #5b5ef4;
+    --accent-light: #eeeefd;
+    --accent-hover: #4547d4;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-pill: 999px;
+    --nav-h: 68px;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: center;
+    padding: 0 40px;
+    gap: 40px;
+    transition: box-shadow .3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.07); }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 17px;
+    color: var(--black); text-decoration: none;
+    letter-spacing: -.3px;
+    margin-right: auto;
+  }
+  .nav-links { display: flex; gap: 6px; list-style: none; }
+  .nav-links a {
+    font-size: 14px; font-weight: 500;
+    color: var(--gray-600); text-decoration: none;
+    padding: 7px 14px; border-radius: var(--radius-pill);
+    transition: color .2s, background .2s;
+  }
+  .nav-links a:hover { color: var(--black); background: var(--gray-100); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--font-body); font-weight: 600; font-size: 14px;
+    padding: 10px 22px; border-radius: var(--radius-pill);
+    text-decoration: none; cursor: pointer;
+    transition: transform .18s, box-shadow .18s, background .2s;
+    white-space: nowrap;
+    border: none;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-dark {
+    background: var(--black); color: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  }
+  .btn-dark:hover { background: #222; box-shadow: 0 4px 16px rgba(0,0,0,.22); }
+  .btn-accent {
+    background: var(--accent); color: var(--white);
+    box-shadow: 0 2px 12px rgba(91,94,244,.35);
+  }
+  .btn-accent:hover { background: var(--accent-hover); box-shadow: 0 4px 20px rgba(91,94,244,.45); }
+  .btn-outline {
+    background: transparent; color: var(--black);
+    border: 1.5px solid var(--gray-200);
+  }
+  .btn-outline:hover { background: var(--gray-50); border-color: var(--gray-400); }
+  .btn-lg { padding: 14px 30px; font-size: 15px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-h) + 60px) 40px 80px;
+    text-align: center;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(91,94,244,.07) 0%, transparent 70%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235b5ef4' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none; opacity: .5;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-light); color: var(--accent);
+    border-radius: var(--radius-pill);
+    font-size: 12.5px; font-weight: 600;
+    padding: 5px 14px; margin-bottom: 28px;
+    letter-spacing: .2px;
+    animation: fadeUp .7s ease both;
+  }
+  .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 800; line-height: 1.08;
+    letter-spacing: -2.5px;
+    max-width: 780px;
+    animation: fadeUp .7s .1s ease both;
+  }
+  .hero-sub {
+    font-size: 18px; color: var(--gray-600);
+    max-width: 480px; margin-top: 20px;
+    line-height: 1.6;
+    animation: fadeUp .7s .2s ease both;
+  }
+  .hero-sub strong { color: var(--black); font-weight: 600; }
+  .hero-ctas {
+    display: flex; gap: 12px; margin-top: 36px;
+    animation: fadeUp .7s .3s ease both;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .hero-trust {
+    margin-top: 60px;
+    font-size: 12.5px; color: var(--gray-400); letter-spacing: .5px; text-transform: uppercase; font-weight: 600;
+    animation: fadeUp .7s .45s ease both;
+  }
+  .hero-img-wrap {
+    width: 100%; max-width: 1000px;
+    margin-top: 52px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.13), 0 2px 0 var(--gray-200);
+    border: 1px solid var(--gray-200);
+    animation: fadeUp .8s .5s ease both;
+    position: relative;
+  }
+  .hero-img-inner {
+    background: linear-gradient(135deg, #f8f8ff 0%, #eeeef8 50%, #e8e8f5 100%);
+    height: 520px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  /* Fake app UI inside hero */
+  .app-mockup {
+    width: 88%; max-width: 820px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 8px 40px rgba(0,0,0,.1);
+    overflow: hidden;
+  }
+  .app-topbar {
+    height: 42px;
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: center; padding: 0 16px; gap: 8px;
+  }
+  .app-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .app-body { display: flex; height: 320px; }
+  .app-sidebar {
+    width: 180px; border-right: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    padding: 16px 12px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .app-sidebar-item {
+    height: 32px; border-radius: 8px;
+    background: var(--gray-200);
+    animation: shimmer 2.4s infinite;
+  }
+  .app-sidebar-item.active { background: var(--accent-light); }
+  .app-main { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .app-row { display: flex; gap: 12px; }
+  .app-card {
+    flex: 1; height: 80px; border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    background: white;
+    padding: 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .app-card-label { height: 10px; width: 60%; background: var(--gray-200); border-radius: 4px; animation: shimmer 2.4s infinite; }
+  .app-card-value { height: 22px; width: 40%; background: var(--gray-100); border-radius: 6px; animation: shimmer 2.4s .3s infinite; }
+  .app-chart { height: 140px; border-radius: 12px; border: 1px solid var(--gray-200); overflow: hidden; position: relative; }
+  .app-chart svg { width: 100%; height: 100%; }
+  @keyframes shimmer {
+    0%,100%{opacity:1} 50%{opacity:.55}
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 100px 40px; }
+  .container { max-width: 1160px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px;
+  }
+  .section-sub {
+    font-size: 17px; color: var(--gray-600);
+    max-width: 520px; margin-top: 16px; line-height: 1.7;
+  }
+
+  /* ── DEVICE TABS ── */
+  .devices-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .devices-header { text-align: center; margin-bottom: 56px; }
+  .device-tabs {
+    display: flex; justify-content: center; gap: 8px;
+    margin-top: 32px;
+  }
+  .device-tab {
+    padding: 8px 22px; border-radius: var(--radius-pill);
+    font-size: 13.5px; font-weight: 600;
+    cursor: pointer; border: 1.5px solid transparent;
+    transition: all .2s;
+    background: white; color: var(--gray-600);
+    border-color: var(--gray-200);
+  }
+  .device-tab.active { background: var(--black); color: white; border-color: var(--black); }
+  .device-display {
+    margin-top: 40px;
+    display: flex; justify-content: center;
+    position: relative; min-height: 420px;
+  }
+  .device-frame {
+    position: absolute;
+    transition: opacity .4s, transform .4s;
+    opacity: 0; transform: scale(.97); pointer-events: none;
+  }
+  .device-frame.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+  /* Phone frame */
+  .phone-frame {
+    width: 240px;
+    background: var(--black);
+    border-radius: 38px;
+    padding: 10px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+  }
+  .phone-inner {
+    background: white; border-radius: 30px; overflow: hidden;
+    height: 400px; position: relative;
+  }
+  .phone-status { height: 36px; background: var(--black); display: flex; align-items: center; justify-content: center; }
+  .phone-notch { width: 90px; height: 18px; background: var(--black); border-radius: 10px; }
+  .phone-body { padding: 16px; }
+  /* Web frame */
+  .web-frame {
+    width: 780px;
+    background: var(--gray-200);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  }
+  .web-bar { height: 32px; background: white; border-radius: 8px 8px 0 0; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+  .web-inner { background: var(--gray-50); border-radius: 0 0 8px 8px; height: 360px; overflow: hidden; }
+  .web-grid { display: grid; grid-template-columns: 160px 1fr; height: 100%; }
+  .web-side { background: white; border-right: 1px solid var(--gray-200); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .web-side-item { height: 28px; border-radius: 6px; background: var(--gray-100); }
+  .web-side-item.hi { background: var(--accent-light); }
+  .web-content { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .web-row { display: flex; gap: 12px; }
+  .web-stat { flex: 1; border: 1px solid var(--gray-200); border-radius: 10px; padding: 12px; background: white; }
+  .web-stat-t { height: 10px; width: 55%; background: var(--gray-200); border-radius: 4px; }
+  .web-stat-n { height: 20px; width: 35%; background: var(--gray-100); border-radius: 4px; margin-top: 8px; }
+
+  /* ── FEATURES GRID ── */
+  .features-section {}
+  .features-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px; }
+  .features-split.reverse { direction: rtl; }
+  .features-split.reverse > * { direction: ltr; }
+  .feature-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5ff 0%, #eef0ff 100%);
+    border: 1px solid var(--gray-200);
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .feature-img-inner {
+    width: 80%;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 8px 32px rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+  .fi-header {
+    height: 36px; background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: center; padding: 0 14px; gap: 10px;
+  }
+  .fi-tag {
+    height: 16px; border-radius: 4px; background: var(--gray-200);
+    animation: shimmer 2s infinite;
+  }
+  .fi-rows { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .fi-row {
+    height: 36px; border-radius: 8px;
+    border: 1px solid var(--gray-200);
+    display: flex; align-items: center; padding: 0 12px; gap: 10px;
+  }
+  .fi-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .fi-line { height: 10px; flex: 1; border-radius: 3px; background: var(--gray-100); }
+  .fi-badge { height: 20px; width: 50px; border-radius: 4px; }
+  .feature-text .section-label { display: inline-block; }
+  .feature-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 800; line-height: 1.15; letter-spacing: -1.2px;
+    margin: 14px 0;
+  }
+  .feature-text p { font-size: 16px; color: var(--gray-600); line-height: 1.7; }
+  .feature-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+  }
+  .feature-tag {
+    font-size: 12.5px; font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--gray-100); color: var(--gray-600);
+    border: 1px solid var(--gray-200);
+  }
+  .feature-tag.primary { background: var(--accent-light); color: var(--accent); border-color: transparent; }
+
+  /* ── FEATURES GRID CARDS ── */
+  .features-bento { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .features-bento-header { text-align: center; margin-bottom: 60px; }
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .bento-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: box-shadow .2s, transform .2s;
+    overflow: hidden;
+    position: relative;
+  }
+  .bento-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-2px); }
+  .bento-card.span2 { grid-column: span 2; }
+  .bento-card.tall { min-height: 320px; }
+  .bento-card h4 {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 10px; letter-spacing: -.3px;
+  }
+  .bento-card p { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+  .bento-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+  /* Integration logos in bento */
+  .logo-strip { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .logo-pill {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: var(--radius-pill);
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    font-size: 12.5px; font-weight: 600; color: var(--gray-600);
+  }
+  .logo-pill .logo-icon { width: 18px; height: 18px; border-radius: 4px; }
+  /* Custom ui preview inside bento */
+  .mini-ui { margin-top: 18px; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-200); }
+  .mini-ui-head { height: 30px; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; padding: 0 10px; gap: 6px; }
+  .mini-ui-body { display: flex; flex-direction: column; gap: 6px; padding: 10px; }
+  .mini-row { height: 26px; border-radius: 6px; background: var(--gray-100); display: flex; align-items: center; padding: 0 10px; gap: 8px; }
+  .mini-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--black); color: white; overflow: hidden; }
+  .testimonials-header { margin-bottom: 60px; }
+  .testimonials-header .section-label { color: rgba(255,255,255,.5); }
+  .testimonials-header .section-title { color: white; }
+  .featured-quote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700; line-height: 1.25;
+    letter-spacing: -.5px;
+    margin-bottom: 24px;
+    color: white;
+  }
+  .featured-person { display: flex; align-items: center; gap: 14px; }
+  .featured-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #8c5ef4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: white; font-weight: 700;
+  }
+  .featured-name { font-weight: 700; color: white; font-size: 15px; }
+  .featured-role { color: rgba(255,255,255,.5); font-size: 13px; }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    margin-top: 40px;
+  }
+  .testi-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: background .2s;
+  }
+  .testi-card:hover { background: rgba(255,255,255,.1); }
+  .testi-stars { color: #fbbf24; font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
+  .testi-text { font-size: 14.5px; color: rgba(255,255,255,.75); line-height: 1.65; margin-bottom: 18px; }
+  .testi-person { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--gray-400);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: white; font-weight: 600;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .testi-name { font-size: 13.5px; font-weight: 600; color: white; }
+  .testi-role { font-size: 12px; color: rgba(255,255,255,.4); }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+  .pricing-header { text-align: center; margin-bottom: 16px; }
+  .billing-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin: 28px 0 52px;
+  }
+  .toggle-label { font-size: 14px; font-weight: 600; color: var(--gray-400); }
+  .toggle-label.active { color: var(--black); }
+  .toggle-switch {
+    width: 46px; height: 26px;
+    background: var(--accent);
+    border-radius: 13px;
+    position: relative; cursor: pointer;
+    transition: background .2s;
+  }
+  .toggle-switch::after {
+    content: '';
+    position: absolute; left: 3px; top: 3px;
+    width: 20px; height: 20px;
+    background: white; border-radius: 50%;
+    transition: transform .2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  }
+  .toggle-switch.monthly::after { transform: translateX(20px); }
+  .save-badge {
+    background: #dcfce7; color: #16a34a;
+    font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 999px;
+  }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    max-width: 960px; margin: 0 auto;
+  }
+  .price-card {
+    background: white; border: 1.5px solid var(--gray-200);
+    border-radius: 20px; padding: 32px;
+    transition: box-shadow .25s, transform .25s;
+    position: relative; overflow: hidden;
+  }
+  .price-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,.1); transform: translateY(-3px); }
+  .price-card.featured {
+    background: var(--black); color: white;
+    border-color: var(--black);
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  }
+  .price-card.featured * { color: white; }
+  .price-badge {
+    position: absolute; top: 18px; right: 18px;
+    background: #fef9c3; color: #854d0e;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .plan-name { font-size: 13px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px; }
+  .plan-price {
+    font-family: var(--font-display);
+    font-size: 48px; font-weight: 800; letter-spacing: -2px;
+    line-height: 1;
+  }
+  .plan-price span { font-size: 18px; font-weight: 600; letter-spacing: 0; }
+  .plan-price-note { font-size: 13px; color: var(--gray-400); margin-top: 4px; }
+  .plan-old-price { font-size: 20px; color: var(--gray-400); text-decoration: line-through; }
+  .plan-desc { font-size: 14px; color: var(--gray-600); margin: 16px 0 24px; }
+  .price-card.featured .plan-desc { color: rgba(255,255,255,.6); }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; }
+  .plan-features li { font-size: 14px; display: flex; align-items: center; gap: 10px; }
+  .plan-features li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .price-card.featured .plan-features li::before { color: #a5b4fc; }
+
+  /* ── BLOG ── */
+  .blog-section {}
+  .blog-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
+  .blog-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
+  .blog-card {
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--gray-200);
+    background: white;
+    transition: box-shadow .2s, transform .2s;
+    text-decoration: none; color: inherit;
+    display: block;
+  }
+  .blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.09); transform: translateY(-2px); }
+  .blog-img {
+    height: 220px; background: linear-gradient(135deg, #f0f0fa, #e5e5f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px; position: relative; overflow: hidden;
+  }
+  .blog-img-main { height: 280px; }
+  .blog-tag {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--black); color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 12px; border-radius: 999px;
+    text-transform: uppercase; letter-spacing: .6px;
+  }
+  .blog-body { padding: 22px; }
+  .blog-meta { font-size: 12px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
+  .blog-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; line-height: 1.3; letter-spacing: -.3px; }
+  .blog-excerpt { font-size: 14px; color: var(--gray-600); margin-top: 8px; line-height: 1.6; }
+  .blog-small-list { display: flex; flex-direction: column; gap: 12px; }
+  .blog-small { display: flex; gap: 16px; align-items: center; }
+  .blog-small-img { width: 70px; height: 70px; border-radius: 10px; background: linear-gradient(135deg, #f0f0fa, #e5e5f7); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .blog-small-text h4 { font-size: 15px; font-weight: 600; letter-spacing: -.2px; margin-bottom: 4px; }
+  .blog-small-text span { font-size: 12px; color: var(--gray-400); font-weight: 600; }
+
+  /* ── COMMUNITY ── */
+  .community-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+  .community-header { text-align: center; margin-bottom: 52px; }
+  .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 720px; margin: 0 auto; }
+  .community-card {
+    background: white; border: 1px solid var(--gray-200); border-radius: var(--radius);
+    padding: 32px; text-align: center;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .community-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); transform: translateY(-2px); }
+  .community-platform-icon { width: 52px; height: 52px; border-radius: 14px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+  .community-count { font-family: var(--font-display); font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 4px; }
+  .community-followers { font-size: 13px; color: var(--gray-400); font-weight: 600; margin-bottom: 14px; }
+  .community-name { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .community-desc { font-size: 14px; color: var(--gray-600); line-height: 1.6; margin-bottom: 20px; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--black);
+    color: white; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(91,94,244,.35) 0%, transparent 70%);
+  }
+  .cta-content { position: relative; z-index: 1; }
+  .cta-section .section-title { color: white; max-width: 560px; margin: 0 auto 12px; }
+  .cta-sub { color: rgba(255,255,255,.6); font-size: 16px; margin-bottom: 36px; }
+  .cta-img {
+    margin-top: 60px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.1);
+    max-width: 900px; margin-left: auto; margin-right: auto;
+    box-shadow: 0 -20px 80px rgba(91,94,244,.25);
+  }
+  .cta-img-inner {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    height: 320px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cta-app { width: 85%; background: rgba(255,255,255,.05); border-radius: 12px; border: 1px solid rgba(255,255,255,.1); padding: 20px; }
+  .cta-app-row { display: flex; gap: 10px; margin-bottom: 10px; }
+  .cta-app-block { flex: 1; height: 60px; border-radius: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.08); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); color: white;
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding: 60px 40px 40px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; max-width: 1160px; margin: 0 auto; }
+  .footer-brand .nav-logo { color: white; font-size: 18px; display: block; margin-bottom: 12px; }
+  .footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6; max-width: 260px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.7); font-size: 14px; text-decoration: none;
+    transition: background .2s;
+  }
+  .social-btn:hover { background: rgba(255,255,255,.18); }
+  .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,.65); text-decoration: none; transition: color .2s; }
+  .footer-col a:hover { color: white; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 28px; margin-top: 48px;
+    max-width: 1160px; margin-left: auto; margin-right: auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,.35); }
+  .footer-bottom a { color: rgba(255,255,255,.5); text-decoration: none; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .65s ease, transform .65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+  .reveal-delay-4 { transition-delay: .4s; }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden; background: var(--gray-50);
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 14px 0;
+  }
+  .ticker-track {
+    display: flex; gap: 48px;
+    animation: ticker 28s linear infinite;
+    width: max-content;
+  }
+  .ticker-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 600; color: var(--gray-400);
+    white-space: nowrap;
+  }
+  .ticker-item .ti-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gray-400); }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .features-split { grid-template-columns: 1fr; gap: 40px; }
+    .features-split.reverse { direction: ltr; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-card.span2 { grid-column: span 1; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .community-grid { grid-template-columns: 1fr; max-width: 360px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .blog-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    section { padding: 70px 24px; }
+    nav { padding: 0 24px; }
+    .web-frame { width: 100%; }
+    .device-display { min-height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">9826.Florenzi</a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <a href="#contact" class="btn btn-dark">Try Florenzi free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span> Owner: @nghia.is.me</div>
+  <h1>9826.Florenzi</h1>
+  <p class="hero-sub">Your favourite <strong>business management software</strong>. Built for early startup founders and freelancers who mean business.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn btn-accent btn-lg">Try Florenzi free</a>
+    <a href="#features" class="btn btn-outline btn-lg">See features</a>
+  </div>
+  <p class="hero-trust">Trusted by 7,000+ top startups, freelancers and studios</p>
+  <div class="hero-img-wrap">
+    <div class="hero-img-inner">
+      <div class="app-mockup">
+        <div class="app-topbar">
+          <div class="app-dot" style="background:#ff5f57"></div>
+          <div class="app-dot" style="background:#ffbd2e"></div>
+          <div class="app-dot" style="background:#28ca41"></div>
+        </div>
+        <div class="app-body">
+          <div class="app-sidebar">
+            <div class="app-sidebar-item active" style="width:100%"></div>
+            <div class="app-sidebar-item" style="width:85%"></div>
+            <div class="app-sidebar-item" style="width:90%"></div>
+            <div class="app-sidebar-item" style="width:70%"></div>
+            <div class="app-sidebar-item" style="width:80%"></div>
+            <div class="app-sidebar-item" style="width:75%"></div>
+          </div>
+          <div class="app-main">
+            <div class="app-row">
+              <div class="app-card"><div class="app-card-label"></div><div class="app-card-value" style="background:#e0e0ff"></div></div>
+              <div class="app-card"><div class="app-card-label"></div><div class="app-card-value" style="background:#e0f0e0"></div></div>
+              <div class="app-card"><div class="app-card-label"></div><div class="app-card-value" style="background:#fff0e0"></div></div>
+            </div>
+            <div class="app-chart">
+              <svg viewBox="0 0 600 140" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#5b5ef4" stop-opacity=".2"/>
+                    <stop offset="100%" stop-color="#5b5ef4" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,110 C50,90 80,40 150,50 C220,60 260,90 320,70 C380,50 420,30 480,40 C520,47 560,55 600,45 L600,140 L0,140 Z" fill="url(#g1)"/>
+                <path d="M0,110 C50,90 80,40 150,50 C220,60 260,90 320,70 C380,50 420,30 480,40 C520,47 560,55 600,45" fill="none" stroke="#5b5ef4" stroke-width="2.5"/>
+                <circle cx="150" cy="50" r="4" fill="#5b5ef4"/>
+                <circle cx="320" cy="70" r="4" fill="#5b5ef4"/>
+                <circle cx="480" cy="40" r="4" fill="#5b5ef4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="ti-dot"></div>Project Management</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Financial Tracking</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Time Tracking</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Client CRM</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Invoicing</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Team Collaboration</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Real-time Reports</div>
+    <div class="ticker-item"><div class="ti-dot"></div>iOS & Android</div>
+    <!-- repeat for seamless loop -->
+    <div class="ticker-item"><div class="ti-dot"></div>Project Management</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Financial Tracking</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Time Tracking</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Client CRM</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Invoicing</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Team Collaboration</div>
+    <div class="ticker-item"><div class="ti-dot"></div>Real-time Reports</div>
+    <div class="ticker-item"><div class="ti-dot"></div>iOS & Android</div>
+  </div>
+</div>
+
+<!-- DEVICE TABS SECTION -->
+<section class="devices-section">
+  <div class="container">
+    <div class="devices-header reveal">
+      <p class="section-label">Seamless across devices</p>
+      <h2 class="section-title">Work from anywhere,<br>stay in sync</h2>
+    </div>
+    <div class="device-tabs reveal reveal-delay-1">
+      <button class="device-tab active" data-tab="mobile">📱 Mobile App</button>
+      <button class="device-tab" data-tab="web">🖥️ Web App</button>
+    </div>
+    <div class="device-display">
+      <!-- MOBILE -->
+      <div class="device-frame active" id="tab-mobile">
+        <div class="phone-frame">
+          <div class="phone-inner">
+            <div class="phone-status" style="background:#0a0a0a; height:40px; display:flex; align-items:center; justify-content:center;">
+              <div class="phone-notch"></div>
+            </div>
+            <div class="phone-body">
+              <div style="height:12px;"></div>
+              <div style="font-size:13px;font-weight:700;color:#0a0a0a;margin-bottom:14px;font-family:'Sora',sans-serif;">Dashboard</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                <div style="background:#f5f5ff;border-radius:10px;padding:12px;">
+                  <div style="font-size:10px;color:#5b5ef4;font-weight:700;margin-bottom:4px;">PROJECTS</div>
+                  <div style="font-size:22px;font-weight:800;color:#0a0a0a;font-family:'Sora',sans-serif;">12</div>
+                </div>
+                <div style="background:#f0fff4;border-radius:10px;padding:12px;">
+                  <div style="font-size:10px;color:#16a34a;font-weight:700;margin-bottom:4px;">EARNINGS</div>
+                  <div style="font-size:18px;font-weight:800;color:#0a0a0a;font-family:'Sora',sans-serif;">$8.4k</div>
+                </div>
+              </div>
+              <div style="background:#f9f9f9;border:1px solid #e8e8e8;border-radius:10px;padding:12px;">
+                <div style="font-size:11px;font-weight:700;color:#6b6b6b;margin-bottom:10px;">RECENT TASKS</div>
+                <div style="display:flex;flex-direction:column;gap:7px;">
+                  <div style="display:flex;align-items:center;gap:8px;font-size:11px;">
+                    <div style="width:8px;height:8px;border-radius:50%;background:#5b5ef4;"></div>
+                    <div style="color:#0a0a0a;font-weight:600;">Design mockups</div>
+                    <div style="margin-left:auto;color:#a0a0a0;">Today</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:11px;">
+                    <div style="width:8px;height:8px;border-radius:50%;background:#fbbf24;"></div>
+                    <div style="color:#0a0a0a;font-weight:600;">Client proposal</div>
+                    <div style="margin-left:auto;color:#a0a0a0;">Tomorrow</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:11px;">
+                    <div style="width:8px;height:8px;border-radius:50%;background:#34d399;"></div>
+                    <div style="color:#0a0a0a;font-weight:600;">Invoice sent</div>
+                    <div style="margin-left:auto;color:#a0a0a0;">Done ✓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- WEB -->
+      <div class="device-frame" id="tab-web">
+        <div class="web-frame">
+          <div class="web-bar">
+            <div class="app-dot" style="background:#ff5f57"></div>
+            <div class="app-dot" style="background:#ffbd2e"></div>
+            <div class="app-dot" style="background:#28ca41"></div>
+            <div style="flex:1;height:16px;background:#f3f3f3;border-radius:6px;margin-left:8px;"></div>
+          </div>
+          <div class="web-inner">
+            <div class="web-grid">
+              <div class="web-side">
+                <div class="web-side-item hi"></div>
+                <div class="web-side-item"></div>
+                <div class="web-side-item"></div>
+                <div class="web-side-item"></div>
+                <div class="web-side-item"></div>
+              </div>
+              <div class="web-content">
+                <div class="web-row">
+                  <div class="web-stat"><div class="web-stat-t"></div><div class="web-stat-n" style="background:#e0e0ff;"></div></div>
+                  <div class="web-stat"><div class="web-stat-t"></div><div class="web-stat-n" style="background:#e0f0e0;"></div></div>
+                  <div class="web-stat"><div class="web-stat-t"></div><div class="web-stat-n" style="background:#fff0e0;"></div></div>
+                </div>
+                <div style="flex:1;background:var(--gray-50);border-radius:10px;border:1px solid var(--gray-200);overflow:hidden;">
+                  <svg viewBox="0 0 500 180" style="width:100%;height:100%" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#5b5ef4" stop-opacity=".15"/>
+                        <stop offset="100%" stop-color="#5b5ef4" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,140 C60,120 100,60 180,75 C260,90 300,120 360,95 C400,78 440,55 500,65 L500,180 L0,180 Z" fill="url(#g2)"/>
+                    <path d="M0,140 C60,120 100,60 180,75 C260,90 300,120 360,95 C400,78 440,55 500,65" fill="none" stroke="#5b5ef4" stroke-width="2.5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES SPLIT -->
+<section class="features-section" id="features">
+  <div class="container">
+    <!-- Feature 1 -->
+    <div class="features-split reveal">
+      <div class="feature-img">
+        <div class="feature-img-inner">
+          <div class="fi-header">
+            <div class="fi-tag" style="width:80px"></div>
+            <div class="fi-tag" style="width:55px"></div>
+          </div>
+          <div class="fi-rows">
+            <div class="fi-row"><div class="fi-dot" style="background:#5b5ef4"></div><div class="fi-line"></div><div class="fi-badge" style="background:#eeeefd;color:#5b5ef4;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">In Progress</div></div>
+            <div class="fi-row"><div class="fi-dot" style="background:#fbbf24"></div><div class="fi-line"></div><div class="fi-badge" style="background:#fef9c3;color:#854d0e;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">Pending</div></div>
+            <div class="fi-row"><div class="fi-dot" style="background:#34d399"></div><div class="fi-line"></div><div class="fi-badge" style="background:#dcfce7;color:#16a34a;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">Done</div></div>
+            <div class="fi-row"><div class="fi-dot" style="background:#f87171"></div><div class="fi-line"></div><div class="fi-badge" style="background:#fee2e2;color:#dc2626;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">Overdue</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-text">
+        <span class="section-label">project management</span>
+        <h2>Keep every project moving forward</h2>
+        <p><strong>Plan, assign, and deliver your work</strong> — all in one place. With smart task tracking, deadlines, and real-time progress, you stay organized and clients stay confident.</p>
+        <div class="feature-tags">
+          <span class="feature-tag primary">Tasks</span>
+          <span class="feature-tag">Time tracking</span>
+          <span class="feature-tag">Timesheets</span>
+          <span class="feature-tag">Reports</span>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="margin-top:28px;">Try Florenzi free</a>
+      </div>
+    </div>
+    <!-- Feature 2 -->
+    <div class="features-split reverse reveal">
+      <div class="feature-img">
+        <div class="feature-img-inner">
+          <div class="fi-header">
+            <div class="fi-tag" style="width:90px"></div>
+            <div class="fi-tag" style="width:60px"></div>
+          </div>
+          <div class="fi-rows">
+            <div style="padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;">
+                <div style="font-size:11px;font-weight:700;color:#6b6b6b;">Monthly Revenue</div>
+                <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:#16a34a;">$24,800</div>
+              </div>
+              <svg viewBox="0 0 300 80" style="width:100%;height:60px">
+                <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#16a34a" stop-opacity=".2"/><stop offset="100%" stop-color="#16a34a" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,60 C40,50 60,20 100,25 C140,30 160,50 200,35 C230,25 260,15 300,20 L300,80 L0,80Z" fill="url(#g3)"/>
+                <path d="M0,60 C40,50 60,20 100,25 C140,30 160,50 200,35 C230,25 260,15 300,20" fill="none" stroke="#16a34a" stroke-width="2"/>
+              </svg>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px;">
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#6b6b6b;">Invoice #0042</span><span style="color:#0a0a0a;font-weight:600;">$3,200</span><span style="background:#dcfce7;color:#16a34a;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;">Paid</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;"><span style="color:#6b6b6b;">Invoice #0041</span><span style="color:#0a0a0a;font-weight:600;">$1,800</span><span style="background:#fef9c3;color:#854d0e;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;">Pending</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-text">
+        <span class="section-label">financial management</span>
+        <h2>Track income, get paid, stress less</h2>
+        <p><strong>Create branded invoices</strong>, log expenses, and keep tabs on your earnings. Whether you bill hourly or per project, everything's automated and tax-friendly.</p>
+        <div class="feature-tags">
+          <span class="feature-tag primary">Invoicing</span>
+          <span class="feature-tag">Budgets</span>
+          <span class="feature-tag">Forecasting</span>
+          <span class="feature-tag">Integrations</span>
+        </div>
+        <a href="#contact" class="btn btn-dark" style="margin-top:28px;">Try Florenzi free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO FEATURES -->
+<section class="features-bento" id="benefits">
+  <div class="container">
+    <div class="features-bento-header reveal">
+      <p class="section-label">features</p>
+      <h2 class="section-title">Built for freelancers,<br>powered by simplicity</h2>
+      <p class="section-sub" style="margin:16px auto 0;">Smart, flexible, and built around your business workflow.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card span2 reveal">
+        <p class="section-label">Customization</p>
+        <h4>Personalize every detail</h4>
+        <p>From branding and interface layout to colors and menus, so Florenzi feels like an extension of your brand.</p>
+        <div class="mini-ui" style="margin-top:20px;">
+          <div class="mini-ui-head">
+            <div style="height:10px;width:60px;background:#e8e8e8;border-radius:3px;"></div>
+            <div style="height:10px;width:40px;background:#e8e8e8;border-radius:3px;margin-left:auto;"></div>
+          </div>
+          <div style="display:flex;gap:8px;padding:12px;">
+            <div style="flex:1;height:80px;border-radius:8px;background:#f5f5ff;border:2px solid #5b5ef4;display:flex;align-items:center;justify-content:center;font-size:22px;">🎨</div>
+            <div style="flex:1;height:80px;border-radius:8px;background:#f9f9f9;border:1px solid #e8e8e8;display:flex;align-items:center;justify-content:center;font-size:22px;">🌙</div>
+            <div style="flex:1;height:80px;border-radius:8px;background:#f9f9f9;border:1px solid #e8e8e8;display:flex;align-items:center;justify-content:center;font-size:22px;">☀️</div>
+          </div>
+        </div>
+      </div>
+      <div class="bento-card reveal reveal-delay-1">
+        <div class="bento-icon">🔗</div>
+        <h4>Seamless integrations</h4>
+        <p>Plug Florenzi into the tools you love. Set up automations, sync your data.</p>
+        <div class="logo-strip">
+          <div class="logo-pill"><div class="logo-icon" style="background:#e5e0fa;"></div>Asana</div>
+          <div class="logo-pill"><div class="logo-icon" style="background:#f0e5fa;"></div>Slack</div>
+          <div class="logo-pill"><div class="logo-icon" style="background:#e0f5ea;"></div>Zapier</div>
+          <div class="logo-pill"><div class="logo-icon" style="background:#e0eafa;"></div>Loom</div>
+        </div>
+      </div>
+      <div class="bento-card reveal reveal-delay-2">
+        <div class="bento-icon">💬</div>
+        <h4>Collaborate in realtime</h4>
+        <p>Keep every conversation in sync — use comments, messages, and project chats to stay on the same page with your team.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-3">
+        <div class="bento-icon">🌍</div>
+        <h4>Speaks your language</h4>
+        <p>Set your language, currency, time, and date preferences for a seamless local experience.</p>
+      </div>
+      <div class="bento-card reveal reveal-delay-4">
+        <div class="bento-icon">📊</div>
+        <h4>View things your way</h4>
+        <p>Toggle between Kanban, cards, list, table, timeline, and calendar view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <p class="section-label">Testimonials</p>
+      <p class="featured-quote">"Florenzi is by far the best agency tool I have ever used"</p>
+      <div class="featured-person">
+        <div class="featured-avatar">M</div>
+        <div>
+          <div class="featured-name">Martha Punla</div>
+          <div class="featured-role">VP Marketing, Meta</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works — clean, fast, and beautifully built."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">L</div>
+          <div>
+            <div class="testi-name">Leah Daniel</div>
+            <div class="testi-role">Design Ops Lead, Teamwork</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f87171,#dc2626);">J</div>
+          <div>
+            <div class="testi-name">Jane Jay Jay</div>
+            <div class="testi-role">Project Manager, Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Managing projects used to mean spreadsheets, DMs, and missed invoices. This platform keeps our workflows tight and our clients impressed."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#34d399,#059669);">A</div>
+          <div>
+            <div class="testi-name">Amos Chen</div>
+            <div class="testi-role">Art Director, Pentagram</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a freelancer juggling 8 clients at once, Florenzi is the only tool that makes me feel truly in control of my business from day one."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#fbbf24,#d97706);">S</div>
+          <div>
+            <div class="testi-name">Sergio Walker</div>
+            <div class="testi-role">Agency Owner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <p class="section-label">pricing</p>
+      <h2 class="section-title">Simple plans<br>for serious work</h2>
+    </div>
+    <div class="billing-toggle reveal">
+      <span class="toggle-label active" id="lbl-annual">Annually</span>
+      <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"></div>
+      <span class="toggle-label" id="lbl-monthly">Monthly</span>
+      <span class="save-badge">Save 20%</span>
+    </div>
+    <div class="pricing-grid">
+      <!-- Basic -->
+      <div class="price-card reveal">
+        <div class="plan-name">Florenzi Basic</div>
+        <div class="plan-price">Free</div>
+        <p class="plan-desc">For solo use with light needs.</p>
+        <ul class="plan-features">
+          <li>Unlimited projects</li>
+          <li>Unlimited clients</li>
+          <li>Time tracking</li>
+          <li>CRM</li>
+          <li>iOS & Android app</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;">Try Florenzi free</a>
+      </div>
+      <!-- Premium -->
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="price-badge">Most Popular</div>
+        <div class="plan-name" style="color:rgba(255,255,255,.5);">Florenzi Premium</div>
+        <div style="margin-bottom:4px;">
+          <span class="plan-old-price" style="color:rgba(255,255,255,.35);font-size:18px;">$189/mo</span>
+        </div>
+        <div class="plan-price">$87<span>/mo</span></div>
+        <p class="plan-desc">For pro use with serious needs.</p>
+        <ul class="plan-features">
+          <li>Everything in Basic</li>
+          <li>Invoices & payments</li>
+          <li>Expense tracking</li>
+          <li>Income tracking</li>
+          <li>Scheduling</li>
+        </ul>
+        <a href="#contact" class="btn btn-accent" style="width:100%;">Get started</a>
+      </div>
+      <!-- Enterprise -->
+      <div class="price-card reveal reveal-delay-2">
+        <div class="plan-name">Florenzi Enterprise</div>
+        <div class="plan-price" style="font-size:36px;">Flexible</div>
+        <p class="plan-desc">For team use with advanced needs.</p>
+        <ul class="plan-features">
+          <li>Everything in Premium</li>
+          <li>Custom data import</li>
+          <li>Advanced onboarding</li>
+          <li>Hubspot integration</li>
+          <li>Timesheets</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;">Contact sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="blog-header reveal">
+      <div>
+        <p class="section-label">blog</p>
+        <h2 class="section-title">Ideas to level-up<br>your freelance game</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View all posts</a>
+    </div>
+    <div class="blog-grid reveal">
+      <a class="blog-card" href="#">
+        <div class="blog-img blog-img-main" style="background:linear-gradient(135deg,#f0eeff,#e0dbff);">
+          👩‍💼
+          <div class="blog-tag">Featured</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">Must Read · Dhyna Phils</div>
+          <div class="blog-title">How to start a $100k creative agency in 2025</div>
+          <div class="blog-excerpt">Learn how to kickstart your journey into agency ownership with our comprehensive guide to growing a six-figure business.</div>
+        </div>
+      </a>
+      <div class="blog-small-list">
+        <a class="blog-card" href="#" style="display:flex;gap:0;">
+          <div style="display:flex;gap:16px;align-items:center;padding:20px;">
+            <div class="blog-small-img">💻</div>
+            <div>
+              <div class="blog-meta" style="font-size:11px;">Tools</div>
+              <div class="blog-title" style="font-size:16px;">Top 10 digital agency software</div>
+            </div>
+          </div>
+        </a>
+        <a class="blog-card" href="#" style="display:flex;gap:0;">
+          <div style="display:flex;gap:16px;align-items:center;padding:20px;">
+            <div class="blog-small-img">☁️</div>
+            <div>
+              <div class="blog-meta" style="font-size:11px;">Insight</div>
+              <div class="blog-title" style="font-size:16px;">A complete guide to project success in 2026</div>
+            </div>
+          </div>
+        </a>
+        <a class="blog-card" href="#" style="display:flex;gap:0;">
+          <div style="display:flex;gap:16px;align-items:center;padding:20px;">
+            <div class="blog-small-img">🧮</div>
+            <div>
+              <div class="blog-meta" style="font-size:11px;">Management</div>
+              <div class="blog-title" style="font-size:16px;">What Are Billable Hours?</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section">
+  <div class="container">
+    <div class="community-header reveal">
+      <p class="section-label">Community</p>
+      <h2 class="section-title">Stay in the loop</h2>
+    </div>
+    <div class="community-grid">
+      <div class="community-card reveal">
+        <div class="community-platform-icon" style="background:#f0f0f0;">𝕏</div>
+        <div class="community-count">15.2K</div>
+        <div class="community-followers">followers</div>
+        <div class="community-name">X / Twitter</div>
+        <p class="community-desc">Stay updated on new features and discover how others are using Florenzi.</p>
+        <a href="#" class="btn btn-dark" style="width:100%;">Follow us</a>
+      </div>
+      <div class="community-card reveal reveal-delay-1">
+        <div class="community-platform-icon" style="background:#fff0f0;">▶️</div>
+        <div class="community-count">32K</div>
+        <div class="community-followers">subscribers</div>
+        <div class="community-name">YouTube</div>
+        <p class="community-desc">Tips, tutorials, and in-depth feature guides to inspire and enhance your workflow.</p>
+        <a href="#" class="btn btn-dark" style="width:100%;">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-content reveal">
+      <p class="section-label" style="color:rgba(255,255,255,.4);">Get started today</p>
+      <h2 class="section-title">Ready to get started</h2>
+      <p class="cta-sub">Download Florenzi for free. No credit card required.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" class="btn btn-accent btn-lg">Try Florenzi free</a>
+        <a href="#" class="btn" style="background:rgba(255,255,255,.1);color:white;padding:14px 30px;font-size:15px;border:1px solid rgba(255,255,255,.2);">Talk to sales</a>
+      </div>
+    </div>
+    <div class="cta-img reveal reveal-delay-1">
+      <div class="cta-img-inner">
+        <div class="cta-app">
+          <div style="display:flex;gap:10px;margin-bottom:10px;">
+            <div style="height:10px;width:80px;background:rgba(255,255,255,.15);border-radius:4px;"></div>
+            <div style="height:10px;width:50px;background:rgba(255,255,255,.1);border-radius:4px;margin-left:auto;"></div>
+          </div>
+          <div class="cta-app-row">
+            <div class="cta-app-block"></div>
+            <div class="cta-app-block"></div>
+            <div class="cta-app-block"></div>
+          </div>
+          <div class="cta-app-row">
+            <div style="flex:2;height:100px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);overflow:hidden;">
+              <svg viewBox="0 0 300 100" style="width:100%;height:100%" preserveAspectRatio="none">
+                <defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5b5ef4" stop-opacity=".4"/><stop offset="100%" stop-color="#5b5ef4" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,70 C40,60 80,20 130,30 C180,40 210,65 250,50 C270,42 285,35 300,30 L300,100 L0,100Z" fill="url(#g4)"/>
+                <path d="M0,70 C40,60 80,20 130,30 C180,40 210,65 250,50 C270,42 285,35 300,30" fill="none" stroke="#5b5ef4" stroke-width="2"/>
+              </svg>
+            </div>
+            <div style="flex:1;height:100px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">9826.Florenzi</a>
+      <p>Your favourite business management software. Built for early startup founders.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Information</h5>
+      <ul>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Florenzi. Owner: <a href="#">@nghia.is.me</a></p>
+    <p style="color:rgba(255,255,255,.25);font-size:12px;">Built with ❤️</p>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+
+  // Device tabs
+  document.querySelectorAll('.device-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.device-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.device-frame').forEach(f => f.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Billing toggle
+  let isMonthly = false;
+  function toggleBilling() {
+    isMonthly = !isMonthly;
+    const toggle = document.getElementById('billing-toggle');
+    toggle.classList.toggle('monthly', isMonthly);
+    document.getElementById('lbl-annual').classList.toggle('active', !isMonthly);
+    document.getElementById('lbl-monthly').classList.toggle('active', isMonthly);
+  }
+</script>
+</body>
+</html>
