@@ -3,7 +3,7 @@ import React from 'react';
 export default function Hero() {
   return (
     <>
-      <section className="hero">
+      <section className="hero" id="about">
   <div className="hero-badge"><span></span> Available for work</div>
   <h1>9826.Florenzi</h1>
   <p className="hero-sub">Hi, I'm <strong>Nguyễn Hữu Nghĩa</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing AI to life.</p>

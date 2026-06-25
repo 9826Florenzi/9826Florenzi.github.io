@@ -3,7 +3,7 @@ import React from 'react';
 export default function Features() {
   return (
     <>
-      <section className="features-section" id="features">
+      <section className="features-section" id="projects">
   <div className="container">
     {/* Feature 1 */}
     <div className="features-split reveal">
