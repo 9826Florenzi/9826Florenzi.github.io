@@ -9,8 +9,8 @@ export default function Footer() {
       <a href="#" className="nav-logo" style={{ fontSize: '18px', fontWeight: '800', textDecoration: 'none', color: 'white' }}>9826.Florenzi</a>
       <p>AI Engineer specializing in Machine Learning, data analysis, and building intelligent systems. (Nguyễn Hữu Nghĩa)</p>
       <div className="footer-social">
-        <a href="#" className="social-btn">in</a>
-        <a href="#" className="social-btn">𝕏</a>
+        <a href="#" className="social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" className="social-btn" aria-label="X (Twitter)">𝕏</a>
       </div>
     </div>
     <div className="footer-col">

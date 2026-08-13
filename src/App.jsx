@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Ticker from './components/Ticker';
-import DevicesSection from './components/DevicesSection';
-import Features from './components/Features';
-import FeaturesBento from './components/FeaturesBento';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import Blog from './components/Blog';
-import Community from './components/Community';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
+
+// Lazy loaded components (below the fold)
+const DevicesSection = lazy(() => import('./components/DevicesSection'));
+const Features = lazy(() => import('./components/Features'));
+const FeaturesBento = lazy(() => import('./components/FeaturesBento'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const CTA = lazy(() => import('./components/CTA'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   useEffect(() => {
@@ -37,17 +35,19 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Ticker />
-      <DevicesSection />
-      <Features />
-      <FeaturesBento />
-      <Testimonials />
-      <Pricing />
-      <Blog />
-      <Community />
-      <CTA />
-      <Footer />
+      <main>
+        <Hero />
+        <Suspense fallback={<div style={{ minHeight: '50vh' }}></div>}>
+          <DevicesSection />
+          <Features />
+          <FeaturesBento />
+          <Pricing />
+          <CTA />
+        </Suspense>
+      </main>
+      <Suspense fallback={<div />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
