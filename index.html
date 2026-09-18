@@ -1,21 +1,327 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Nguyễn Hữu Nghĩa, an AI Engineer specializing in building intelligent systems and training machine learning models." />
-    <meta name="keywords" content="AI Engineer, Machine Learning, Python, Portfolio, Data Analysis, Nguyễn Hữu Nghĩa" />
-    <meta property="og:title" content="9826.Florenzi | AI Engineer" />
-    <meta property="og:description" content="Portfolio of Nguyễn Hữu Nghĩa, an AI Engineer specializing in building intelligent systems and training machine learning models." />
-    <meta property="og:image" content="/banner.png" />
-    <title>9826.Florenzi | AI Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9826.Florenzi | AI Engineer - Nguyen Huu Nghia</title>
+  <meta name="description" content="Portfolio of Nguyen Huu Nghia - AI Engineer specializing in Machine Learning, intelligent systems, and data-driven solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+  <style>
+    :root{--g:#38ef7d;--gd:#11998e;--am:#ffe066;--bg:#04100a;--card:rgba(7,22,14,0.72);--cb:rgba(56,239,125,0.18);--cg:rgba(56,239,125,0.07);--tp:#edfaf3;--tm:#94b8a8}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--tp);background:var(--bg);overflow-x:hidden;line-height:1.65}
+    #cv{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;pointer-events:none}
+    .vo{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(2,8,5,.85) 100%)}
+    #sp{position:fixed;top:0;left:0;height:3px;width:0%;z-index:200;background:linear-gradient(90deg,var(--gd),var(--g),var(--am));box-shadow:0 0 12px var(--g);transition:width .08s linear}
+    nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(4,16,10,.7) 0%,transparent 100%)}
+    .nl{font-size:1.1rem;font-weight:800;letter-spacing:-.5px;color:var(--g);text-decoration:none}
+    ul.lk{display:flex;gap:2rem;list-style:none}
+    ul.lk a{font-size:.88rem;font-weight:500;color:var(--tm);text-decoration:none;transition:color .25s}
+    ul.lk a:hover{color:var(--g)}
+    .cw{position:relative;z-index:10}
+    .ss{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.5rem 5rem}
+    .cc{max-width:700px;width:100%;background:var(--card);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid var(--cb);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 40px var(--cg),inset 0 1px 0 rgba(255,255,255,.06);border-radius:28px;padding:3rem;opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),border-color .35s ease}
+    .cc.vis{opacity:1;transform:translateY(0)}
+    .cc:hover{border-color:rgba(56,239,125,.38)}
+    .wc{max-width:1100px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(56,239,125,.1);color:var(--g);border:1px solid rgba(56,239,125,.28);margin-bottom:1.3rem}
+    .sd{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:pd 2.2s ease-in-out infinite}
+    @keyframes pd{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+    .mt{font-size:clamp(2.8rem,6vw,4.2rem);font-weight:800;letter-spacing:-2px;line-height:1.1;background:linear-gradient(125deg,#fff 30%,var(--g) 70%,var(--am) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.2rem}
+    .it{font-size:1.12rem;color:#ddf1e8;margin-bottom:.6rem}
+    .is{font-size:.88rem;color:var(--tm);margin-bottom:2rem;font-style:italic}
+    .ab{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:16px;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s cubic-bezier(.2,.8,.2,1);cursor:pointer;border:none}
+    .bp{background:linear-gradient(135deg,var(--gd) 0%,var(--g) 100%);color:#031508;box-shadow:0 8px 24px rgba(56,239,125,.35)}
+    .bp:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 36px rgba(56,239,125,.5)}
+    .bo{background:transparent;color:var(--g);border:1.5px solid var(--cb)}
+    .bo:hover{border-color:var(--g);background:rgba(56,239,125,.08);transform:translateY(-2px)}
+    .sh{margin-bottom:2.2rem}
+    .st{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;letter-spacing:-.5px;display:flex;align-items:center;gap:14px;margin-bottom:.5rem}
+    .st i{font-size:1.5rem;color:var(--g);background:rgba(56,239,125,.1);width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;border:1px solid rgba(56,239,125,.2)}
+    .ss2{color:var(--tm);font-size:.92rem}
+    .sg{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.4rem}
+    .si-info{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600;margin-bottom:7px}
+    .sv{color:var(--g)}
+    .pb{width:100%;height:7px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+    .pf{height:100%;background:linear-gradient(90deg,var(--gd),var(--g));border-radius:99px;width:0%;box-shadow:0 0 10px rgba(56,239,125,.45);transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+    .sl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+    .sc{background:rgba(10,28,18,.5);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.4rem;position:relative;overflow:hidden;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+    .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(56,239,125,.4),transparent);opacity:0;transition:opacity .35s}
+    .sc:hover{transform:translateY(-8px);border-color:rgba(56,239,125,.35);background:rgba(10,28,18,.85);box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 20px rgba(56,239,125,.08)}
+    .sc:hover::before{opacity:1}
+    .sc.ft{border-color:rgba(56,239,125,.25);background:rgba(14,38,25,.65)}
+    .stop{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+    .si{font-size:2rem;font-weight:800;color:rgba(255,255,255,.1);line-height:1}
+    .sbg{font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:8px;background:rgba(255,224,102,.13);color:var(--am);letter-spacing:.3px}
+    .sc h3{font-size:1.15rem;font-weight:700;margin-bottom:0}
+    .vnt{font-size:.82rem;color:var(--g);font-weight:500;margin-bottom:.7rem}
+    .sd2{font-size:.85rem;color:#cfe8d8;line-height:1.55}
+    .sd2v{font-size:.82rem;color:var(--tm);font-style:italic}
+    .ctc{text-align:center}
+    .ctc .st{justify-content:center;font-size:clamp(1.8rem,4vw,2.6rem)}
+    .cd{font-size:1.05rem;color:#ddf1e8;max-width:460px;margin:0 auto .6rem}
+    .cdv{font-size:.86rem;color:var(--tm);font-style:italic;margin-bottom:2rem}
+    .ctc .ab{justify-content:center}
+    .mh{margin-top:1.6rem;color:var(--am);font-size:.88rem;display:flex;align-items:center;justify-content:center;gap:8px}
+    footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.8rem;color:var(--tm)}
+    #sh{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:50;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--tm);font-size:.75rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;opacity:1;transition:opacity .4s;pointer-events:none}
+    #sh.hid{opacity:0}
+    .sm{width:22px;height:34px;border:2px solid rgba(56,239,125,.4);border-radius:12px;display:flex;justify-content:center;padding-top:5px}
+    .sm::before{content:'';width:3px;height:7px;background:var(--g);border-radius:99px;animation:sa 1.8s ease-in-out infinite}
+    @keyframes sa{0%{transform:translateY(0);opacity:1}100%{transform:translateY(8px);opacity:0}}
+    @media(max-width:900px){.sl{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.cc{padding:2rem 1.5rem}ul.lk{display:none}}
+    @media(max-width:600px){.mt{font-size:2.4rem}.ss{padding:6rem 1rem 4rem}}
+  </style>
+</head>
+<body>
+  <canvas id="cv"></canvas>
+  <div class="vo"></div>
+  <div id="sp"></div>
+  <nav>
+    <a href="#hero" class="nl">9826.Florenzi</a>
+    <ul class="lk">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="sh"><div class="sm"></div>Scroll</div>
+  <main class="cw">
+    <section class="ss" id="hero">
+      <div class="cc">
+        <div class="badge"><span class="sd"></span>Available for Work</div>
+        <h1 class="mt">9826.Florenzi</h1>
+        <p class="it">Hi, I'm <strong>Nguyen Huu Nghia</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing data to life.</p>
+        <p class="is">(Chao ban, toi la Nguyen Huu Nghia. Toi la mot Ky su AI chuyen xay dung cac he thong thong minh, huan luyen mo hinh Machine Learning va dua du lieu vao thuc tien.)</p>
+        <div class="ab">
+          <a href="#contact" class="btn bp"><i class="fa-solid fa-envelope"></i><span>Contact Me</span></a>
+          <a href="#skills" class="btn bo"><i class="fa-solid fa-arrow-down"></i><span>Explore</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="ss" id="skills">
+      <div class="cc">
+        <div class="sh">
+          <h2 class="st"><i class="fa-solid fa-code-branch"></i>Tools &amp; Languages</h2>
+          <p class="ss2">Proficiency in key tools for AI and software engineering.</p>
+        </div>
+        <div class="sg">
+          <div><div class="si-info"><span>Python</span><span class="sv">80%</span></div><div class="pb"><div class="pf" data-t="80"></div></div></div>
+          <div><div class="si-info"><span>Machine Learning</span><span class="sv">85%</span></div><div class="pb"><div class="pf" data-t="85"></div></div></div>
+          <div><div class="si-info"><span>PyTorch / TensorFlow</span><span class="sv">70%</span></div><div class="pb"><div class="pf" data-t="70"></div></div></div>
+          <div><div class="si-info"><span>Data Analysis</span><span class="sv">75%</span></div><div class="pb"><div class="pf" data-t="75"></div></div></div>
+          <div><div class="si-info"><span>SQL / Database</span><span class="sv">70%</span></div><div class="pb"><div class="pf" data-t="70"></div></div></div>
+          <div><div class="si-info"><span>HTML / CSS</span><span class="sv">20%</span></div><div class="pb"><div class="pf" data-t="20"></div></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="ss" id="services">
+      <div class="cc wc">
+        <div class="sh">
+          <h2 class="st"><i class="fa-solid fa-microchip"></i>Freelance AI Services</h2>
+          <p class="ss2">Tailored AI solutions for your business needs.</p>
+        </div>
+        <div class="sl">
+          <div class="sc">
+            <div class="stop"><span class="si">01</span><span class="sbg">Let's talk</span></div>
+            <h3>Consulting &amp; Analysis</h3>
+            <p class="vnt">Tu van &amp; Phan tich</p>
+            <p class="sd2">Data assessment, AI/ML architecture consulting, roadmap creation.</p>
+            <p class="sd2v">Danh gia du lieu, tu van kien truc AI/ML, xay dung lo trinh.</p>
+          </div>
+          <div class="sc ft">
+            <div class="stop"><span class="si">02</span><span class="sbg">Custom</span></div>
+            <h3>ML Model Development</h3>
+            <p class="vnt">Xay dung Mo hinh ML</p>
+            <p class="sd2">Build and train custom AI models, hyperparameter tuning, API deployment.</p>
+            <p class="sd2v">Huan luyen mo hinh AI tuy chinh, tinh chinh tham so, trien khai API.</p>
+          </div>
+          <div class="sc">
+            <div class="stop"><span class="si">03</span><span class="sbg">On request</span></div>
+            <h3>Full AI Solution</h3>
+            <p class="vnt">Giai phap AI toan dien</p>
+            <p class="sd2">Complex AI systems integrated into your workflow, automated monitoring.</p>
+            <p class="sd2v">Tich hop he thong AI phuc tap vao quy trinh, giam sat tu dong.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ss" id="contact">
+      <div class="cc ctc">
+        <div class="badge"><i class="fa-regular fa-handshake"></i>Collaborate</div>
+        <h2 class="st">Have a project in mind?</h2>
+        <p class="cd">Leave a message or send me an email to collaborate on high-quality AI solutions.</p>
+        <p class="cdv">(Hay de lai tin nhan hoac gui email cho toi de cung nhau tao ra nhung san pham AI chat luong.)</p>
+        <div class="ab"><a href="mailto:9826.florenzi@gmail.com" class="btn bp"><i class="fa-solid fa-envelope"></i><span>Send me an Email</span></a></div>
+        <div class="mh"><i class="fa-regular fa-paper-plane"></i>9826.florenzi@gmail.com</div>
+        <footer>&copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.</footer>
+      </div>
+    </section>
+  </main>
+  <script type="module">
+    import * as THREE from 'three';
+    const canvas=document.querySelector('#cv');
+    const scene=new THREE.Scene();
+    scene.fog=new THREE.FogExp2(0x061309,0.018);
+    scene.background=new THREE.Color(0x061309);
+    const camera=new THREE.PerspectiveCamera(50,innerWidth/innerHeight,0.1,800);
+    camera.position.set(0,4,18);
+    const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+    renderer.setSize(innerWidth,innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.shadowMap.enabled=true;
+    renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+    renderer.toneMapping=THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure=0.9;
+    scene.add(new THREE.HemisphereLight(0x7dc89a,0x0a1a0d,1.4));
+    const sun=new THREE.DirectionalLight(0xfff5d0,3.2);
+    sun.position.set(20,40,15);sun.castShadow=true;
+    sun.shadow.mapSize.set(2048,2048);
+    sun.shadow.camera.near=0.5;sun.shadow.camera.far=120;
+    sun.shadow.camera.left=sun.shadow.camera.bottom=-35;
+    sun.shadow.camera.right=sun.shadow.camera.top=35;
+    sun.shadow.bias=-0.001;scene.add(sun);
+    const fill=new THREE.DirectionalLight(0x1a4a6e,0.6);
+    fill.position.set(-15,10,-10);scene.add(fill);
+    const glow=new THREE.PointLight(0x38ef7d,3.5,25);
+    glow.position.set(0,5,2);scene.add(glow);
+    const warm=new THREE.PointLight(0xff9a3c,2.0,30);
+    warm.position.set(-12,3,-8);scene.add(warm);
+    function ty(x,z){return Math.sin(x*.09)*Math.cos(z*.09)*2.8+Math.sin(x*.04+z*.06)*4+Math.cos(x*.15-z*.12)*1.2}
+    const tg=new THREE.PlaneGeometry(160,160,110,110);tg.rotateX(-Math.PI/2);
+    const pa=tg.attributes.position;
+    for(let i=0;i<pa.count;i++) pa.setY(i,ty(pa.getX(i),pa.getZ(i))+(Math.random()-.5)*.25);
+    tg.computeVertexNormals();
+    const tm=new THREE.MeshStandardMaterial({color:0x0c2215,roughness:.92,metalness:.02});
+    const terr=new THREE.Mesh(tg,tm);terr.receiveShadow=true;scene.add(terr);
+    const trees=new THREE.Group();
+    const trM=new THREE.MeshStandardMaterial({color:0x1a0c04,roughness:.95});
+    const lMs=[
+      new THREE.MeshStandardMaterial({color:0x0e3318,roughness:.8,flatShading:true}),
+      new THREE.MeshStandardMaterial({color:0x153b20,roughness:.75,flatShading:true}),
+      new THREE.MeshStandardMaterial({color:0x1b4a28,roughness:.7,flatShading:true})
+    ];
+    function mkTree(x,z,s){
+      const g=new THREE.Group();
+      const tr=new THREE.Mesh(new THREE.CylinderGeometry(.18*s,.32*s,2.8*s,7),trM);
+      tr.position.y=1.4*s;tr.castShadow=true;g.add(tr);
+      const lv=3+(Math.random()>.5?1:0);
+      const lm=lMs[Math.floor(Math.random()*3)];
+      for(let i=0;i<lv;i++){
+        const c=new THREE.Mesh(new THREE.ConeGeometry((1.7-i*.3)*s,(2.4-i*.25)*s,7+Math.floor(Math.random()*3)),lm);
+        c.position.y=(2.2+i*1.35)*s;c.rotation.y=i*.9+Math.random()*.6;c.castShadow=true;g.add(c);
+      }
+      g.position.set(x,ty(x,z),z);g.rotation.y=Math.random()*Math.PI*2;
+      return g;
+    }
+    for(let i=0;i<160;i++){
+      const r=8+Math.random()*55,a=Math.random()*Math.PI*2;
+      trees.add(mkTree(Math.cos(a)*r,Math.sin(a)*r,.65+Math.random()*1));
+    }
+    scene.add(trees);
+    const bM=new THREE.MeshStandardMaterial({color:0x0e2a14,roughness:.9,flatShading:true});
+    for(let i=0;i<80;i++){
+      const r=3+Math.random()*40,a=Math.random()*Math.PI*2;
+      const x=Math.cos(a)*r,z=Math.sin(a)*r,s=.2+Math.random()*.5;
+      const b=new THREE.Mesh(new THREE.IcosahedronGeometry(s,1),bM);
+      b.position.set(x,ty(x,z)+s*.6,z);b.castShadow=true;scene.add(b);
+    }
+    const FC=280,fg=new THREE.BufferGeometry(),fp=new Float32Array(FC*3),fd=[];
+    for(let i=0;i<FC;i++){
+      const r=Math.random()*38,a=Math.random()*Math.PI*2;
+      const ox=Math.cos(a)*r,oz=Math.sin(a)*r,oy=ty(ox,oz)+.8+Math.random()*7;
+      fp[i*3]=ox;fp[i*3+1]=oy;fp[i*3+2]=oz;
+      fd.push({ox,oy,oz,ph:Math.random()*Math.PI*2,sx:(Math.random()-.5)*3,sy:(Math.random()-.5)*1.5,sz:(Math.random()-.5)*3});
+    }
+    fg.setAttribute('position',new THREE.BufferAttribute(fp,3));
+    const fc=document.createElement('canvas');fc.width=fc.height=64;
+    const fx=fc.getContext('2d'),fg2=fx.createRadialGradient(32,32,0,32,32,32);
+    fg2.addColorStop(0,'#fff');fg2.addColorStop(.2,'#ffe877');
+    fg2.addColorStop(.5,'rgba(56,239,125,.6)');fg2.addColorStop(1,'rgba(0,0,0,0)');
+    fx.fillStyle=fg2;fx.fillRect(0,0,64,64);
+    const fft=new THREE.CanvasTexture(fc);
+    const ffm=new THREE.PointsMaterial({size:.55,map:fft,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,sizeAttenuation:true});
+    const ffs=new THREE.Points(fg,ffm);scene.add(ffs);
+    const DC=600,dg=new THREE.BufferGeometry(),dp=new Float32Array(DC*3),dv=[];
+    for(let i=0;i<DC;i++){
+      dp[i*3]=(Math.random()-.5)*60;dp[i*3+1]=Math.random()*12;dp[i*3+2]=(Math.random()-.5)*60;
+      dv.push({vx:(Math.random()-.5)*.008,vy:.003+Math.random()*.006});
+    }
+    dg.setAttribute('position',new THREE.BufferAttribute(dp,3));
+    const dm=new THREE.PointsMaterial({size:.08,color:0xd4f5c2,transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false});
+    const dsts=new THREE.Points(dg,dm);scene.add(dsts);
+    const rm=new THREE.MeshBasicMaterial({color:0xfff5b0,transparent:true,opacity:.03,side:THREE.DoubleSide,depthWrite:false});
+    [{x:4,z:2},{x:-6,z:-4},{x:8,z:-8}].forEach(p=>{
+      const ray=new THREE.Mesh(new THREE.CylinderGeometry(.01,3.5,22,8,1,true),rm.clone());
+      ray.position.set(p.x,ty(p.x,p.z)+11,p.z);ray.rotation.y=Math.random()*Math.PI;scene.add(ray);
+    });
+    const wps=[
+      {p:new THREE.Vector3(0,4.5,18),l:new THREE.Vector3(0,2.5,0)},
+      {p:new THREE.Vector3(9,6,9),l:new THREE.Vector3(2,1.5,-4)},
+      {p:new THREE.Vector3(-10,5.5,-3),l:new THREE.Vector3(0,2.5,-14)},
+      {p:new THREE.Vector3(0,7.5,-16),l:new THREE.Vector3(0,2,-28)}
+    ];
+    let sT=0,mx=0,my=0;
+    const sp=document.getElementById('sp'),sh=document.getElementById('sh');
+    window.addEventListener('scroll',()=>{
+      const max=document.documentElement.scrollHeight-innerHeight;
+      sT=Math.max(0,Math.min(1,scrollY/(max||1)));
+      sp.style.width=sT*100+'%';
+      scrollY>80?sh.classList.add('hid'):sh.classList.remove('hid');
+    },{passive:true});
+    window.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*2;my=(e.clientY/innerHeight-.5)*2;});
+    const clk=new THREE.Clock(),tv=new THREE.Vector3(),lv=new THREE.Vector3();
+    function tick(){
+      requestAnimationFrame(tick);
+      const t=clk.getElapsedTime();
+      const fa=ffs.geometry.attributes.position.array;
+      for(let i=0;i<FC;i++){
+        const d=fd[i];
+        fa[i*3]=d.ox+Math.sin(t*.4+d.ph)*d.sx;
+        fa[i*3+1]=d.oy+Math.sin(t*.6+d.ph*1.3)*Math.abs(d.sy);
+        fa[i*3+2]=d.oz+Math.cos(t*.35+d.ph)*d.sz;
+      }
+      ffs.geometry.attributes.position.needsUpdate=true;
+      ffm.opacity=.65+Math.sin(t*1.8)*.25;
+      const da=dsts.geometry.attributes.position.array;
+      for(let i=0;i<DC;i++){da[i*3]+=dv[i].vx;da[i*3+1]+=dv[i].vy;if(da[i*3+1]>13)da[i*3+1]=.1;}
+      dsts.geometry.attributes.position.needsUpdate=true;
+      trees.children.forEach((tr,i)=>{tr.rotation.z=Math.sin(t*1.2+i*.7)*.013;});
+      glow.intensity=3+Math.sin(t*2.5)*1.2;
+      warm.intensity=1.8+Math.cos(t*1.7+1)*.8;
+      glow.position.set(Math.sin(t*.4)*4,4.5+Math.sin(t*.7),Math.cos(t*.4)*3);
+      const raw=sT*(wps.length-1),ia=Math.floor(raw),ib=Math.min(ia+1,wps.length-1),f=raw-ia;
+      tv.lerpVectors(wps[ia].p,wps[ib].p,f);
+      tv.x+=mx*.7;tv.y-=my*.4;
+      camera.position.lerp(tv,.055);
+      lv.lerpVectors(wps[ia].l,wps[ib].l,f);
+      camera.lookAt(lv);
+      renderer.render(scene,camera);
+    }
+    tick();
+    window.addEventListener('resize',()=>{
+      camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    });
+  </script>
+  <script>
+    const obs=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('vis');
+          e.target.querySelectorAll('.pf').forEach(f=>{
+            const t=f.dataset.t;if(t)setTimeout(()=>{f.style.width=t+'%';},200);
+          });
+        }
+      });
+    },{threshold:.15});
+    document.querySelectorAll('.cc').forEach(c=>obs.observe(c));
+  </script>
+</body>
 </html>
-
