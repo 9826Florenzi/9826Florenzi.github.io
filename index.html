@@ -1,76 +1,72 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9826.Florenzi | Nguyễn Hữu Nghĩa — Kỹ Sư AI / AI Engineer</title>
-  <meta name="description" content="Portfolio của Nguyễn Hữu Nghĩa (9826.Florenzi) — Kỹ sư AI chuyên về Machine Learning, Thị giác máy tính (Computer Vision) và các giải pháp hệ thống thông minh." />
+  <title>9826.Florenzi | Nguyen Huu Nghia &mdash; AI Engineer</title>
+  <meta name="description" content="Portfolio of Nguyen Huu Nghia (9826.Florenzi) &mdash; AI Engineer specializing in Machine Learning, Computer Vision, and end-to-end intelligent systems." />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  <!-- Lenis Smooth Scroll CDN -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
   <style>
     /* ==========================================================================
-       THEME SYSTEM & DESIGN TOKENS
+       DESIGN TOKENS & THEMING (EXPANDED DESKTOP SCALE, HIGH CONTRAST)
        ========================================================================== */
     :root {
-      --bg: #06070c;
-      --bg-secondary: #0b0d17;
-      --surface: rgba(255, 255, 255, 0.035);
-      --surface-hover: rgba(255, 255, 255, 0.065);
+      --bg: #07090e;
+      --bg-secondary: #0c0f18;
+      --surface: #0e121d;
+      --surface-hover: #141a29;
       --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(139, 92, 246, 0.45);
+      --border-hover: rgba(139, 92, 246, 0.55);
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --text-subtle: #64748b;
       
       --accent: #8b5cf6;
-      --accent-glow: rgba(139, 92, 246, 0.25);
+      --accent-glow: rgba(139, 92, 246, 0.3);
       --accent-blue: #3b82f6;
       --accent-cyan: #06b6d4;
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
+      --accent-linkedin: #0a66c2;
       
-      --nav-bg: rgba(6, 7, 12, 0.82);
-      --spotlight-glow: rgba(139, 92, 246, 0.12);
-      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
-      --ambient-halo: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+      --nav-bg: #07090ef2;
+      --card-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.65);
     }
 
     [data-theme="light"] {
       --bg: #f8fafc;
       --bg-secondary: #f1f5f9;
-      --surface: rgba(255, 255, 255, 0.85);
-      --surface-hover: rgba(255, 255, 255, 0.98);
-      --border: rgba(0, 0, 0, 0.08);
-      --border-hover: rgba(139, 92, 246, 0.4);
+      --surface: #ffffff;
+      --surface-hover: #f8fafc;
+      --border: rgba(0, 0, 0, 0.09);
+      --border-hover: rgba(139, 92, 246, 0.45);
       --text: #0f172a;
       --text-muted: #475569;
       --text-subtle: #94a3b8;
       
       --accent: #7c3aed;
-      --accent-glow: rgba(124, 58, 237, 0.18);
+      --accent-glow: rgba(124, 58, 237, 0.2);
       --accent-blue: #2563eb;
       --accent-cyan: #0891b2;
       --accent-emerald: #059669;
       --accent-amber: #d97706;
+      --accent-linkedin: #0a66c2;
       
-      --nav-bg: rgba(248, 250, 252, 0.88);
-      --spotlight-glow: rgba(124, 58, 237, 0.09);
-      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06);
-      --ambient-halo: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+      --nav-bg: #fffffffa;
+      --card-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.07);
     }
 
     /* ==========================================================================
-       RESET & BASE STYLES
+       RESET & 100% HARDWARE-ACCELERATED NATIVE SCROLL (ZERO JS JANK)
        ========================================================================== */
     *, *::before, *::after {
       margin: 0;
@@ -78,6 +74,7 @@
       box-sizing: border-box;
     }
 
+    /* Native compositor-threaded smooth scrolling: buttery 60/120/144/240Hz */
     html.lenis, html.lenis body {
       height: auto;
     }
@@ -86,27 +83,19 @@
       scroll-behavior: auto !important;
     }
 
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overscroll-behavior: contain;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.68;
+      line-height: 1.7;
       overflow-x: hidden;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      selection-background-color: var(--accent);
-      selection-color: #ffffff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     ::selection {
@@ -115,66 +104,16 @@
     }
 
     /* ==========================================================================
-       BACKGROUND AMBIENT SYSTEM
+       ZERO-OVERHEAD STATIC AMBIENT SYSTEM
        ========================================================================== */
-    #particles-canvas {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.6;
-    }
-
-    .ambient-blobs {
+    .ambient-background-glow {
       position: fixed;
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      overflow: hidden;
-    }
-
-    .ambient-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      animation: floatBlob 16s ease-in-out infinite;
-      opacity: 0.8;
-    }
-
-    .blob-violet {
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.18), transparent 70%);
-      top: -200px;
-      left: -150px;
-      animation-delay: 0s;
-    }
-
-    .blob-cyan {
-      width: 580px;
-      height: 580px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.14), transparent 70%);
-      bottom: -150px;
-      right: -100px;
-      animation-delay: -5s;
-    }
-
-    .blob-emerald {
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.09), transparent 70%);
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-delay: -10s;
-    }
-
-    @keyframes floatBlob {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(35px, -30px) scale(1.08); }
-      66% { transform: translate(-25px, 20px) scale(0.94); }
+      background:
+        radial-gradient(circle 800px at 10% 8%, rgba(139, 92, 246, 0.1) 0%, transparent 65%),
+        radial-gradient(circle 750px at 90% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 65%);
     }
 
     .dot-grid-pattern {
@@ -182,17 +121,12 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background-image: radial-gradient(circle, rgba(148, 163, 184, 0.11) 1.2px, transparent 1.2px);
-      background-size: 32px 32px;
-      transition: opacity 0.4s ease;
-    }
-
-    [data-theme="light"] .dot-grid-pattern {
-      opacity: 0.7;
+      background-image: radial-gradient(circle, rgba(148, 163, 184, 0.09) 1px, transparent 1px);
+      background-size: 36px 36px;
     }
 
     /* ==========================================================================
-       SCROLL PROGRESS BAR
+       SCROLL PROGRESS BAR (GPU TRANSFORM WILL-CHANGE)
        ========================================================================== */
     #scroll-progress {
       position: fixed;
@@ -202,54 +136,52 @@
       width: 0%;
       z-index: 1000;
       background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4, #10b981);
-      box-shadow: 0 0 14px rgba(139, 92, 246, 0.85);
-      transition: width 0.08s linear;
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+      will-change: width;
     }
 
     /* ==========================================================================
-       NAVIGATION BAR
+       NAVBAR (NO EXPENSIVE BLUR FILTERS)
        ========================================================================== */
     nav.site-navbar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 68px;
+      height: 74px;
       z-index: 800;
       background: var(--nav-bg);
-      backdrop-filter: blur(24px) saturate(190%);
-      -webkit-backdrop-filter: blur(24px) saturate(190%);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 clamp(1.2rem, 5vw, 3.5rem);
-      transition: background-color 0.4s ease, border-color 0.4s ease;
+      padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
     }
 
     .nav-brand-logo {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       background: linear-gradient(135deg, #8b5cf6, #3b82f6);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
-      font-size: 0.92rem;
+      font-size: 1rem;
       font-weight: 800;
       box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
     }
 
     .nav-brand-text {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: -0.6px;
       background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
@@ -261,12 +193,12 @@
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 2.2rem;
+      gap: 2.6rem;
       list-style: none;
     }
 
     .nav-menu a {
-      font-size: 0.88rem;
+      font-size: 0.94rem;
       font-weight: 500;
       color: var(--text-muted);
       text-decoration: none;
@@ -285,7 +217,7 @@
       background: linear-gradient(90deg, #8b5cf6, #3b82f6);
       transform: scaleX(0);
       transform-origin: center;
-      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.2s ease;
       border-radius: 99px;
     }
 
@@ -302,22 +234,44 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+    }
+
+    .nav-social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-social-link:hover {
+      border-color: var(--accent-linkedin);
+      color: var(--accent-linkedin);
+      transform: translateY(-2px);
+      background: var(--surface-hover);
     }
 
     #theme-toggle-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 11px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     #theme-toggle-btn:hover {
@@ -332,7 +286,7 @@
        ========================================================================== */
     #scroll-indicator {
       position: fixed;
-      bottom: 2rem;
+      bottom: 2.2rem;
       left: 50%;
       transform: translateX(-50%);
       z-index: 50;
@@ -340,15 +294,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
       color: var(--text-subtle);
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       opacity: 1;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.3s ease;
     }
 
     #scroll-indicator.faded {
@@ -356,9 +310,9 @@
     }
 
     .mouse-icon {
-      width: 20px;
-      height: 32px;
-      border: 1.6px solid var(--text-subtle);
+      width: 22px;
+      height: 34px;
+      border: 1.8px solid var(--text-subtle);
       border-radius: 12px;
       display: flex;
       justify-content: center;
@@ -370,21 +324,21 @@
       height: 6px;
       background: var(--text-subtle);
       border-radius: 99px;
-      animation: mouseWheel 1.9s ease-in-out infinite;
+      animation: mouseWheel 1.8s ease-in-out infinite;
     }
 
     @keyframes mouseWheel {
       0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(9px); opacity: 0; }
+      100% { transform: translateY(10px); opacity: 0; }
     }
 
     /* ==========================================================================
-       LAYOUT & SECTION STRUCTURE
+       LAYOUT & EXPANDED CONTAINERS (1260PX IMMERSIVE PC SCALE)
        ========================================================================== */
     main.main-content {
       position: relative;
       z-index: 10;
-      padding-top: 68px;
+      padding-top: 74px;
     }
 
     section.content-section {
@@ -392,130 +346,138 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: clamp(4.5rem, 9vh, 7rem) 1.5rem;
+      padding: clamp(5.5rem, 10vh, 8.5rem) 2rem;
     }
 
     .container-wide {
       width: 100%;
-      max-width: 1140px;
+      max-width: 1260px;
       margin: 0 auto;
     }
 
     .container-narrow {
       width: 100%;
-      max-width: 780px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
     /* ==========================================================================
-       TYPOGRAPHY & SECTION HEADERS
+       SECTION HEADERS & HUD MARKERS
        ========================================================================== */
+    .section-hud-index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-hud-index::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--accent-cyan);
+    }
+
     .section-tag {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       font-weight: 600;
       letter-spacing: 1.6px;
       text-transform: uppercase;
       color: var(--accent);
-      padding: 5px 14px;
-      border-radius: 8px;
+      padding: 6px 16px;
+      border-radius: 9px;
       background: rgba(139, 92, 246, 0.1);
       border: 1px solid rgba(139, 92, 246, 0.25);
-      margin-bottom: 1.1rem;
-      backdrop-filter: blur(8px);
+      margin-bottom: 1.2rem;
     }
 
     .section-title {
-      font-size: clamp(2rem, 4.6vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -1.6px;
-      line-height: 1.16;
-      margin-bottom: 0.65rem;
+      font-size: clamp(2.3rem, 5.2vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -1.8px;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
     }
 
     .section-subtitle {
-      font-size: 0.96rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
-      margin-bottom: 2.8rem;
-      max-width: 680px;
-      line-height: 1.65;
+      margin-bottom: 3.2rem;
+      max-width: 740px;
+      line-height: 1.7;
     }
 
     /* ==========================================================================
-       SPOTLIGHT CARDS & INTERACTIVE COMPONENTS
+       FAST CARDS (ZERO BACKDROP-FILTER BLUR = LIGHTNING 60FPS)
        ========================================================================== */
-    .spotlight-card {
+    .clean-card {
       position: relative;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      overflow: hidden;
       box-shadow: var(--card-shadow);
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-                  border-color 0.35s ease,
-                  box-shadow 0.35s ease;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      will-change: transform;
     }
 
-    .spotlight-card::before {
+    .clean-card::after {
       content: '';
       position: absolute;
-      top: var(--mouse-y, -250px);
-      left: var(--mouse-x, -250px);
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--spotlight-glow), transparent 70%);
-      transform: translate(-50%, -50%);
+      top: 14px;
+      right: 14px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid rgba(139, 92, 246, 0.35);
+      border-right: 2px solid rgba(139, 92, 246, 0.35);
       pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      z-index: 1;
+      transition: border-color 0.2s ease;
     }
 
-    .spotlight-card:hover {
+    .clean-card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-6px);
-      box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.75), 0 0 35px var(--accent-glow);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 24px var(--accent-glow);
     }
 
-    .spotlight-card:hover::before {
-      opacity: 1;
+    .clean-card:hover::after {
+      border-color: var(--accent);
     }
 
-    .spotlight-card > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Button System */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 26px;
+      gap: 11px;
+      padding: 13px 28px;
       border-radius: 14px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       font-family: 'Inter', sans-serif;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
       color: #ffffff;
-      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 8px 20px -4px rgba(139, 92, 246, 0.5);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2.5px) scale(1.02);
-      box-shadow: 0 16px 35px -5px rgba(139, 92, 246, 0.65);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -4px rgba(139, 92, 246, 0.65);
     }
 
     .btn-ghost {
@@ -527,48 +489,49 @@
     .btn-ghost:hover {
       border-color: var(--border-hover);
       background: var(--surface-hover);
-      transform: translateY(-2.5px);
+      transform: translateY(-2px);
       color: var(--text);
     }
 
+    .btn-linkedin {
+      background: rgba(10, 102, 194, 0.14);
+      color: #38bdf8;
+      border: 1px solid rgba(10, 102, 194, 0.35);
+    }
+
+    .btn-linkedin:hover {
+      background: rgba(10, 102, 194, 0.28);
+      border-color: #0ea5e9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(10, 102, 194, 0.4);
+      color: #ffffff;
+    }
+
     .btn-sm {
-      padding: 8px 16px;
-      font-size: 0.8rem;
-      border-radius: 10px;
+      padding: 9px 18px;
+      font-size: 0.82rem;
+      border-radius: 11px;
     }
 
     /* Tag Pills */
     .tech-pill {
-      font-size: 0.72rem;
-      padding: 4px 11px;
+      font-size: 0.74rem;
+      padding: 5px 12px;
       border-radius: 8px;
       background: rgba(139, 92, 246, 0.09);
       color: var(--accent);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.22);
       font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
 
     .tech-pill:hover {
       background: rgba(139, 92, 246, 0.18);
       border-color: var(--accent);
-    }
-
-    /* Fade-up Animation */
-    .fade-up-element {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .fade-up-element.in-view {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     /* ==========================================================================
@@ -577,24 +540,42 @@
     .hero-wrapper {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 4.5rem;
+      gap: 5rem;
       align-items: center;
+    }
+
+    .hero-terminal-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      padding: 5px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-terminal-chip .term-prompt {
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .hero-status-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 600;
       letter-spacing: 0.4px;
       color: var(--accent-emerald);
-      padding: 6px 16px;
+      padding: 7px 18px;
       border-radius: 999px;
       background: rgba(16, 185, 129, 0.1);
       border: 1px solid rgba(16, 185, 129, 0.3);
       margin-bottom: 1.6rem;
-      backdrop-filter: blur(8px);
     }
 
     .radar-pulse-box {
@@ -611,7 +592,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent-emerald);
-      box-shadow: 0 0 10px var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
     }
 
     .radar-wave {
@@ -620,7 +601,7 @@
       height: 100%;
       border-radius: 50%;
       background: var(--accent-emerald);
-      animation: radarAnimation 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      animation: radarAnimation 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
       opacity: 0.75;
     }
 
@@ -632,26 +613,26 @@
     }
 
     .hero-heading {
-      font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+      font-size: clamp(3.4rem, 7.8vw, 6.2rem);
       font-weight: 900;
-      letter-spacing: -3px;
-      line-height: 1.05;
-      background: linear-gradient(135deg, var(--text) 30%, #8b5cf6 65%, #06b6d4 100%);
+      letter-spacing: -3.2px;
+      line-height: 1.04;
+      background: linear-gradient(135deg, var(--text) 25%, #8b5cf6 65%, #06b6d4 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
     }
 
     .hero-typewriter {
-      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      font-size: clamp(1.1rem, 2.6vw, 1.45rem);
       font-weight: 500;
       color: var(--text-muted);
-      margin-bottom: 1.2rem;
-      min-height: 2rem;
+      margin-bottom: 1.4rem;
+      min-height: 2.2rem;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
 
     .typewriter-text {
@@ -674,11 +655,11 @@
     }
 
     .hero-description {
-      font-size: 1.05rem;
+      font-size: 1.12rem;
       color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 1rem;
-      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 650px;
     }
 
     .hero-description strong {
@@ -686,43 +667,51 @@
       font-weight: 600;
     }
 
-    .hero-description-vn {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 580px;
-      font-style: italic;
-      border-left: 2px solid var(--accent);
-      padding-left: 14px;
-    }
-
     .hero-actions {
       display: flex;
-      gap: 1.1rem;
+      gap: 1.2rem;
       flex-wrap: wrap;
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.8rem;
     }
 
-    .hero-highlights {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .hero-stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      max-width: 680px;
     }
 
-    .highlight-chip {
-      font-size: 0.78rem;
-      color: var(--text-subtle);
+    .stat-item {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      flex-direction: column;
+    }
+
+    .stat-number {
       font-family: 'JetBrains Mono', monospace;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .highlight-chip i {
-      color: var(--accent-emerald);
-      font-size: 0.72rem;
+    .stat-number span.stat-accent {
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.74rem;
+      color: var(--text-subtle);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 500;
     }
 
     .hero-avatar-box {
@@ -730,34 +719,22 @@
       flex-shrink: 0;
     }
 
-    .hero-avatar-glow {
-      position: absolute;
-      inset: -15px;
-      border-radius: 35px;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.45), rgba(6, 182, 212, 0.3));
-      filter: blur(24px);
-      z-index: 1;
-      opacity: 0.7;
-    }
-
     .hero-avatar-img {
-      position: relative;
-      z-index: 2;
-      width: 190px;
-      height: 190px;
-      border-radius: 28px;
+      width: 220px;
+      height: 220px;
+      border-radius: 32px;
       object-fit: cover;
       border: 2px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     }
 
     /* ==========================================================================
-       SECTION 2: SKILLS (CHUYÊN MÔN)
+       SECTION 2: SKILLS (ENGLISH 85%)
        ========================================================================== */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.8rem 3.5rem;
+      gap: 2rem 4rem;
     }
 
     .skill-card-item {
@@ -769,26 +746,26 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 0.94rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
 
     .skill-header span:first-child {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
 
     .skill-percentage {
       color: var(--accent);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 700;
     }
 
     .skill-track-bar {
-      height: 8px;
+      height: 9px;
       background: var(--border);
       border-radius: 99px;
       overflow: hidden;
@@ -800,21 +777,33 @@
       width: 0%;
       border-radius: 99px;
       background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4);
-      box-shadow: 0 0 14px rgba(139, 92, 246, 0.5);
-      transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+      transition: width 1.2s ease-out;
+    }
+
+    .skill-special-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-family: 'JetBrains Mono', monospace;
+      margin-left: 6px;
     }
 
     /* ==========================================================================
-       SECTION 3: SERVICES (DỊCH VỤ)
+       SECTION 3: SERVICES
        ========================================================================== */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     .service-card {
-      padding: 2.2rem;
+      padding: 2.6rem;
       display: flex;
       flex-direction: column;
     }
@@ -823,26 +812,26 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
     }
 
     .service-index {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 900;
       font-family: 'JetBrains Mono', monospace;
       color: var(--border);
       line-height: 1;
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
     }
 
     .service-card:hover .service-index {
-      color: rgba(139, 92, 246, 0.3);
+      color: rgba(139, 92, 246, 0.32);
     }
 
     .service-price-badge {
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      padding: 4px 11px;
+      padding: 5px 12px;
       border-radius: 8px;
       background: rgba(245, 158, 11, 0.12);
       color: var(--accent-amber);
@@ -850,67 +839,59 @@
       border: 1px solid rgba(245, 158, 11, 0.25);
     }
 
-    .service-title-en {
-      font-size: 1.18rem;
+    .service-title {
+      font-size: 1.28rem;
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
     }
 
-    .service-title-vn {
-      font-size: 0.88rem;
+    .service-deliverable-label {
+      font-size: 0.78rem;
       color: var(--accent-emerald);
+      font-family: 'JetBrains Mono', monospace;
       margin-bottom: 1rem;
       font-weight: 600;
     }
 
-    .service-desc-en {
-      font-size: 0.88rem;
+    .service-description {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.62;
-      margin-bottom: 0.6rem;
-    }
-
-    .service-desc-vn {
-      font-size: 0.82rem;
-      color: var(--text-subtle);
-      font-style: italic;
-      line-height: 1.58;
-      margin-top: auto;
+      line-height: 1.68;
     }
 
     /* ==========================================================================
-       SECTION 4: PROJECTS (DỰ ÁN)
+       SECTION 4: PROJECTS
        ========================================================================== */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.6rem;
+      gap: 1.8rem;
     }
 
     .project-card {
-      padding: 2rem;
+      padding: 2.4rem;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
 
     .project-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .project-icon-box {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(6, 182, 212, 0.18));
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background: rgba(139, 92, 246, 0.12);
       border: 1px solid rgba(139, 92, 246, 0.28);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.18rem;
+      font-size: 1.25rem;
       color: var(--accent);
     }
 
@@ -924,13 +905,13 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--accent-emerald);
-      padding: 3px 9px;
-      border-radius: 6px;
+      padding: 4px 10px;
+      border-radius: 7px;
       background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.28);
       font-family: 'JetBrains Mono', monospace;
     }
 
@@ -939,7 +920,7 @@
       height: 6px;
       border-radius: 50%;
       background: var(--accent-emerald);
-      animation: liveBlink 1.6s infinite ease-in-out;
+      animation: liveBlink 1.8s infinite ease-in-out;
     }
 
     @keyframes liveBlink {
@@ -951,68 +932,68 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       color: var(--accent-amber);
       font-weight: 600;
       font-family: 'JetBrains Mono', monospace;
     }
 
     .project-title {
-      font-size: 1.15rem;
+      font-size: 1.24rem;
       font-weight: 700;
       line-height: 1.3;
       margin-top: 0.2rem;
     }
 
     .project-lang-label {
-      font-size: 0.76rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
     .project-description {
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.68;
       flex: 1;
     }
 
     .project-tags-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.6rem;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .project-footer-actions {
       display: flex;
-      gap: 0.65rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
       border-top: 1px solid var(--border);
     }
 
     .projects-more-cta {
       text-align: center;
-      margin-top: 2.8rem;
+      margin-top: 3.2rem;
     }
 
     /* ==========================================================================
-       SECTION 5: AI MINDSET BENTO (TƯ DUY KỸ SƯ)
+       SECTION 5: AI MINDSET BENTO
        ========================================================================== */
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.3rem;
+      gap: 1.5rem;
     }
 
     .bento-card {
-      padding: 2rem;
+      padding: 2.4rem;
       border-radius: 24px;
       display: flex;
       flex-direction: column;
@@ -1023,32 +1004,32 @@
     }
 
     .bento-icon {
-      font-size: 1.6rem;
-      margin-bottom: 0.85rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.9rem;
     }
 
     .bento-header-label {
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
       font-family: 'JetBrains Mono', monospace;
     }
 
     .pipeline-container {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
-      margin-top: 0.4rem;
+      margin-top: 0.6rem;
     }
 
     .pipeline-step {
-      font-size: 0.82rem;
-      padding: 6px 14px;
-      border-radius: 10px;
+      font-size: 0.85rem;
+      padding: 7px 16px;
+      border-radius: 11px;
       font-family: 'JetBrains Mono', monospace;
       font-weight: 600;
       background: rgba(139, 92, 246, 0.12);
@@ -1058,33 +1039,33 @@
 
     .pipeline-arrow {
       color: var(--text-subtle);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .research-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.75rem;
     }
 
     .research-list li {
-      font-size: 0.88rem;
+      font-size: 0.94rem;
       color: var(--text);
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.75rem;
     }
 
     .research-list li i {
       color: var(--accent-cyan);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     .learning-text {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .learning-text strong {
@@ -1094,19 +1075,19 @@
     .stack-chips-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 0.3rem;
+      gap: 0.65rem;
+      margin-top: 0.4rem;
     }
 
     .stack-chip {
-      font-size: 0.78rem;
-      padding: 6px 13px;
-      border-radius: 10px;
+      font-size: 0.82rem;
+      padding: 7px 15px;
+      border-radius: 11px;
       font-family: 'JetBrains Mono', monospace;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
     }
 
     .sc-python { background: rgba(59, 130, 246, 0.12); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25); }
@@ -1115,68 +1096,61 @@
     .sc-fastapi { background: rgba(139, 92, 246, 0.12); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.25); }
     .sc-git { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.25); }
     .sc-linux { background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .sc-docker { background: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.25); }
 
     .philosophy-quote {
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       font-style: italic;
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.8;
       position: relative;
-      padding-left: 1.2rem;
+      padding-left: 1.4rem;
       border-left: 2px solid var(--accent);
     }
 
     /* ==========================================================================
-       SECTION 6: CONTACT (LIÊN HỆ)
+       SECTION 6: CONTACT
        ========================================================================== */
     .contact-container {
       text-align: center;
     }
 
     .contact-heading {
-      font-size: clamp(2.4rem, 5.8vw, 4rem);
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
       font-weight: 900;
-      letter-spacing: -2px;
+      letter-spacing: -2.2px;
       line-height: 1.1;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.2rem;
     }
 
     .contact-text {
-      font-size: 1.05rem;
+      font-size: 1.12rem;
       color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 0.5rem;
-      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 650px;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .contact-text-vn {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-bottom: 1.8rem;
     }
 
     .contact-email-link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-family: 'JetBrains Mono', monospace;
       color: var(--accent-amber);
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       font-weight: 600;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.6rem;
       text-decoration: none;
-      padding: 7px 18px;
-      border-radius: 12px;
+      padding: 9px 22px;
+      border-radius: 14px;
       background: rgba(245, 158, 11, 0.1);
       border: 1px solid rgba(245, 158, 11, 0.25);
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .contact-email-link:hover {
-      background: rgba(245, 158, 11, 0.2);
       transform: translateY(-2px);
     }
 
@@ -1190,23 +1164,23 @@
     .social-links-row {
       display: flex;
       justify-content: center;
-      gap: 0.85rem;
-      margin-top: 2.5rem;
+      gap: 1rem;
+      margin-top: 3rem;
     }
 
     .social-icon-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--surface);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 1.12rem;
       text-decoration: none;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     .social-icon-btn:hover {
@@ -1216,51 +1190,50 @@
       box-shadow: 0 8px 20px -4px var(--accent-glow);
     }
 
+    .social-icon-btn.linkedin-brand:hover {
+      border-color: var(--accent-linkedin);
+      color: #38bdf8;
+      box-shadow: 0 8px 20px -4px rgba(10, 102, 194, 0.4);
+    }
+
     footer.site-footer {
-      margin-top: 4.5rem;
-      padding-top: 2.2rem;
+      margin-top: 5rem;
+      padding-top: 2.5rem;
       border-top: 1px solid var(--border);
     }
 
     .footer-copy {
-      font-size: 0.82rem;
+      font-size: 0.86rem;
       color: var(--text-subtle);
       text-align: center;
     }
 
     /* ==========================================================================
-       RESPONSIVE ADAPTATIONS
+       RESPONSIVE BREAKPOINTS
        ========================================================================== */
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       .hero-wrapper {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2.5rem;
+        gap: 3rem;
       }
       .hero-avatar-box {
         order: -1;
         margin: 0 auto;
       }
       .hero-avatar-img {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
       }
-      .hero-actions {
+      .hero-actions,
+      .hero-stats-ribbon {
         justify-content: center;
-      }
-      .hero-highlights {
-        justify-content: center;
-      }
-      .hero-description,
-      .hero-description-vn {
         margin-left: auto;
         margin-right: auto;
       }
-      .hero-description-vn {
-        border-left: none;
-        border-top: 2px solid var(--accent);
-        padding-left: 0;
-        padding-top: 10px;
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
       }
       .services-grid,
       .projects-grid {
@@ -1268,7 +1241,7 @@
       }
       .skills-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.8rem;
       }
       .bento-grid {
         grid-template-columns: 1fr;
@@ -1281,12 +1254,16 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       section.content-section {
-        padding: 4rem 1rem;
+        padding: 4.5rem 1.2rem;
       }
       .hero-heading {
         letter-spacing: -2px;
+      }
+      .hero-stats-ribbon {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
       .btn {
         width: 100%;
@@ -1297,13 +1274,8 @@
 </head>
 <body>
 
-  <!-- Background Ambience -->
-  <canvas id="particles-canvas"></canvas>
-  <div class="ambient-blobs">
-    <div class="ambient-blob blob-violet"></div>
-    <div class="ambient-blob blob-cyan"></div>
-    <div class="ambient-blob blob-emerald"></div>
-  </div>
+  <!-- Static GPU-Friendly Ambient Background -->
+  <div class="ambient-background-glow"></div>
   <div class="dot-grid-pattern"></div>
 
   <!-- Scroll Progress Indicator -->
@@ -1316,14 +1288,19 @@
       <span class="nav-brand-text">9826.Florenzi</span>
     </a>
     <ul class="nav-menu">
-      <li><a href="#skills">Kỹ năng</a></li>
-      <li><a href="#services">Dịch vụ</a></li>
-      <li><a href="#projects">Dự án</a></li>
-      <li><a href="#mindset">Tư duy AI</a></li>
-      <li><a href="#contact">Liên hệ</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#mindset">Mindset</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <button id="theme-toggle-btn" aria-label="Chuyển đổi giao diện sáng/tối" title="Chuyển đổi Light/Dark mode">
+      <!-- LinkedIn Quick Button -->
+      <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="nav-social-link" title="Connect on LinkedIn" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <!-- Theme Switcher -->
+      <button id="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle Light/Dark mode">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
       </button>
     </div>
@@ -1334,7 +1311,7 @@
     <div class="mouse-icon">
       <div class="mouse-wheel"></div>
     </div>
-    <span>Cuộn chuột</span>
+    <span>SCROLL</span>
   </div>
 
   <!-- ==========================================================================
@@ -1348,52 +1325,71 @@
         <div class="hero-wrapper">
           <!-- Text Column -->
           <div>
-            <div class="hero-status-badge fade-up-element">
-              <span class="radar-pulse-box">
-                <span class="radar-core"></span>
-                <span class="radar-wave"></span>
-              </span>
-              Sẵn sàng nhận dự án mới (Available for Work)
+            <div class="hero-terminal-chip">
+              <span class="term-prompt">&gt;</span> florenzi.init() --status="Available for Hire"
             </div>
 
-            <h1 class="hero-heading fade-up-element">9826.Florenzi</h1>
+            <div>
+              <div class="hero-status-badge">
+                <span class="radar-pulse-box">
+                  <span class="radar-core"></span>
+                  <span class="radar-wave"></span>
+                </span>
+                Available for Work &middot; Full-Time &amp; Contracts
+              </div>
+            </div>
 
-            <div class="hero-typewriter fade-up-element">
-              <span style="color: var(--text-muted)">Tôi là&nbsp;</span>
+            <h1 class="hero-heading">9826.Florenzi</h1>
+
+            <div class="hero-typewriter">
+              <span style="color: var(--text-muted)">I'm an&nbsp;</span>
               <span class="typewriter-text" id="typewriter-display"></span>
               <span class="typewriter-cursor"></span>
             </div>
 
-            <p class="hero-description fade-up-element">
-              Xin chào! Tôi là <strong>Nguyễn Hữu Nghĩa</strong>. Tôi tập trung phát triển các hệ thống thông minh, huấn luyện mô hình Machine Learning thực chiến và đưa dữ liệu vào ứng dụng thực tế.
+            <p class="hero-description">
+              Hi, I'm <strong>Nguyen Huu Nghia</strong> &mdash; an AI Engineer focused on developing computer vision systems, training robust machine learning models, and delivering scalable data-driven solutions from research to production.
             </p>
 
-            <p class="hero-description-vn fade-up-element">
-              "Biến dữ liệu phức tạp thành những giải pháp trí tuệ nhân tạo tin cậy, giải quyết trực diện bài toán của bạn."
-            </p>
-
-            <div class="hero-actions fade-up-element">
+            <div class="hero-actions">
               <a href="#contact" class="btn btn-primary">
-                <i class="fa-solid fa-envelope"></i> Liên hệ hợp tác
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
               </a>
               <a href="#projects" class="btn btn-ghost">
-                <i class="fa-brands fa-github"></i> Khám phá Dự án
+                <i class="fa-brands fa-github"></i> View Projects
+              </a>
+              <!-- LinkedIn Button in Hero -->
+              <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="btn btn-linkedin">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
               </a>
             </div>
 
-            <div class="hero-highlights fade-up-element">
-              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Python &amp; ML Core</span>
-              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Production-Ready AI</span>
-              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Computer Vision &amp; LLMs</span>
+            <!-- Hero Quick Stats Ribbon -->
+            <div class="hero-stats-ribbon">
+              <div class="stat-item">
+                <div class="stat-number">3+<span class="stat-accent">Yrs</span></div>
+                <div class="stat-label">Python &amp; ML</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100<span class="stat-accent">%</span></div>
+                <div class="stat-label">Production Focus</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">End<span class="stat-accent">-to-</span>End</div>
+                <div class="stat-label">AI Integration</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">Global<span class="stat-accent">★</span></div>
+                <div class="stat-label">Remote Ready</div>
+              </div>
             </div>
           </div>
 
           <!-- Avatar Column -->
-          <div class="hero-avatar-box fade-up-element">
-            <div class="hero-avatar-glow"></div>
+          <div class="hero-avatar-box">
             <img 
               src="https://avatars.githubusercontent.com/u/211441746?v=4" 
-              alt="Nguyễn Hữu Nghĩa (9826.Florenzi)" 
+              alt="Nguyen Huu Nghia (9826.Florenzi)" 
               class="hero-avatar-img"
               loading="eager"
             />
@@ -1402,29 +1398,21 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 2: SKILLS (KỸ NĂNG) ===== -->
+    <!-- ===== SECTION 2: SKILLS ===== -->
     <section id="skills" class="content-section">
       <div class="container-narrow">
-        <div class="fade-up-element">
-          <span class="section-tag"><i class="fa-solid fa-code-branch"></i>&nbsp; Năng lực Chuyên môn</span>
-          <h2 class="section-title">Công cụ &amp; Ngôn ngữ</h2>
-          <p class="section-subtitle">Mức độ am hiểu và thành thạo các công nghệ nền tảng trong kỹ thuật AI &amp; phát triển phần mềm.</p>
+        <div>
+          <div class="section-hud-index">// 02. TECH STACK &amp; CAPABILITIES</div>
+          <span class="section-tag"><i class="fa-solid fa-code-branch"></i>&nbsp; Core Competencies</span>
+          <h2 class="section-title">Tools &amp; Languages</h2>
+          <p class="section-subtitle">Demonstrated proficiency across key artificial intelligence, software engineering, and international communication toolchains.</p>
         </div>
 
-        <div class="skills-grid fade-up-element">
+        <div class="skills-grid">
+          <!-- Skill 1: Python -->
           <div class="skill-card-item">
             <div class="skill-header">
-              <span><i class="fa-brands fa-python" style="color: #60a5fa"></i> Python</span>
-              <span class="skill-percentage">80%</span>
-            </div>
-            <div class="skill-track-bar">
-              <div class="skill-fill-progress" data-target="80"></div>
-            </div>
-          </div>
-
-          <div class="skill-card-item">
-            <div class="skill-header">
-              <span><i class="fa-solid fa-brain" style="color: #a78bfa"></i> Machine Learning</span>
+              <span><i class="fa-brands fa-python" style="color: #60a5fa"></i> Python (Core &amp; Ecosystem)</span>
               <span class="skill-percentage">85%</span>
             </div>
             <div class="skill-track-bar">
@@ -1432,19 +1420,21 @@
             </div>
           </div>
 
+          <!-- Skill 2: Machine Learning -->
           <div class="skill-card-item">
             <div class="skill-header">
-              <span><i class="fa-solid fa-fire-flame-curved" style="color: #fb923c"></i> PyTorch / TensorFlow</span>
-              <span class="skill-percentage">70%</span>
+              <span><i class="fa-solid fa-brain" style="color: #a78bfa"></i> Machine Learning &amp; Algorithms</span>
+              <span class="skill-percentage">85%</span>
             </div>
             <div class="skill-track-bar">
-              <div class="skill-fill-progress" data-target="70"></div>
+              <div class="skill-fill-progress" data-target="85"></div>
             </div>
           </div>
 
+          <!-- Skill 3: PyTorch & TensorFlow -->
           <div class="skill-card-item">
             <div class="skill-header">
-              <span><i class="fa-solid fa-chart-line" style="color: #34d399"></i> Data Analysis &amp; Visualization</span>
+              <span><i class="fa-solid fa-fire-flame-curved" style="color: #fb923c"></i> PyTorch / Deep Learning</span>
               <span class="skill-percentage">75%</span>
             </div>
             <div class="skill-track-bar">
@@ -1452,9 +1442,46 @@
             </div>
           </div>
 
+          <!-- Skill 4: Data Engineering & Analytics -->
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-chart-line" style="color: #34d399"></i> Data Engineering &amp; Analytics</span>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="80"></div>
+            </div>
+          </div>
+
+          <!-- Skill 5: SQL & Database Architecture -->
           <div class="skill-card-item">
             <div class="skill-header">
               <span><i class="fa-solid fa-database" style="color: #38bdf8"></i> SQL &amp; Database Architecture</span>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="75"></div>
+            </div>
+          </div>
+
+          <!-- Skill 6: English Proficiency (85% AS REQUESTED) -->
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span>
+                <i class="fa-solid fa-earth-americas" style="color: #06b6d4"></i> English
+                <span class="skill-special-badge">Professional</span>
+              </span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="85"></div>
+            </div>
+          </div>
+
+          <!-- Skill 7: MLOps & API Serving -->
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-server" style="color: #f43f5e"></i> MLOps &amp; API Serving (FastAPI, Docker)</span>
               <span class="skill-percentage">70%</span>
             </div>
             <div class="skill-track-bar">
@@ -1462,80 +1489,86 @@
             </div>
           </div>
 
+          <!-- Skill 8: Frontend & UI Integration -->
           <div class="skill-card-item">
             <div class="skill-header">
-              <span><i class="fa-brands fa-html5" style="color: #f87171"></i> Frontend Basics (HTML/CSS)</span>
-              <span class="skill-percentage">20%</span>
+              <span><i class="fa-brands fa-html5" style="color: #f97316"></i> Frontend UI Integration (HTML/CSS/JS)</span>
+              <span class="skill-percentage">35%</span>
             </div>
             <div class="skill-track-bar">
-              <div class="skill-fill-progress" data-target="20"></div>
+              <div class="skill-fill-progress" data-target="35"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SECTION 3: SERVICES (DỊCH VỤ) ===== -->
+    <!-- ===== SECTION 3: SERVICES ===== -->
     <section id="services" class="content-section">
       <div class="container-wide">
-        <div class="fade-up-element">
-          <span class="section-tag"><i class="fa-solid fa-microchip"></i>&nbsp; Giải Pháp Cung Cấp</span>
-          <h2 class="section-title">Dịch Vụ AI Chuyên Nghiệp</h2>
-          <p class="section-subtitle">Giải pháp AI &amp; Machine Learning tùy chỉnh, thiết kế chuẩn xác theo nhu cầu thực tế của bạn.</p>
+        <div>
+          <div class="section-hud-index">// 03. ENGINEERING SERVICES</div>
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i>&nbsp; What I Offer</span>
+          <h2 class="section-title">Freelance AI Services</h2>
+          <p class="section-subtitle">Tailored artificial intelligence and machine learning solutions engineered precisely to match your business requirements.</p>
         </div>
 
         <div class="services-grid">
           <!-- Service 1 -->
-          <div class="spotlight-card service-card fade-up-element">
+          <div class="clean-card service-card">
             <div class="service-card-top">
               <span class="service-index">01</span>
-              <span class="service-price-badge">Thỏa thuận</span>
+              <span class="service-price-badge">Let's talk</span>
             </div>
-            <h3 class="service-title-en">Consulting &amp; Analysis</h3>
-            <p class="service-title-vn">Tư Vấn &amp; Phân Tích Dữ Liệu</p>
-            <p class="service-desc-en">Data assessment, feasibility study, AI/ML architecture consulting, and roadmap creation.</p>
-            <p class="service-desc-vn">Đánh giá cấu trúc dữ liệu, khảo sát tính khả thi, tư vấn kiến trúc mô hình và xây dựng lộ trình ứng dụng AI hiệu quả cho tổ chức.</p>
+            <h3 class="service-title">Consulting &amp; Architecture</h3>
+            <div class="service-deliverable-label">Feasibility Study &middot; System Design</div>
+            <p class="service-description">
+              Data readiness assessments, AI model selection, algorithmic feasibility analysis, and end-to-end technical roadmaps tailored to your infrastructure.
+            </p>
           </div>
 
           <!-- Service 2 -->
-          <div class="spotlight-card service-card fade-up-element" data-delay="0.1">
+          <div class="clean-card service-card">
             <div class="service-card-top">
               <span class="service-index">02</span>
-              <span class="service-price-badge">Theo quy mô</span>
+              <span class="service-price-badge">Custom scope</span>
             </div>
-            <h3 class="service-title-en">ML Model Development</h3>
-            <p class="service-title-vn">Xây Dựng &amp; Huấn Luyện Mô Hình</p>
-            <p class="service-desc-en">Custom AI model training, fine-tuning, metric evaluation, and scalable REST API deployment.</p>
-            <p class="service-desc-vn">Huấn luyện mô hình học máy theo bài toán đặc thù, tinh chỉnh siêu tham số, kiểm thử chuẩn xác và đóng gói thành API sẵn sàng tích hợp.</p>
+            <h3 class="service-title">ML Model Development</h3>
+            <div class="service-deliverable-label">Training &middot; Fine-Tuning &middot; Evaluation</div>
+            <p class="service-description">
+              Developing and fine-tuning custom deep learning and machine learning models, hyperparameter optimization, rigorous evaluation metrics, and API packaging.
+            </p>
           </div>
 
           <!-- Service 3 -->
-          <div class="spotlight-card service-card fade-up-element" data-delay="0.2">
+          <div class="clean-card service-card">
             <div class="service-card-top">
               <span class="service-index">03</span>
-              <span class="service-price-badge">Theo yêu cầu</span>
+              <span class="service-price-badge">On demand</span>
             </div>
-            <h3 class="service-title-en">Full AI Solution</h3>
-            <p class="service-title-vn">Giải Pháp AI Toàn Diện</p>
-            <p class="service-desc-en">End-to-end intelligent systems integrated into business workflows with continuous monitoring.</p>
-            <p class="service-desc-vn">Xây dựng trọn gói hệ thống AI từ khâu tiền xử lý dữ liệu, suy luận mô hình đến tích hợp quy trình nghiệp vụ và giám sát tự động.</p>
+            <h3 class="service-title">Full AI System Integration</h3>
+            <div class="service-deliverable-label">End-to-End Pipeline &middot; Production</div>
+            <p class="service-description">
+              Comprehensive AI implementations spanning data ingestion pipelines, real-time inference engines, automated monitoring, and seamless workflow integration.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SECTION 4: PROJECTS (DỰ ÁN) ===== -->
+    <!-- ===== SECTION 4: PROJECTS ===== -->
     <section id="projects" class="content-section">
       <div class="container-wide">
-        <div class="fade-up-element">
-          <span class="section-tag"><i class="fa-brands fa-github"></i>&nbsp; Sản Phẩm Thực Chiến</span>
-          <h2 class="section-title">Dự Án Nổi Bật</h2>
-          <p class="section-subtitle">Các dự án nghiên cứu và sản phẩm thực tế được xây dựng và phát triển trên GitHub.</p>
+        <div>
+          <div class="section-hud-index">// 04. FEATURED CODEBASES</div>
+          <span class="section-tag"><i class="fa-brands fa-github"></i>&nbsp; Selected Work</span>
+          <h2 class="section-title">Projects &amp; Systems</h2>
+          <p class="section-subtitle">Real-world projects, research implementations, and production codebases built on GitHub.</p>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1: ALPR -->
-          <div class="spotlight-card project-card fade-up-element">
+          <div class="clean-card project-card">
             <div class="project-card-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-car-burst"></i>
@@ -1551,7 +1584,7 @@
               <i class="fa-brands fa-python" style="color: #3b82f6"></i> Python &middot; Deep Learning
             </div>
             <p class="project-description">
-              Tối ưu hóa khả năng nhận diện biển số xe tự động (ALPR) trong các điều kiện môi trường bất lợi: trời mưa lớn, ban đêm, sương mù và hiện tượng mờ chuyển động bằng cách kết hợp Deep Learning và các kỹ thuật tăng cường hình ảnh (Image Enhancement).
+              Optimizing Automatic License Plate Recognition (ALPR) under harsh real-world conditions &mdash; heavy rainfall, nighttime lighting, thick fog, and motion blur &mdash; via image enhancement algorithms coupled with YOLO deep learning detection.
             </p>
             <div class="project-tags-list">
               <span class="tech-pill">Computer Vision</span>
@@ -1561,13 +1594,13 @@
             </div>
             <div class="project-footer-actions">
               <a href="https://github.com/9826Florenzi/ALPR-in-Bad-Conditions" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
-                <i class="fa-brands fa-github"></i> Mã nguồn GitHub
+                <i class="fa-brands fa-github"></i> Source Code
               </a>
             </div>
           </div>
 
-          <!-- Project 2: DNDB (Danh Nhân Bắc Đẩu) -->
-          <div class="spotlight-card project-card fade-up-element" data-delay="0.1">
+          <!-- Project 2: DNDB -->
+          <div class="clean-card project-card">
             <div class="project-card-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-book-bookmark"></i>
@@ -1581,12 +1614,12 @@
                 </div>
               </div>
             </div>
-            <h3 class="project-title">DNDB - Danh Nhân Bắc Đẩu</h3>
+            <h3 class="project-title">DNDB &mdash; Danh Nhan Bac Dau</h3>
             <div class="project-lang-label">
               <i class="fa-brands fa-js" style="color: #eab308"></i> TypeScript &middot; Next.js
             </div>
             <p class="project-description">
-              Nền tảng tra cứu và lưu trữ tư liệu, tiểu sử và niên biểu các nhân vật lịch sử Việt Nam. Hệ thống được tinh chỉnh giao diện người dùng hiện đại, tối ưu hóa tốc độ truy vấn cơ sở dữ liệu và hiện đang hoạt động trực tuyến trên tên miền chính thức.
+              A public biographical reference and archive platform for historical Vietnamese figures. Features responsive modern UI design, optimized database queries, fast full-text search, and full production deployment.
             </p>
             <div class="project-tags-list">
               <span class="tech-pill">TypeScript</span>
@@ -1599,13 +1632,13 @@
                 <i class="fa-brands fa-github"></i> GitHub
               </a>
               <a href="https://www.danhnhanbacdau.io.vn/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Live Demo
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
               </a>
             </div>
           </div>
 
           <!-- Project 3: POS App -->
-          <div class="spotlight-card project-card fade-up-element" data-delay="0.2">
+          <div class="clean-card project-card">
             <div class="project-card-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-cash-register"></i>
@@ -1616,12 +1649,12 @@
                 </div>
               </div>
             </div>
-            <h3 class="project-title">POS App for Mobile Shop</h3>
+            <h3 class="project-title">Mobile Shop POS System</h3>
             <div class="project-lang-label">
               <i class="fa-brands fa-js" style="color: #eab308"></i> TypeScript &middot; MIT License
             </div>
             <p class="project-description">
-              Phần mềm quản lý bán hàng (Point-of-Sale) tùy biến chuyên sâu cho chuỗi cửa hàng bán lẻ điện thoại: quản lý danh mục IMEI/serial, theo dõi doanh thu thời gian thực, quản lý kho và báo cáo tài chính trực quan.
+              A specialized Point-of-Sale (POS) application tailored for mobile phone retailers: featuring IMEI/serial inventory tracking, real-time sales reporting, invoice processing, and an intuitive management dashboard.
             </p>
             <div class="project-tags-list">
               <span class="tech-pill">TypeScript</span>
@@ -1631,141 +1664,148 @@
             </div>
             <div class="project-footer-actions">
               <a href="https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
-                <i class="fa-brands fa-github"></i> Mã nguồn GitHub
+                <i class="fa-brands fa-github"></i> Source Code
               </a>
             </div>
           </div>
         </div>
 
-        <div class="projects-more-cta fade-up-element">
+        <div class="projects-more-cta">
           <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn btn-ghost">
-            <i class="fa-brands fa-github"></i> Xem toàn bộ kho mã nguồn trên GitHub
+            <i class="fa-brands fa-github"></i> Explore All Repositories on GitHub
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== SECTION 5: AI MINDSET (TƯ DUY KỸ SƯ) ===== -->
+    <!-- ===== SECTION 5: AI MINDSET BENTO ===== -->
     <section id="mindset" class="content-section">
       <div class="container-wide">
-        <div class="fade-up-element">
-          <span class="section-tag"><i class="fa-solid fa-brain"></i>&nbsp; Triết Lý &amp; Phương Pháp</span>
-          <h2 class="section-title">Tư Duy Kỹ Sư AI</h2>
-          <p class="section-subtitle">Cách tôi tiếp cận bài toán, liên tục học hỏi và hiện thực hóa các mô hình trí tuệ nhân tạo.</p>
+        <div>
+          <div class="section-hud-index">// 05. ENGINEERING PHILOSOPHY</div>
+          <span class="section-tag"><i class="fa-solid fa-brain"></i>&nbsp; Mindset &amp; Methodology</span>
+          <h2 class="section-title">AI Engineering Mindset</h2>
+          <p class="section-subtitle">How I formulate problems, iteratively build systems, and translate machine learning models into reliable production software.</p>
         </div>
 
-        <div class="bento-grid fade-up-element">
+        <div class="bento-grid">
           <!-- Cell 1: How I Think -->
-          <div class="spotlight-card bento-card">
+          <div class="clean-card bento-card">
             <div class="bento-icon">&#129504;</div>
-            <div class="bento-header-label">Quy Trình Tiếp Cận</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem;">
-              Giải quyết bài toán AI có hệ thống từ nghiên cứu đến vận hành:
+            <div class="bento-header-label">Systematic Approach</div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.9rem;">
+              Iterative, data-centric execution lifecycle from research to deployment:
             </p>
             <div class="pipeline-container">
-              <span class="pipeline-step">Dữ liệu</span>
+              <span class="pipeline-step">Data</span>
               <span class="pipeline-arrow">&#8594;</span>
-              <span class="pipeline-step">Mô hình</span>
+              <span class="pipeline-step">Model</span>
               <span class="pipeline-arrow">&#8594;</span>
-              <span class="pipeline-step">Đánh giá</span>
+              <span class="pipeline-step">Evaluate</span>
               <span class="pipeline-arrow">&#8594;</span>
-              <span class="pipeline-step">Triển khai</span>
+              <span class="pipeline-step">Deploy</span>
             </div>
           </div>
 
           <!-- Cell 2: Research Focus -->
-          <div class="spotlight-card bento-card">
+          <div class="clean-card bento-card">
             <div class="bento-icon">&#128300;</div>
-            <div class="bento-header-label">Trọng Tâm Nghiên Cứu</div>
+            <div class="bento-header-label">Research Interests</div>
             <ul class="research-list">
-              <li><i class="fa-solid fa-chevron-right"></i> Computer Vision &amp; Image Enhancement</li>
-              <li><i class="fa-solid fa-chevron-right"></i> Large Language Models &amp; RAG Systems</li>
-              <li><i class="fa-solid fa-chevron-right"></i> MLOps &amp; Automated Evaluation Pipelines</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Computer Vision &amp; Low-Light Image Enhancement</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Large Language Models &amp; Agentic Architectures</li>
+              <li><i class="fa-solid fa-chevron-right"></i> MLOps, CI/CD &amp; Model Monitoring Pipelines</li>
             </ul>
           </div>
 
           <!-- Cell 3: Currently Exploring -->
-          <div class="spotlight-card bento-card">
+          <div class="clean-card bento-card">
             <div class="bento-icon">&#128218;</div>
-            <div class="bento-header-label">Đang Mở Rộng</div>
+            <div class="bento-header-label">Continuous Learning</div>
             <p class="learning-text">
-              <strong>LLM Fine-tuning (LoRA/QLoRA)</strong> &middot; Agentic Workflows &middot; LangChain &amp; LlamaIndex &middot; Weights &amp; Biases &middot; High-throughput API Serving với FastAPI &amp; vLLM.
+              <strong>LLM Fine-tuning (LoRA / QLoRA)</strong> &middot; Retrieval-Augmented Generation (RAG) &middot; LangChain &middot; Weights &amp; Biases experiment tracking &middot; High-throughput API serving via FastAPI &amp; vLLM.
             </p>
           </div>
 
           <!-- Cell 4: Daily Stack (Wide) -->
-          <div class="spotlight-card bento-card bento-card-wide">
+          <div class="clean-card bento-card bento-card-wide">
             <div class="bento-icon">&#128295;</div>
-            <div class="bento-header-label">Bộ Công Cụ Hàng Ngày (Daily Stack)</div>
+            <div class="bento-header-label">Daily Development Stack</div>
             <div class="stack-chips-group">
               <span class="stack-chip sc-python"><i class="fa-brands fa-python"></i> Python 3.10+</span>
               <span class="stack-chip sc-pytorch"><i class="fa-solid fa-fire"></i> PyTorch</span>
               <span class="stack-chip sc-scikit"><i class="fa-solid fa-gears"></i> Scikit-learn</span>
               <span class="stack-chip sc-fastapi"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+              <span class="stack-chip sc-docker"><i class="fa-brands fa-docker"></i> Docker</span>
               <span class="stack-chip sc-git"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
-              <span class="stack-chip sc-linux"><i class="fa-brands fa-linux"></i> Linux &amp; Bash</span>
+              <span class="stack-chip sc-linux"><i class="fa-brands fa-linux"></i> Linux / Bash</span>
             </div>
           </div>
 
           <!-- Cell 5: Philosophy -->
-          <div class="spotlight-card bento-card">
+          <div class="clean-card bento-card">
             <div class="bento-icon">&#128172;</div>
-            <div class="bento-header-label">Kim Chỉ Nam Kỹ Thuật</div>
+            <div class="bento-header-label">Core Philosophy</div>
             <blockquote class="philosophy-quote">
-              "Một mô hình AI giá trị không chỉ nằm ở độ chính xác trên tập dữ liệu thử nghiệm, mà phải giải quyết đúng bài toán, minh bạch và vận hành ổn định trong môi trường thực tế."
+              "Great AI is not just about achieving high test-set metrics &mdash; it must solve genuine operational bottlenecks, maintain explainability, and run reliably in real-world environments."
             </blockquote>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SECTION 6: CONTACT (LIÊN HỆ) ===== -->
+    <!-- ===== SECTION 6: CONTACT & LINKEDIN ===== -->
     <section id="contact" class="content-section">
       <div class="container-narrow">
         <div class="contact-container">
-          <div class="fade-up-element">
-            <span class="section-tag"><i class="fa-regular fa-handshake"></i>&nbsp; Hợp Tác &amp; Kết Nối</span>
+          <div>
+            <div class="section-hud-index">// 06. INITIATE CONTACT</div>
+            <span class="section-tag"><i class="fa-regular fa-handshake"></i>&nbsp; Let's Collaborate</span>
           </div>
 
-          <h2 class="contact-heading fade-up-element">
-            Bạn có dự án<br />cần hiện thực hóa?
+          <h2 class="contact-heading">
+            Have a project in mind?
           </h2>
 
-          <p class="contact-text fade-up-element">
-            Tôi luôn hào hứng với những bài toán dữ liệu thách thức và các ý tưởng công nghệ mới. Hãy liên hệ với tôi để cùng tạo nên những giải pháp AI chất lượng cao.
+          <p class="contact-text">
+            Whether you are exploring an innovative machine learning application, need consulting on computer vision pipelines, or seek an AI engineer for your team &mdash; my inbox is always open.
           </p>
 
-          <p class="contact-text-vn fade-up-element">
-            (Feel free to reach out for project collaboration, AI consulting, or technical discussions.)
-          </p>
-
-          <div class="fade-up-element">
+          <div>
             <a href="mailto:9826.florenzi@gmail.com" class="contact-email-link">
               <i class="fa-regular fa-paper-plane"></i> 9826.florenzi@gmail.com
             </a>
           </div>
 
-          <div class="contact-buttons-group fade-up-element">
+          <div class="contact-buttons-group">
             <a href="mailto:9826.florenzi@gmail.com" class="btn btn-primary">
-              <i class="fa-solid fa-envelope"></i> Gửi Email Trực Tiếp
+              <i class="fa-solid fa-envelope"></i> Send an Email
+            </a>
+            <!-- LinkedIn in Contact -->
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="btn btn-linkedin">
+              <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
             </a>
             <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn btn-ghost">
-              <i class="fa-brands fa-github"></i> Ghé thăm GitHub
+              <i class="fa-brands fa-github"></i> GitHub Profile
             </a>
           </div>
 
-          <div class="social-links-row fade-up-element">
-            <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
+          <div class="social-links-row">
+            <!-- LinkedIn Social Button -->
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="social-icon-btn linkedin-brand" title="LinkedIn Profile" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub Profile" aria-label="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="mailto:9826.florenzi@gmail.com" class="social-icon-btn" title="Gửi Email">
+            <a href="mailto:9826.florenzi@gmail.com" class="social-icon-btn" title="Send Email" aria-label="Email">
               <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
 
-          <footer class="site-footer fade-up-element">
+          <footer class="site-footer">
             <p class="footer-copy">
-              &copy; 2026 Nguyễn Hữu Nghĩa (9826.Florenzi). Bản quyền đã được bảo lưu.
+              &copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.
             </p>
           </footer>
         </div>
@@ -1775,7 +1815,7 @@
   </main>
 
   <!-- ==========================================================================
-       SCRIPTS: SMOOTH SCROLL, SPOTLIGHT & INTERACTION
+       ULTRA-LIGHTWEIGHT JAVASCRIPT: ZERO MAIN-THREAD BLOCKING
        ========================================================================== -->
   <script>
     (function () {
@@ -1786,7 +1826,7 @@
 
       function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
-        localStorage.setItem('portfolio_theme', theme);
+        localStorage.setItem('florenzi_theme', theme);
         if (theme === 'dark') {
           themeIcon.className = 'fa-solid fa-moon';
         } else {
@@ -1794,7 +1834,7 @@
         }
       }
 
-      const savedTheme = localStorage.getItem('portfolio_theme');
+      const savedTheme = localStorage.getItem('florenzi_theme');
       const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
       applyTheme(savedTheme || (systemPrefersLight ? 'light' : 'dark'));
 
@@ -1803,17 +1843,15 @@
         applyTheme(current === 'dark' ? 'light' : 'dark');
       });
 
-      // 2. LENIS SMOOTH SCROLL ENGINE
+      
+      // GENTLE FLOATING INERTIA SCROLL (Zero-lag DOM + smooth gliding)
       let lenis;
       if (typeof Lenis !== 'undefined') {
         lenis = new Lenis({
-          duration: 1.25,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          orientation: 'vertical',
-          gestureOrientation: 'vertical',
+          lerp: 0.08,             // Gentle floating inertia drift ('trôi trôi nhẹ')
+          wheelMultiplier: 0.9,   // Natural wheel response
           smoothWheel: true,
-          wheelMultiplier: 1.05,
-          touchMultiplier: 1.5,
+          syncTouch: false
         });
 
         function raf(time) {
@@ -1822,7 +1860,7 @@
         }
         requestAnimationFrame(raf);
 
-        // Smooth navigation anchor links
+        // Smooth scroll for anchor navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -1830,88 +1868,75 @@
             const targetEl = document.querySelector(targetId);
             if (targetEl) {
               e.preventDefault();
-              lenis.scrollTo(targetEl, { offset: -30, duration: 1.2 });
+              lenis.scrollTo(targetEl, { offset: -35, duration: 1.1 });
             }
           });
         });
       }
 
-      // 3. SCROLL PROGRESS & ACTIVE NAV HIGHLIGHT
+      // 2. SCROLL PROGRESS (EFFICIENT REQUESTANIMATIONFRAME - ZERO REFLOW)
       const progressBar = document.getElementById('scroll-progress');
       const scrollIndicator = document.getElementById('scroll-indicator');
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-menu a');
+      let ticking = false;
 
-      function onScrollUpdate() {
-        const scrollY = window.scrollY || window.pageYOffset;
+      function updateProgress() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         
         if (progressBar && maxScroll > 0) {
           progressBar.style.width = (scrollY / maxScroll * 100) + '%';
         }
-
         if (scrollIndicator) {
-          scrollIndicator.classList.toggle('faded', scrollY > 70);
+          scrollIndicator.classList.toggle('faded', scrollY > 80);
         }
-
-        let currentSectionId = '';
-        sections.forEach(sec => {
-          if (scrollY >= sec.offsetTop - 120) {
-            currentSectionId = sec.id;
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + currentSectionId);
-        });
+        ticking = false;
       }
 
-      window.addEventListener('scroll', onScrollUpdate, { passive: true });
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      }, { passive: true });
 
-      // 4. SPOTLIGHT GLOW ON MOUSEMOVE
-      const spotlightCards = document.querySelectorAll('.spotlight-card');
-      spotlightCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', x + 'px');
-          card.style.setProperty('--mouse-y', y + 'px');
-        });
-      });
+      // 3. ASYNC INTERSECTION OBSERVER FOR ACTIVE NAV & SKILL BARS (OFF MAIN THREAD)
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      const sections = document.querySelectorAll('section');
 
-      // 5. INTERSECTION OBSERVER FOR FADE-UP & SKILLS PROGRESS
-      const observerOptions = {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      };
-
-      const appearObserver = new IntersectionObserver((entries) => {
+      const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          const delay = parseFloat(el.dataset.delay || '0') * 1000;
+          if (entry.isIntersecting) {
+            const currentId = entry.target.id;
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+            });
+          }
+        });
+      }, { threshold: 0.35 });
 
-          setTimeout(() => {
-            el.classList.add('in-view');
+      sections.forEach(sec => sectionObserver.observe(sec));
 
-            // Trigger skill bars animation
-            const skillFills = el.querySelectorAll('.skill-fill-progress');
+      // Skill Bars Observer
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        const skillFills = skillsSection.querySelectorAll('.skill-fill-progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
             skillFills.forEach(fill => {
               fill.style.width = fill.dataset.target + '%';
             });
-          }, delay);
-        });
-      }, observerOptions);
+            skillObserver.disconnect();
+          }
+        }, { threshold: 0.2 });
+        skillObserver.observe(skillsSection);
+      }
 
-      document.querySelectorAll('.fade-up-element').forEach(el => appearObserver.observe(el));
-
-      // 6. TYPEWRITER EFFECT (Song ngữ / Chuyên môn)
+      // 4. TYPEWRITER EFFECT
       const typewriterWords = [
-        'Kỹ sư Trí tuệ Nhân tạo (AI Engineer)',
+        'AI Engineer',
         'Machine Learning Specialist',
-        'Thị giác Máy tính (Computer Vision)',
-        'Nhà phát triển Giải pháp Dữ liệu'
+        'Computer Vision Developer',
+        'End-to-End Solutions Architect'
       ];
       const twDisplay = document.getElementById('typewriter-display');
       let wordIdx = 0;
@@ -1940,73 +1965,6 @@
       }
       handleTypewriter();
 
-      // 7. PARTICLES CANVAS BACKGROUND
-      const canvas = document.getElementById('particles-canvas');
-      if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        const particleCount = 70;
-
-        function resizeCanvas() {
-          width = canvas.width = window.innerWidth;
-          height = canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        for (let i = 0; i < particleCount; i++) {
-          particles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.32,
-            vy: (Math.random() - 0.5) * 0.32,
-            radius: 1 + Math.random() * 1.5
-          });
-        }
-
-        function renderParticles() {
-          ctx.clearRect(0, 0, width, height);
-          const isDark = root.getAttribute('data-theme') !== 'light';
-          const pAlpha = isDark ? 0.38 : 0.2;
-          const lineAlpha = isDark ? 0.1 : 0.05;
-
-          particles.forEach(p => {
-            p.x += p.vx;
-            p.y += p.vy;
-
-            if (p.x < 0) p.x = width;
-            if (p.x > width) p.x = 0;
-            if (p.y < 0) p.y = height;
-            if (p.y > height) p.y = 0;
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(139, 92, 246, ' + pAlpha + ')';
-            ctx.fill();
-          });
-
-          for (let a = 0; a < particleCount; a++) {
-            for (let b = a + 1; b < particleCount; b++) {
-              const dx = particles[a].x - particles[b].x;
-              const dy = particles[a].y - particles[b].y;
-              const dist = Math.sqrt(dx * dx + dy * dy);
-
-              if (dist < 135) {
-                ctx.beginPath();
-                ctx.moveTo(particles[a].x, particles[a].y);
-                ctx.lineTo(particles[b].x, particles[b].y);
-                ctx.strokeStyle = 'rgba(139, 92, 246, ' + (lineAlpha * (1 - dist / 135)) + ')';
-                ctx.lineWidth = 0.7;
-                ctx.stroke();
-              }
-            }
-          }
-
-          requestAnimationFrame(renderParticles);
-        }
-        renderParticles();
-      }
     })();
   </script>
 </body>

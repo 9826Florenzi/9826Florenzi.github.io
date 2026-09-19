@@ -1,88 +1,92 @@
-# 9826.Florenzi - Nội dung Portfolio (Phiên bản v2.1)
+# 9826.Florenzi &mdash; Portfolio Documentation (v2.2)
 
-Tài liệu này lưu trữ toàn bộ nội dung hiển thị trên trang portfolio cá nhân của bạn, được chuẩn hóa tiếng Việt đầy đủ và cập nhật các liên kết mới nhất.
+This document contains the official English content currently displayed on the portfolio website at [9826florenzi.github.io](https://9826florenzi.github.io/).
 
 ---
 
-## Phân cảnh 1: Giới thiệu (Hero Section)
-- **Huy hiệu:** Sẵn sàng nhận dự án mới (Available for Work)
-- **Tiêu đề chính:** 9826.Florenzi
-- **Dòng gõ chữ động (Typewriter):**
-  - Kỹ sư Trí tuệ Nhân tạo (AI Engineer)
+## 01. Overview (Hero Section)
+- **Status Badge:** Available for Work &middot; Full-Time & Contracts (with active radar pulse)
+- **Terminal Chip:** `> florenzi.init() --status="Available for Hire"`
+- **Main Heading:** 9826.Florenzi
+- **Typewriter Cycling Titles:**
+  - AI Engineer
   - Machine Learning Specialist
-  - Thị giác Máy tính (Computer Vision)
-  - Nhà phát triển Giải pháp Dữ liệu
-- **Nội dung giới thiệu:** 
-  Xin chào! Tôi là **Nguyễn Hữu Nghĩa**. Tôi tập trung phát triển các hệ thống thông minh, huấn luyện mô hình Machine Learning thực chiến và đưa dữ liệu vào ứng dụng thực tế.
-- **Nút bấm:** Liên hệ hợp tác (Contact Me) | Khám phá Dự án (View Projects)
-- **Huy hiệu công nghệ nhanh:**
-  - Python & ML Core
-  - Production-Ready AI
-  - Computer Vision & LLMs
-- **Hình ảnh đại diện:** https://avatars.githubusercontent.com/u/211441746?v=4
+  - Computer Vision Developer
+  - End-to-End Solutions Architect
+- **Introductory Biography:** 
+  Hi, I'm **Nguyen Huu Nghia** &mdash; an AI Engineer focused on developing computer vision systems, training robust machine learning models, and delivering scalable data-driven solutions from research to production.
+- **CTAs:** Get in Touch | View Projects | Connect on LinkedIn
+- **Quick Stats Ribbon:**
+  - 3+ Yrs: Python & ML
+  - 100%: Production Focus
+  - End-to-End: AI Integration
+  - Global: Remote Ready
+- **LinkedIn Profile Placeholder:** https://linkedin.com/in/your-profile
+- **Avatar Image:** https://avatars.githubusercontent.com/u/211441746?v=4
 
 ---
 
-## Phân cảnh 2: Kỹ năng chuyên môn (Tools & Languages)
-- **Tiêu đề:** Công cụ & Ngôn ngữ (Tools & Languages)
-- **Phụ đề:** Mức độ am hiểu và thành thạo các công nghệ nền tảng trong kỹ thuật AI & phát triển phần mềm.
-- **Danh sách kỹ năng:**
-  - Python: 80%
-  - Machine Learning: 85%
-  - PyTorch / TensorFlow: 70%
-  - Phân tích & Trực quan hóa Dữ liệu (Data Analysis): 75%
-  - Kiến trúc CSDL & SQL (SQL & Database): 70%
-  - Nền tảng Giao diện (HTML/CSS): 20%
+## 02. Tech Stack & Capabilities (Skills)
+- **Section Tag:** Core Competencies
+- **Title:** Tools & Languages
+- **Subtitle:** Demonstrated proficiency across key artificial intelligence, software engineering, and international communication toolchains.
+- **Skills Matrix:**
+  - Python (Core & Ecosystem): 85%
+  - Machine Learning & Algorithms: 85%
+  - PyTorch / Deep Learning: 75%
+  - Data Engineering & Analytics: 80%
+  - SQL & Database Architecture: 75%
+  - **English (Professional Working Proficiency): 85%** *(Special badge)*
+  - MLOps & API Serving (FastAPI, Docker): 70%
+  - Frontend UI Integration (HTML/CSS/JS): 35%
 
 ---
 
-## Phân cảnh 3: Dịch vụ Chuyên môn (Freelance AI Services)
-1. **Consulting & Analysis (Tư Vấn & Phân Tích Dữ Liệu)**
-   - *Mức giá:* Thỏa thuận
-   - *Mô tả:* Đánh giá cấu trúc dữ liệu, khảo sát tính khả thi, tư vấn kiến trúc mô hình và xây dựng lộ trình ứng dụng AI hiệu quả cho tổ chức.
-2. **ML Model Development (Xây Dựng & Huấn Luyện Mô Hình)**
-   - *Mức giá:* Tùy thuộc quy mô
-   - *Mô tả:* Huấn luyện mô hình học máy theo bài toán đặc thù, tinh chỉnh siêu tham số, kiểm thử chuẩn xác và đóng gói thành API sẵn sàng tích hợp.
-3. **Full AI Solution (Giải Pháp AI Toàn Diện)**
-   - *Mức giá:* Theo yêu cầu
-   - *Mô tả:* Xây dựng trọn gói hệ thống AI từ khâu tiền xử lý dữ liệu, suy luận mô hình đến tích hợp quy trình nghiệp vụ và giám sát tự động.
+## 03. Engineering Services
+1. **Consulting & Architecture** *(Let's talk)*
+   - Feasibility studies, data readiness assessments, model architecture selection, and scalable technical roadmaps.
+2. **ML Model Development** *(Custom scope)*
+   - Custom machine learning and deep learning training, fine-tuning, hyperparameter optimization, and REST API deployment.
+3. **Full AI System Integration** *(On demand)*
+   - End-to-end production AI workflows covering data pipelines, real-time inference engines, and automated monitoring.
 
 ---
 
-## Phân cảnh 4: Dự án Thực tế (Projects & Work)
-1. **ALPR in Bad Conditions** *(Python &middot; Deep Learning)*
-   - *Mô tả:* Tối ưu hóa khả năng nhận diện biển số xe tự động (ALPR) trong các điều kiện môi trường bất lợi: trời mưa lớn, ban đêm, sương mù và mờ chuyển động bằng Deep Learning và tăng cường ảnh (Image Enhancement).
-   - *Từ khóa:* Computer Vision, YOLO, OpenCV, Deep Learning
-   - *Mã nguồn:* https://github.com/9826Florenzi/ALPR-in-Bad-Conditions
+## 04. Featured Codebases (Projects)
+1. **ALPR in Bad Conditions** *(Python &middot; Deep Learning &middot; 1 Star)*
+   - Automatic License Plate Recognition (ALPR) optimized for extreme environmental conditions (rain, night, fog, blur) using YOLO and image enhancement.
+   - Tags: Computer Vision, YOLO, OpenCV, Deep Learning
+   - Repository: https://github.com/9826Florenzi/ALPR-in-Bad-Conditions
 
-2. **DNDB - Danh Nhân Bắc Đẩu** *(TypeScript &middot; Next.js)*
-   - *Mô tả:* Nền tảng tra cứu và lưu trữ tư liệu, tiểu sử và niên biểu các nhân vật lịch sử Việt Nam với giao diện hiện đại, tối ưu truy vấn cơ sở dữ liệu.
-   - *Từ khóa:* TypeScript, Next.js, Database, Production
-   - *Mã nguồn:* https://github.com/9826Florenzi/DNDB
-   - *Live Demo chính thức:* https://www.danhnhanbacdau.io.vn/
+2. **DNDB &mdash; Danh Nhan Bac Dau** *(TypeScript &middot; Next.js &middot; 1 Star &middot; Live)*
+   - Biographical reference and historical archive platform for Vietnamese figures. Modern interface with fast full-text search and optimized database queries.
+   - Tags: TypeScript, Next.js, Database, Production
+   - Repository: https://github.com/9826Florenzi/DNDB
+   - **Live Production:** https://www.danhnhanbacdau.io.vn/
 
-3. **POS App for Mobile Shop** *(TypeScript &middot; MIT License)*
-   - *Mô tả:* Phần mềm quản lý bán hàng (Point-of-Sale) tùy biến chuyên sâu cho cửa hàng bán lẻ điện thoại: quản lý IMEI, theo dõi doanh thu thời gian thực, quản lý kho và báo cáo tài chính.
-   - *Từ khóa:* TypeScript, POS Retail, Inventory, Open Source
-   - *Mã nguồn:* https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop
-
----
-
-## Phân cảnh 5: Tư duy Kỹ sư (AI Mindset)
-- **Quy trình tiếp cận:** Dữ liệu → Mô hình → Đánh giá → Triển khai
-- **Trọng tâm nghiên cứu:** 
-  - Computer Vision & Image Enhancement
-  - Large Language Models & RAG Systems
-  - MLOps & Automated Evaluation Pipelines
-- **Đang mở rộng:** LLM Fine-tuning (LoRA/QLoRA), Agentic Workflows, LangChain, Weights & Biases, FastAPI & vLLM.
-- **Bộ công cụ hàng ngày:** Python, PyTorch, Scikit-learn, FastAPI, Git, Linux
-- **Kim chỉ nam kỹ thuật:** "Một mô hình AI giá trị không chỉ nằm ở độ chính xác trên tập dữ liệu thử nghiệm, mà phải giải quyết đúng bài toán, minh bạch và vận hành ổn định trong môi trường thực tế."
+3. **Mobile Shop POS System** *(TypeScript &middot; MIT License &middot; 1 Star)*
+   - Point-of-Sale (POS) software customized for mobile phone retail with serial/IMEI inventory tracking, real-time sales reporting, and analytics.
+   - Tags: TypeScript, POS Retail, Inventory, Open Source
+   - Repository: https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop
 
 ---
 
-## Phân cảnh 6: Liên hệ (Contact)
-- **Tiêu đề:** Bạn có dự án cần hiện thực hóa?
-- **Nội dung:** Tôi luôn hào hứng với những bài toán dữ liệu thách thức và các ý tưởng công nghệ mới. Hãy liên hệ với tôi để cùng tạo nên những giải pháp AI chất lượng cao.
+## 05. Engineering Philosophy (Mindset)
+- **Systematic Approach:** Data &rarr; Model &rarr; Evaluate &rarr; Deploy
+- **Research Interests:**
+  - Computer Vision & Low-Light Image Enhancement
+  - Large Language Models & Agentic Architectures
+  - MLOps, CI/CD & Model Monitoring Pipelines
+- **Continuous Learning:** LLM Fine-tuning (LoRA/QLoRA), RAG, LangChain, Weights & Biases, FastAPI & vLLM.
+- **Daily Stack:** Python 3.10+, PyTorch, Scikit-learn, FastAPI, Docker, Git, Linux/Bash.
+- **Core Philosophy:** "Great AI is not just about achieving high test-set metrics &mdash; it must solve genuine operational bottlenecks, maintain explainability, and run reliably in real-world environments."
+
+---
+
+## 06. Initiate Contact
+- **Title:** Have a project in mind?
+- **Text:** Whether you are exploring an innovative machine learning application, need consulting on computer vision pipelines, or seek an AI engineer for your team &mdash; my inbox is always open.
 - **Email:** 9826.florenzi@gmail.com
+- **LinkedIn:** https://linkedin.com/in/your-profile
 - **GitHub:** https://github.com/9826Florenzi
-- **Bản quyền:** © 2026 Nguyễn Hữu Nghĩa (9826.Florenzi)
+- **Footer:** &copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.
