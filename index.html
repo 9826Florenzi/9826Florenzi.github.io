@@ -1,290 +1,2013 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="vi" data-theme="dark">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>9826.Florenzi | Nguyen Huu Nghia &mdash; AI Engineer</title>
-<meta name="description" content="Portfolio of Nguyen Huu Nghia &mdash; AI Engineer specializing in Machine Learning, Computer Vision, and intelligent systems."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<style>
-:root{--bg:#080810;--bg2:#0e0e1a;--surf:rgba(255,255,255,.04);--surf-h:rgba(255,255,255,.07);--bdr:rgba(255,255,255,.08);--bdr-h:rgba(124,58,237,.5);--tx:#f1f5f9;--mu:#94a3b8;--sub:#475569;--ac:#7c3aed;--ac2:#2563eb;--gr:#10b981;--am:#f59e0b;--nav:rgba(8,8,16,.87);--shd:0 25px 50px -12px rgba(0,0,0,.5);--glow:0 0 40px rgba(124,58,237,.15)}
-[data-theme="light"]{--bg:#f8fafc;--bg2:#f1f5f9;--surf:rgba(255,255,255,.88);--surf-h:rgba(255,255,255,1);--bdr:rgba(0,0,0,.08);--bdr-h:rgba(124,58,237,.38);--tx:#0f172a;--mu:#64748b;--sub:#94a3b8;--nav:rgba(248,250,252,.9);--shd:0 25px 50px -12px rgba(0,0,0,.07);--glow:0 0 40px rgba(124,58,237,.07)}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.65;transition:background .35s,color .35s}
-#particles{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
-.blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);animation:blobF 14s ease-in-out infinite}
-.blob-1{width:650px;height:650px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);top:-250px;left:-200px}
-.blob-2{width:550px;height:550px;background:radial-gradient(circle,rgba(37,99,235,.13),transparent 70%);bottom:-180px;right:-120px;animation-delay:-5s}
-.blob-3{width:420px;height:420px;background:radial-gradient(circle,rgba(16,185,129,.09),transparent 70%);top:45%;left:48%;transform:translate(-50%,-50%);animation-delay:-10s}
-@keyframes blobF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-28px) scale(1.06)}66%{transform:translate(-18px,18px) scale(.95)}}
-.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(148,163,184,.12) 1px,transparent 1px);background-size:32px 32px;transition:opacity .35s}
-[data-theme="light"] .grid-bg{opacity:.6}
-#progress{position:fixed;top:0;left:0;height:2px;z-index:600;background:linear-gradient(90deg,#7c3aed,#2563eb,#10b981);width:0%;transition:width .1s;box-shadow:0 0 10px rgba(124,58,237,.7)}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;background:var(--nav);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;transition:background .35s,border-color .35s}
-.nav-logo{font-size:1rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(135deg,#7c3aed,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{font-size:.84rem;font-weight:500;color:var(--mu);text-decoration:none;transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:linear-gradient(90deg,#7c3aed,#2563eb);transform:scaleX(0);transition:transform .2s;border-radius:2px}
-.nav-links a:hover,.nav-links a.active{color:var(--tx)}
-.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-#theme-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);color:var(--mu);cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
-#theme-btn:hover{border-color:var(--bdr-h);color:var(--tx);background:var(--surf-h)}
-#sh{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:20;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--sub);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;opacity:1;transition:opacity .4s}
-#sh.hide{opacity:0}
-.sm{width:20px;height:30px;border:1.5px solid var(--sub);border-radius:10px;display:flex;justify-content:center;padding-top:4px}
-.sm::before{content:'';width:2px;height:5px;background:var(--sub);border-radius:99px;animation:sd 1.8s ease-in-out infinite}
-@keyframes sd{0%{transform:translateY(0);opacity:1}100%{transform:translateY(7px);opacity:0}}
-main{position:relative;z-index:10;padding-top:64px}
-section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem 1.5rem}
-.ct{width:100%;max-width:1100px;margin:0 auto}
-.cts{width:100%;max-width:740px;margin:0 auto}
-.slbl{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.71rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);padding:4px 12px;border-radius:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.22);margin-bottom:1rem}
-.stit{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:.5rem}
-.ssub{font-size:.93rem;color:var(--mu);margin-bottom:2.5rem}
-.card{background:var(--surf);border:1px solid var(--bdr);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
-.card:hover{border-color:var(--bdr-h);box-shadow:var(--shd),var(--glow);transform:translateY(-5px)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:12px;font-weight:600;font-size:.88rem;text-decoration:none;cursor:pointer;border:none;transition:all .25s;font-family:'Inter',sans-serif}
-.bp{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;box-shadow:0 8px 24px rgba(124,58,237,.3)}
-.bp:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(124,58,237,.45)}
-.bg{background:var(--surf);color:var(--tx);border:1px solid var(--bdr)}
-.bg:hover{border-color:var(--bdr-h);background:var(--surf-h);transform:translateY(-2px)}
-.bsm{padding:7px 15px;font-size:.78rem;border-radius:9px}
-.tag{font-size:.68rem;padding:3px 9px;border-radius:6px;background:rgba(124,58,237,.1);color:var(--ac);border:1px solid rgba(124,58,237,.16);font-family:'JetBrains Mono',monospace;font-weight:500}
-.fu{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
-.fu.in{opacity:1;transform:translateY(0)}
-.hg{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
-.hbadge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.5px;color:var(--gr);padding:5px 14px;border-radius:999px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);margin-bottom:1.4rem}
-.pdot{width:7px;height:7px;border-radius:50%;background:var(--gr);box-shadow:0 0 8px var(--gr);animation:pls 2.2s ease-in-out infinite}
-@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
-.htit{font-size:clamp(3rem,7.5vw,5.8rem);font-weight:800;letter-spacing:-3px;line-height:1;background:linear-gradient(125deg,var(--tx) 35%,#7c3aed 65%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem}
-.htw{font-size:clamp(1rem,2.5vw,1.3rem);font-weight:500;color:var(--mu);margin-bottom:.8rem;min-height:1.8rem;display:flex;align-items:center;gap:6px}
-.tww{color:var(--ac);font-weight:700}
-.twc{width:2px;height:1.1em;background:var(--ac);border-radius:1px;animation:cur .75s step-end infinite}
-@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
-.hdesc{font-size:.98rem;color:var(--mu);line-height:1.75;margin-bottom:2rem;max-width:500px}
-.hdesc strong{color:var(--tx);font-weight:600}
-.hbtns{display:flex;gap:1rem;flex-wrap:wrap}
-.hav{width:170px;height:170px;border-radius:24px;object-fit:cover;border:2px solid var(--bdr);flex-shrink:0;box-shadow:var(--glow),0 0 0 6px rgba(124,58,237,.06)}
-.skg{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 3rem}
-.skh{display:flex;justify-content:space-between;font-size:.87rem;font-weight:600;margin-bottom:8px}
-.skp{color:var(--ac);font-family:'JetBrains Mono',monospace;font-size:.82rem}
-.skt{height:6px;background:var(--bdr);border-radius:99px;overflow:hidden}
-.skf{height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#7c3aed,#2563eb);box-shadow:0 0 10px rgba(124,58,237,.35);transition:width 1.4s cubic-bezier(.22,1,.36,1)}
-.svg2{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.svc{padding:1.8rem;position:relative;overflow:hidden}
-.svc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.5),transparent);opacity:0;transition:opacity .3s}
-.svc:hover::before{opacity:1}
-.svct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem}
-.svcn{font-size:2.2rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--bdr);line-height:1;transition:color .3s}
-.svc:hover .svcn{color:rgba(124,58,237,.2)}
-.svcp{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:6px;background:rgba(245,158,11,.12);color:var(--am);font-family:'JetBrains Mono',monospace}
-.svcti{font-size:1.05rem;font-weight:700;margin-bottom:.2rem}
-.svcvn{font-size:.78rem;color:var(--gr);margin-bottom:.7rem;font-weight:500}
-.svcd{font-size:.82rem;color:var(--mu);line-height:1.55;margin-bottom:.25rem}
-.svcdv{font-size:.77rem;color:var(--sub);font-style:italic;line-height:1.5}
-.prjg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.prjc{padding:1.6rem;display:flex;flex-direction:column;gap:.45rem}
-.prjt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
-.prji{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(37,99,235,.18));border:1px solid rgba(124,58,237,.22);display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:var(--ac)}
-.prjs{display:flex;align-items:center;gap:4px;font-size:.73rem;color:var(--am);font-weight:600;font-family:'JetBrains Mono',monospace}
-.prjn{font-size:1rem;font-weight:700;line-height:1.25}
-.prjl{font-size:.72rem;color:var(--mu);font-family:'JetBrains Mono',monospace;margin-bottom:.2rem}
-.prjd{font-size:.82rem;color:var(--mu);line-height:1.58;flex:1}
-.prjtg{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.3rem}
-.prjf{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
-.prjva{text-align:center;margin-top:2rem}
-.bn{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.bc{padding:1.6rem;border-radius:20px;background:var(--surf);border:1px solid var(--bdr);transition:border-color .3s,transform .3s}
-.bc:hover{border-color:var(--bdr-h);transform:translateY(-3px)}
-.bcw{grid-column:span 2}
-.bci{font-size:1.35rem;margin-bottom:.7rem}
-.bct{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mu);margin-bottom:.6rem;font-family:'JetBrains Mono',monospace}
-.bctx{font-size:.85rem;color:var(--tx);line-height:1.65}
-.bctx strong{color:var(--ac)}
-.bcq{font-size:.92rem;font-style:italic;color:var(--tx);line-height:1.65}
-.bcq::before{content:'"';font-size:2.5rem;color:rgba(124,58,237,.35);line-height:0;vertical-align:-.55rem;margin-right:2px}
-.pl{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
-.ps{font-size:.75rem;padding:4px 11px;border-radius:7px;font-family:'JetBrains Mono',monospace;font-weight:600;background:rgba(124,58,237,.12);color:var(--ac);border:1px solid rgba(124,58,237,.2)}
-.pa{color:var(--sub);font-size:.85rem}
-.il{list-style:none;display:flex;flex-direction:column;gap:.45rem}
-.il li{font-size:.84rem;color:var(--tx);display:flex;align-items:center;gap:.5rem}
-.il li::before{content:'\2192';color:var(--ac);font-weight:700}
-.sc2{display:flex;flex-wrap:wrap;gap:.45rem}
-.ch{font-size:.73rem;padding:4px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-weight:600}
-.cy{background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)}
-.co{background:rgba(234,88,12,.1);color:#fb923c;border:1px solid rgba(234,88,12,.2)}
-.cg{background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2)}
-.cp{background:rgba(124,58,237,.12);color:#a78bfa;border:1px solid rgba(124,58,237,.2)}
-.cr{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
-.ce{background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.2)}
-.cw{text-align:center}
-.ctit{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:1rem}
-.cd{font-size:.98rem;color:var(--mu);line-height:1.75;margin-bottom:.4rem}
-.ce2{font-family:'JetBrains Mono',monospace;color:var(--am);font-size:.88rem;margin-bottom:2rem}
-.cb{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-.soc{display:flex;justify-content:center;gap:.7rem;margin-top:2rem}
-.sl2{width:40px;height:40px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:.9rem;text-decoration:none;transition:all .2s}
-.sl2:hover{border-color:var(--bdr-h);color:var(--ac);transform:translateY(-2px)}
-footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--bdr)}
-.ft{font-size:.77rem;color:var(--sub);text-align:center}
-@media(max-width:900px){.hg{grid-template-columns:1fr;text-align:center;gap:2rem}.hav{width:110px;height:110px;order:-1;margin:0 auto}.hbtns{justify-content:center}.hdesc{margin:0 auto 2rem}.svg2,.prjg{grid-template-columns:1fr}.skg{grid-template-columns:1fr}.bn{grid-template-columns:1fr 1fr}.bcw{grid-column:span 2}nav{padding:0 1.2rem}.nav-links{display:none}}
-@media(max-width:600px){.bn{grid-template-columns:1fr}.bcw{grid-column:span 1}section{padding:4rem 1rem}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9826.Florenzi | Nguyễn Hữu Nghĩa — Kỹ Sư AI / AI Engineer</title>
+  <meta name="description" content="Portfolio của Nguyễn Hữu Nghĩa (9826.Florenzi) — Kỹ sư AI chuyên về Machine Learning, Thị giác máy tính (Computer Vision) và các giải pháp hệ thống thông minh." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       THEME SYSTEM & DESIGN TOKENS
+       ========================================================================== */
+    :root {
+      --bg: #06070c;
+      --bg-secondary: #0b0d17;
+      --surface: rgba(255, 255, 255, 0.035);
+      --surface-hover: rgba(255, 255, 255, 0.065);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(139, 92, 246, 0.45);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      
+      --accent: #8b5cf6;
+      --accent-glow: rgba(139, 92, 246, 0.25);
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      
+      --nav-bg: rgba(6, 7, 12, 0.82);
+      --spotlight-glow: rgba(139, 92, 246, 0.12);
+      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
+      --ambient-halo: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --surface: rgba(255, 255, 255, 0.85);
+      --surface-hover: rgba(255, 255, 255, 0.98);
+      --border: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(139, 92, 246, 0.4);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #94a3b8;
+      
+      --accent: #7c3aed;
+      --accent-glow: rgba(124, 58, 237, 0.18);
+      --accent-blue: #2563eb;
+      --accent-cyan: #0891b2;
+      --accent-emerald: #059669;
+      --accent-amber: #d97706;
+      
+      --nav-bg: rgba(248, 250, 252, 0.88);
+      --spotlight-glow: rgba(124, 58, 237, 0.09);
+      --card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06);
+      --ambient-halo: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      selection-background-color: var(--accent);
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       BACKGROUND AMBIENT SYSTEM
+       ========================================================================== */
+    #particles-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .ambient-blobs {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ambient-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: floatBlob 16s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    .blob-violet {
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.18), transparent 70%);
+      top: -200px;
+      left: -150px;
+      animation-delay: 0s;
+    }
+
+    .blob-cyan {
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.14), transparent 70%);
+      bottom: -150px;
+      right: -100px;
+      animation-delay: -5s;
+    }
+
+    .blob-emerald {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.09), transparent 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -10s;
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(35px, -30px) scale(1.08); }
+      66% { transform: translate(-25px, 20px) scale(0.94); }
+    }
+
+    .dot-grid-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(148, 163, 184, 0.11) 1.2px, transparent 1.2px);
+      background-size: 32px 32px;
+      transition: opacity 0.4s ease;
+    }
+
+    [data-theme="light"] .dot-grid-pattern {
+      opacity: 0.7;
+    }
+
+    /* ==========================================================================
+       SCROLL PROGRESS BAR
+       ========================================================================== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      z-index: 1000;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4, #10b981);
+      box-shadow: 0 0 14px rgba(139, 92, 246, 0.85);
+      transition: width 0.08s linear;
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    nav.site-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 68px;
+      z-index: 800;
+      background: var(--nav-bg);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.2rem, 5vw, 3.5rem);
+      transition: background-color 0.4s ease, border-color 0.4s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+    }
+
+    .nav-brand-text {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-radius: 99px;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--text);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #theme-toggle-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+    }
+
+    #theme-toggle-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SCROLL INDICATOR
+       ========================================================================== */
+    #scroll-indicator {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      color: var(--text-subtle);
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    #scroll-indicator.faded {
+      opacity: 0;
+    }
+
+    .mouse-icon {
+      width: 20px;
+      height: 32px;
+      border: 1.6px solid var(--text-subtle);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+    }
+
+    .mouse-wheel {
+      width: 3px;
+      height: 6px;
+      background: var(--text-subtle);
+      border-radius: 99px;
+      animation: mouseWheel 1.9s ease-in-out infinite;
+    }
+
+    @keyframes mouseWheel {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(9px); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       LAYOUT & SECTION STRUCTURE
+       ========================================================================== */
+    main.main-content {
+      position: relative;
+      z-index: 10;
+      padding-top: 68px;
+    }
+
+    section.content-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(4.5rem, 9vh, 7rem) 1.5rem;
+    }
+
+    .container-wide {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .container-narrow {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & SECTION HEADERS
+       ========================================================================== */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 5px 14px;
+      border-radius: 8px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      margin-bottom: 1.1rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.6vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1.6px;
+      line-height: 1.16;
+      margin-bottom: 0.65rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 2.8rem;
+      max-width: 680px;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       SPOTLIGHT CARDS & INTERACTIVE COMPONENTS
+       ========================================================================== */
+    .spotlight-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+    }
+
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -250px);
+      left: var(--mouse-x, -250px);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--spotlight-glow), transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      z-index: 1;
+    }
+
+    .spotlight-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.75), 0 0 35px var(--accent-glow);
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    .spotlight-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Button System */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 26px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2.5px) scale(1.02);
+      box-shadow: 0 16px 35px -5px rgba(139, 92, 246, 0.65);
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--border-hover);
+      background: var(--surface-hover);
+      transform: translateY(-2.5px);
+      color: var(--text);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      border-radius: 10px;
+    }
+
+    /* Tag Pills */
+    .tech-pill {
+      font-size: 0.72rem;
+      padding: 4px 11px;
+      border-radius: 8px;
+      background: rgba(139, 92, 246, 0.09);
+      color: var(--accent);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .tech-pill:hover {
+      background: rgba(139, 92, 246, 0.18);
+      border-color: var(--accent);
+    }
+
+    /* Fade-up Animation */
+    .fade-up-element {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-up-element.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       SECTION 1: HERO
+       ========================================================================== */
+    .hero-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .hero-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--accent-emerald);
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 1.6rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .radar-pulse-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10px;
+      height: 10px;
+    }
+
+    .radar-core {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+    }
+
+    .radar-wave {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      animation: radarAnimation 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      opacity: 0.75;
+    }
+
+    @keyframes radarAnimation {
+      75%, 100% {
+        transform: scale(3.2);
+        opacity: 0;
+      }
+    }
+
+    .hero-heading {
+      font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: 1.05;
+      background: linear-gradient(135deg, var(--text) 30%, #8b5cf6 65%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .hero-typewriter {
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      min-height: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .typewriter-text {
+      color: var(--accent);
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .typewriter-cursor {
+      width: 2.5px;
+      height: 1.2em;
+      background: var(--accent);
+      border-radius: 2px;
+      animation: cursorBlink 0.8s step-end infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+      max-width: 580px;
+    }
+
+    .hero-description strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-description-vn {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 580px;
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .highlight-chip {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .highlight-chip i {
+      color: var(--accent-emerald);
+      font-size: 0.72rem;
+    }
+
+    .hero-avatar-box {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .hero-avatar-glow {
+      position: absolute;
+      inset: -15px;
+      border-radius: 35px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.45), rgba(6, 182, 212, 0.3));
+      filter: blur(24px);
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    .hero-avatar-img {
+      position: relative;
+      z-index: 2;
+      width: 190px;
+      height: 190px;
+      border-radius: 28px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ==========================================================================
+       SECTION 2: SKILLS (CHUYÊN MÔN)
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 3.5rem;
+    }
+
+    .skill-card-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.94rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .skill-header span:first-child {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-percentage {
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .skill-track-bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-fill-progress {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6, #06b6d4);
+      box-shadow: 0 0 14px rgba(139, 92, 246, 0.5);
+      transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ==========================================================================
+       SECTION 3: SERVICES (DỊCH VỤ)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-index {
+      font-size: 2.6rem;
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--border);
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+
+    .service-card:hover .service-index {
+      color: rgba(139, 92, 246, 0.3);
+    }
+
+    .service-price-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 8px;
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent-amber);
+      font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .service-title-en {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .service-title-vn {
+      font-size: 0.88rem;
+      color: var(--accent-emerald);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .service-desc-en {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc-vn {
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      font-style: italic;
+      line-height: 1.58;
+      margin-top: auto;
+    }
+
+    /* ==========================================================================
+       SECTION 4: PROJECTS (DỰ ÁN)
+       ========================================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+
+    .project-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(6, 182, 212, 0.18));
+      border: 1px solid rgba(139, 92, 246, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.18rem;
+      color: var(--accent);
+    }
+
+    .project-badges-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project-live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      animation: liveBlink 1.6s infinite ease-in-out;
+    }
+
+    @keyframes liveBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .project-stars-count {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: var(--accent-amber);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-top: 0.2rem;
+    }
+
+    .project-lang-label {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-description {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .project-footer-actions {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .projects-more-cta {
+      text-align: center;
+      margin-top: 2.8rem;
+    }
+
+    /* ==========================================================================
+       SECTION 5: AI MINDSET BENTO (TƯ DUY KỸ SƯ)
+       ========================================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem;
+    }
+
+    .bento-card {
+      padding: 2rem;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bento-card-wide {
+      grid-column: span 2;
+    }
+
+    .bento-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .bento-header-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .pipeline-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.4rem;
+    }
+
+    .pipeline-step {
+      font-size: 0.82rem;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      background: rgba(139, 92, 246, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+    }
+
+    .pipeline-arrow {
+      color: var(--text-subtle);
+      font-size: 0.95rem;
+    }
+
+    .research-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .research-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .research-list li i {
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+    }
+
+    .learning-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .learning-text strong {
+      color: var(--accent);
+    }
+
+    .stack-chips-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.3rem;
+    }
+
+    .stack-chip {
+      font-size: 0.78rem;
+      padding: 6px 13px;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sc-python { background: rgba(59, 130, 246, 0.12); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25); }
+    .sc-pytorch { background: rgba(234, 88, 12, 0.1); color: #fb923c; border: 1px solid rgba(234, 88, 12, 0.25); }
+    .sc-scikit { background: rgba(245, 158, 11, 0.1); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.25); }
+    .sc-fastapi { background: rgba(139, 92, 246, 0.12); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.25); }
+    .sc-git { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.25); }
+    .sc-linux { background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+
+    .philosophy-quote {
+      font-size: 0.98rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.75;
+      position: relative;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--accent);
+    }
+
+    /* ==========================================================================
+       SECTION 6: CONTACT (LIÊN HỆ)
+       ========================================================================== */
+    .contact-container {
+      text-align: center;
+    }
+
+    .contact-heading {
+      font-size: clamp(2.4rem, 5.8vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-text {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-text-vn {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-amber);
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 2.2rem;
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 12px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .contact-email-link:hover {
+      background: rgba(245, 158, 11, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .contact-buttons-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+
+    .social-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px -4px var(--accent-glow);
+    }
+
+    footer.site-footer {
+      margin-top: 4.5rem;
+      padding-top: 2.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTATIONS
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero-avatar-box {
+        order: -1;
+        margin: 0 auto;
+      }
+      .hero-avatar-img {
+        width: 140px;
+        height: 140px;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-highlights {
+        justify-content: center;
+      }
+      .hero-description,
+      .hero-description-vn {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-description-vn {
+        border-left: none;
+        border-top: 2px solid var(--accent);
+        padding-left: 0;
+        padding-top: 10px;
+      }
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-card-wide {
+        grid-column: span 1;
+      }
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section.content-section {
+        padding: 4rem 1rem;
+      }
+      .hero-heading {
+        letter-spacing: -2px;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<canvas id="particles"></canvas>
-<div class="blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
-<div class="grid-bg"></div>
-<div id="progress"></div>
-<nav>
-  <a href="#hero" class="nav-logo">9826.Florenzi</a>
-  <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#mindset">Mindset</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button id="theme-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
-</nav>
-<div id="sh"><div class="sm"></div>Scroll</div>
-<main>
 
-<section id="hero"><div class="ct"><div class="hg">
-<div>
-  <div class="hbadge fu"><span class="pdot"></span> Available for Work</div>
-  <h1 class="htit fu">9826.Florenzi</h1>
-  <div class="htw fu"><span style="color:var(--mu)">I'm an&nbsp;</span><span class="tww" id="tw"></span><span class="twc"></span></div>
-  <p class="hdesc fu">Hi, I'm <strong>Nguyen Huu Nghia</strong>. I build intelligent systems, train machine learning models, and deliver data-driven solutions &mdash; from research to production.</p>
-  <p class="hdesc fu" style="font-style:italic;font-size:.87rem;margin-top:-.8rem">(Chao ban, toi la Nguyen Huu Nghia &mdash; Ky su AI chuyen xay dung he thong thong minh va giai phap hoc may.)</p>
-  <div class="hbtns fu">
-    <a href="#contact" class="btn bp"><i class="fa-solid fa-envelope"></i> Contact Me</a>
-    <a href="#projects" class="btn bg"><i class="fa-brands fa-github"></i> View Projects</a>
+  <!-- Background Ambience -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="ambient-blobs">
+    <div class="ambient-blob blob-violet"></div>
+    <div class="ambient-blob blob-cyan"></div>
+    <div class="ambient-blob blob-emerald"></div>
   </div>
-</div>
-<img src="https://avatars.githubusercontent.com/u/211441746?v=4" alt="Nguyen Huu Nghia" class="hav fu" loading="eager" onerror="this.style.display='none'"/>
-</div></div></section>
+  <div class="dot-grid-pattern"></div>
 
-<section id="skills"><div class="cts">
-  <div class="fu"><span class="slbl"><i class="fa-solid fa-code-branch"></i>&nbsp;Expertise</span><h2 class="stit">Tools &amp; Languages</h2><p class="ssub">Proficiency in key tools for AI and software engineering.</p></div>
-  <div class="skg fu">
-    <div><div class="skh"><span>Python</span><span class="skp">80%</span></div><div class="skt"><div class="skf" data-w="80"></div></div></div>
-    <div><div class="skh"><span>Machine Learning</span><span class="skp">85%</span></div><div class="skt"><div class="skf" data-w="85"></div></div></div>
-    <div><div class="skh"><span>PyTorch / TensorFlow</span><span class="skp">70%</span></div><div class="skt"><div class="skf" data-w="70"></div></div></div>
-    <div><div class="skh"><span>Data Analysis</span><span class="skp">75%</span></div><div class="skt"><div class="skf" data-w="75"></div></div></div>
-    <div><div class="skh"><span>SQL / Database</span><span class="skp">70%</span></div><div class="skt"><div class="skf" data-w="70"></div></div></div>
-    <div><div class="skh"><span>HTML / CSS</span><span class="skp">20%</span></div><div class="skt"><div class="skf" data-w="20"></div></div></div>
-  </div>
-</div></section>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
 
-<section id="services"><div class="ct">
-  <div class="fu"><span class="slbl"><i class="fa-solid fa-microchip"></i>&nbsp;Services</span><h2 class="stit">Freelance AI Services</h2><p class="ssub">Tailored AI solutions for your business needs.</p></div>
-  <div class="svg2">
-    <div class="card svc fu"><div class="svct"><span class="svcn">01</span><span class="svcp">Let's talk</span></div><div class="svcti">Consulting &amp; Analysis</div><div class="svcvn">Tu van &amp; Phan tich</div><div class="svcd">Data assessment, AI/ML architecture consulting, roadmap creation.</div><div class="svcdv">Danh gia du lieu, tu van kien truc AI/ML, xay dung lo trinh.</div></div>
-    <div class="card svc fu" data-delay=".1"><div class="svct"><span class="svcn">02</span><span class="svcp">Custom</span></div><div class="svcti">ML Model Development</div><div class="svcvn">Xay dung Mo hinh ML</div><div class="svcd">Build and train custom AI models, hyperparameter tuning, API deployment.</div><div class="svcdv">Huan luyen mo hinh AI tuy chinh, tinh chinh tham so, trien khai API.</div></div>
-    <div class="card svc fu" data-delay=".2"><div class="svct"><span class="svcn">03</span><span class="svcp">On request</span></div><div class="svcti">Full AI Solution</div><div class="svcvn">Giai phap AI toan dien</div><div class="svcd">Complex AI systems integrated into your workflow, automated monitoring.</div><div class="svcdv">Tich hop he thong AI phuc tap vao quy trinh, giam sat tu dong.</div></div>
-  </div>
-</div></section>
-
-<section id="projects"><div class="ct">
-  <div class="fu"><span class="slbl"><i class="fa-brands fa-github"></i>&nbsp;GitHub</span><h2 class="stit">Projects &amp; Work</h2><p class="ssub">A selection of real-world projects from my GitHub profile.</p></div>
-  <div class="prjg">
-    <div class="card prjc fu">
-      <div class="prjt"><div class="prji"><i class="fa-solid fa-car-burst"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
-      <div class="prjn">ALPR in Bad Conditions</div>
-      <div class="prjl"><i class="fa-brands fa-python" style="color:#3b82f6"></i>&nbsp; Python</div>
-      <div class="prjd">Optimizing automatic license plate recognition under challenging real-world conditions &mdash; rain, night, fog, and motion blur &mdash; using deep learning and image enhancement.</div>
-      <div class="prjtg"><span class="tag">Computer Vision</span><span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span></div>
-      <div class="prjf"><a href="https://github.com/9826Florenzi/ALPR-in-Bad-Conditions" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a></div>
+  <!-- Main Navigation -->
+  <nav class="site-navbar">
+    <a href="#hero" class="nav-brand">
+      <div class="nav-brand-logo">N</div>
+      <span class="nav-brand-text">9826.Florenzi</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#services">Dịch vụ</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#mindset">Tư duy AI</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="theme-toggle-btn" aria-label="Chuyển đổi giao diện sáng/tối" title="Chuyển đổi Light/Dark mode">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+      </button>
     </div>
-    <div class="card prjc fu" data-delay=".1">
-      <div class="prjt"><div class="prji"><i class="fa-solid fa-database"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
-      <div class="prjn">DNDB</div>
-      <div class="prjl"><i class="fa-brands fa-js" style="color:#eab308"></i>&nbsp; TypeScript</div>
-      <div class="prjd">A customized database management application built on an open-source foundation &mdash; extended with improved UI, query optimization, and deployed live on Vercel.</div>
-      <div class="prjtg"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Database</span><span class="tag">Vercel</span></div>
-      <div class="prjf"><a href="https://github.com/9826Florenzi/DNDB" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a><a href="https://dndb-sooty.vercel.app" target="_blank" rel="noopener" class="btn bp bsm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
+  </nav>
+
+  <!-- Scroll Hint Widget -->
+  <div id="scroll-indicator">
+    <div class="mouse-icon">
+      <div class="mouse-wheel"></div>
     </div>
-    <div class="card prjc fu" data-delay=".2">
-      <div class="prjt"><div class="prji"><i class="fa-solid fa-cash-register"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
-      <div class="prjn">POS App for Mobile Shop</div>
-      <div class="prjl"><i class="fa-brands fa-js" style="color:#eab308"></i>&nbsp; TypeScript &middot; MIT</div>
-      <div class="prjd">A point-of-sale system customized for mobile phone retail &mdash; featuring inventory tracking, sales management, and reporting built on an open-source base.</div>
-      <div class="prjtg"><span class="tag">TypeScript</span><span class="tag">POS System</span><span class="tag">Retail</span><span class="tag">MIT</span></div>
-      <div class="prjf"><a href="https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a></div>
-    </div>
+    <span>Cuộn chuột</span>
   </div>
-  <div class="prjva fu"><a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn bg"><i class="fa-brands fa-github"></i> View all on GitHub</a></div>
-</div></section>
 
-<section id="mindset"><div class="ct">
-  <div class="fu"><span class="slbl"><i class="fa-solid fa-brain"></i>&nbsp;Philosophy</span><h2 class="stit">AI Mindset</h2><p class="ssub">How I think, learn, and build intelligent systems.</p></div>
-  <div class="bn fu">
-    <div class="bc"><div class="bci">&#129504;</div><div class="bct">How I Think</div><div class="pl"><span class="ps">Data</span><span class="pa">&#8594;</span><span class="ps">Model</span><span class="pa">&#8594;</span><span class="ps">Evaluate</span><span class="pa">&#8594;</span><span class="ps">Deploy</span></div></div>
-    <div class="bc"><div class="bci">&#128300;</div><div class="bct">Research Interests</div><ul class="il"><li>Computer Vision &amp; ALPR</li><li>Large Language Models</li><li>MLOps &amp; Production AI</li></ul></div>
-    <div class="bc"><div class="bci">&#128218;</div><div class="bct">Currently Learning</div><div class="bctx"><strong>LLM Fine-tuning</strong> &middot; RAG Pipelines &middot; LangChain &middot; Weights &amp; Biases &middot; FastAPI at scale</div></div>
-    <div class="bc bcw"><div class="bci">&#128295;</div><div class="bct">Daily Stack</div><div class="sc2"><span class="ch cy">Python</span><span class="ch co">PyTorch</span><span class="ch cg">Scikit-learn</span><span class="ch cp">FastAPI</span><span class="ch cr">Git</span><span class="ch ce">Linux</span></div></div>
-    <div class="bc"><div class="bci">&#128172;</div><div class="bct">Philosophy</div><div class="bcq">Good AI is not just accurate &mdash; it must be trustworthy, explainable, and genuinely useful.</div></div>
-  </div>
-</div></section>
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main class="main-content">
 
-<section id="contact"><div class="cts"><div class="cw">
-  <div class="fu"><span class="slbl"><i class="fa-regular fa-handshake"></i>&nbsp;Collaborate</span></div>
-  <h2 class="ctit fu">Have a project<br/>in mind?</h2>
-  <p class="cd fu">Leave a message or send me an email to collaborate on high-quality AI solutions.</p>
-  <p class="cd fu" style="font-style:italic;font-size:.86rem;margin-top:-.5rem">(Hay de lai tin nhan hoac gui email cho toi de cung nhau tao ra nhung san pham AI chat luong.)</p>
-  <p class="ce2 fu"><i class="fa-regular fa-paper-plane"></i>&nbsp; 9826.florenzi@gmail.com</p>
-  <div class="cb fu">
-    <a href="mailto:9826.florenzi@gmail.com" class="btn bp"><i class="fa-solid fa-envelope"></i> Send me an Email</a>
-    <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn bg"><i class="fa-brands fa-github"></i> GitHub</a>
-  </div>
-  <div class="soc fu">
-    <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="sl2" title="GitHub"><i class="fa-brands fa-github"></i></a>
-    <a href="mailto:9826.florenzi@gmail.com" class="sl2" title="Email"><i class="fa-solid fa-envelope"></i></a>
-  </div>
-  <footer class="fu"><p class="ft">&copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.</p></footer>
-</div></div></section>
-</main>
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section id="hero" class="content-section">
+      <div class="container-wide">
+        <div class="hero-wrapper">
+          <!-- Text Column -->
+          <div>
+            <div class="hero-status-badge fade-up-element">
+              <span class="radar-pulse-box">
+                <span class="radar-core"></span>
+                <span class="radar-wave"></span>
+              </span>
+              Sẵn sàng nhận dự án mới (Available for Work)
+            </div>
 
-<script>
-(function(){
-var root=document.documentElement,icon=document.getElementById('theme-icon'),btn=document.getElementById('theme-btn');
-function setT(t){root.setAttribute('data-theme',t);localStorage.setItem('theme',t);icon.className=t==='dark'?'fa-solid fa-moon':'fa-solid fa-sun'}
-var sv=localStorage.getItem('theme'),sys=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
-setT(sv||sys);
-btn.addEventListener('click',function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark')});
-var bar=document.getElementById('progress'),sh=document.getElementById('sh');
-var secs=document.querySelectorAll('section'),lks=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',function(){
-  var st=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
-  bar.style.width=(st/max*100)+'%';
-  sh.classList.toggle('hide',st>80);
-  var cur='';secs.forEach(function(s){if(st>=s.offsetTop-100)cur=s.id});
-  lks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
-},{passive:true});
-var obs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(!e.isIntersecting)return;
-    var el=e.target,d=(parseFloat(el.dataset.delay||'0'))*1000;
-    setTimeout(function(){el.classList.add('in');el.querySelectorAll('.skf').forEach(function(f){f.style.width=f.dataset.w+'%'})},d);
-  });
-},{threshold:.12});
-document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
-var words=['AI Engineer','ML Specialist','Data Scientist','CV Developer'],tw=document.getElementById('tw'),wi=0,ci=0,del=false;
-function type(){var w=words[wi];if(!del){tw.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,2000);return}}else{tw.textContent=w.slice(0,--ci);if(ci===0){del=false;wi=(wi+1)%words.length}}setTimeout(type,del?55:105)}
-type();
-var cv=document.getElementById('particles'),ctx2=cv.getContext('2d'),W,H,pts=[];
-function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}rsz();window.addEventListener('resize',rsz);
-for(var i=0;i<75;i++)pts.push({x:Math.random()*1400,y:Math.random()*900,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:1+Math.random()*1.5});
-function draw(){ctx2.clearRect(0,0,W,H);var dk=root.getAttribute('data-theme')!=='light',pA=dk?.45:.22,lA=dk?.12:.06;
-pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx2.beginPath();ctx2.arc(p.x,p.y,p.r,0,Math.PI*2);ctx2.fillStyle='rgba(124,58,237,'+pA+')';ctx2.fill()});
-for(var a=0;a<75;a++)for(var b=a+1;b<75;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx2.beginPath();ctx2.moveTo(pts[a].x,pts[a].y);ctx2.lineTo(pts[b].x,pts[b].y);ctx2.strokeStyle='rgba(124,58,237,'+(lA*(1-d/130))+')';ctx2.lineWidth=.7;ctx2.stroke()}}
-requestAnimationFrame(draw)}draw();
-})();
-</script>
-</body></html>
+            <h1 class="hero-heading fade-up-element">9826.Florenzi</h1>
+
+            <div class="hero-typewriter fade-up-element">
+              <span style="color: var(--text-muted)">Tôi là&nbsp;</span>
+              <span class="typewriter-text" id="typewriter-display"></span>
+              <span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-description fade-up-element">
+              Xin chào! Tôi là <strong>Nguyễn Hữu Nghĩa</strong>. Tôi tập trung phát triển các hệ thống thông minh, huấn luyện mô hình Machine Learning thực chiến và đưa dữ liệu vào ứng dụng thực tế.
+            </p>
+
+            <p class="hero-description-vn fade-up-element">
+              "Biến dữ liệu phức tạp thành những giải pháp trí tuệ nhân tạo tin cậy, giải quyết trực diện bài toán của bạn."
+            </p>
+
+            <div class="hero-actions fade-up-element">
+              <a href="#contact" class="btn btn-primary">
+                <i class="fa-solid fa-envelope"></i> Liên hệ hợp tác
+              </a>
+              <a href="#projects" class="btn btn-ghost">
+                <i class="fa-brands fa-github"></i> Khám phá Dự án
+              </a>
+            </div>
+
+            <div class="hero-highlights fade-up-element">
+              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Python &amp; ML Core</span>
+              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Production-Ready AI</span>
+              <span class="highlight-chip"><i class="fa-solid fa-circle-check"></i> Computer Vision &amp; LLMs</span>
+            </div>
+          </div>
+
+          <!-- Avatar Column -->
+          <div class="hero-avatar-box fade-up-element">
+            <div class="hero-avatar-glow"></div>
+            <img 
+              src="https://avatars.githubusercontent.com/u/211441746?v=4" 
+              alt="Nguyễn Hữu Nghĩa (9826.Florenzi)" 
+              class="hero-avatar-img"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: SKILLS (KỸ NĂNG) ===== -->
+    <section id="skills" class="content-section">
+      <div class="container-narrow">
+        <div class="fade-up-element">
+          <span class="section-tag"><i class="fa-solid fa-code-branch"></i>&nbsp; Năng lực Chuyên môn</span>
+          <h2 class="section-title">Công cụ &amp; Ngôn ngữ</h2>
+          <p class="section-subtitle">Mức độ am hiểu và thành thạo các công nghệ nền tảng trong kỹ thuật AI &amp; phát triển phần mềm.</p>
+        </div>
+
+        <div class="skills-grid fade-up-element">
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-python" style="color: #60a5fa"></i> Python</span>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-brain" style="color: #a78bfa"></i> Machine Learning</span>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-fire-flame-curved" style="color: #fb923c"></i> PyTorch / TensorFlow</span>
+              <span class="skill-percentage">70%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="70"></div>
+            </div>
+          </div>
+
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-chart-line" style="color: #34d399"></i> Data Analysis &amp; Visualization</span>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="75"></div>
+            </div>
+          </div>
+
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-solid fa-database" style="color: #38bdf8"></i> SQL &amp; Database Architecture</span>
+              <span class="skill-percentage">70%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="70"></div>
+            </div>
+          </div>
+
+          <div class="skill-card-item">
+            <div class="skill-header">
+              <span><i class="fa-brands fa-html5" style="color: #f87171"></i> Frontend Basics (HTML/CSS)</span>
+              <span class="skill-percentage">20%</span>
+            </div>
+            <div class="skill-track-bar">
+              <div class="skill-fill-progress" data-target="20"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: SERVICES (DỊCH VỤ) ===== -->
+    <section id="services" class="content-section">
+      <div class="container-wide">
+        <div class="fade-up-element">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i>&nbsp; Giải Pháp Cung Cấp</span>
+          <h2 class="section-title">Dịch Vụ AI Chuyên Nghiệp</h2>
+          <p class="section-subtitle">Giải pháp AI &amp; Machine Learning tùy chỉnh, thiết kế chuẩn xác theo nhu cầu thực tế của bạn.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="spotlight-card service-card fade-up-element">
+            <div class="service-card-top">
+              <span class="service-index">01</span>
+              <span class="service-price-badge">Thỏa thuận</span>
+            </div>
+            <h3 class="service-title-en">Consulting &amp; Analysis</h3>
+            <p class="service-title-vn">Tư Vấn &amp; Phân Tích Dữ Liệu</p>
+            <p class="service-desc-en">Data assessment, feasibility study, AI/ML architecture consulting, and roadmap creation.</p>
+            <p class="service-desc-vn">Đánh giá cấu trúc dữ liệu, khảo sát tính khả thi, tư vấn kiến trúc mô hình và xây dựng lộ trình ứng dụng AI hiệu quả cho tổ chức.</p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="spotlight-card service-card fade-up-element" data-delay="0.1">
+            <div class="service-card-top">
+              <span class="service-index">02</span>
+              <span class="service-price-badge">Theo quy mô</span>
+            </div>
+            <h3 class="service-title-en">ML Model Development</h3>
+            <p class="service-title-vn">Xây Dựng &amp; Huấn Luyện Mô Hình</p>
+            <p class="service-desc-en">Custom AI model training, fine-tuning, metric evaluation, and scalable REST API deployment.</p>
+            <p class="service-desc-vn">Huấn luyện mô hình học máy theo bài toán đặc thù, tinh chỉnh siêu tham số, kiểm thử chuẩn xác và đóng gói thành API sẵn sàng tích hợp.</p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="spotlight-card service-card fade-up-element" data-delay="0.2">
+            <div class="service-card-top">
+              <span class="service-index">03</span>
+              <span class="service-price-badge">Theo yêu cầu</span>
+            </div>
+            <h3 class="service-title-en">Full AI Solution</h3>
+            <p class="service-title-vn">Giải Pháp AI Toàn Diện</p>
+            <p class="service-desc-en">End-to-end intelligent systems integrated into business workflows with continuous monitoring.</p>
+            <p class="service-desc-vn">Xây dựng trọn gói hệ thống AI từ khâu tiền xử lý dữ liệu, suy luận mô hình đến tích hợp quy trình nghiệp vụ và giám sát tự động.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: PROJECTS (DỰ ÁN) ===== -->
+    <section id="projects" class="content-section">
+      <div class="container-wide">
+        <div class="fade-up-element">
+          <span class="section-tag"><i class="fa-brands fa-github"></i>&nbsp; Sản Phẩm Thực Chiến</span>
+          <h2 class="section-title">Dự Án Nổi Bật</h2>
+          <p class="section-subtitle">Các dự án nghiên cứu và sản phẩm thực tế được xây dựng và phát triển trên GitHub.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: ALPR -->
+          <div class="spotlight-card project-card fade-up-element">
+            <div class="project-card-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-car-burst"></i>
+              </div>
+              <div class="project-badges-group">
+                <div class="project-stars-count">
+                  <i class="fa-solid fa-star"></i>&nbsp;1
+                </div>
+              </div>
+            </div>
+            <h3 class="project-title">ALPR in Bad Conditions</h3>
+            <div class="project-lang-label">
+              <i class="fa-brands fa-python" style="color: #3b82f6"></i> Python &middot; Deep Learning
+            </div>
+            <p class="project-description">
+              Tối ưu hóa khả năng nhận diện biển số xe tự động (ALPR) trong các điều kiện môi trường bất lợi: trời mưa lớn, ban đêm, sương mù và hiện tượng mờ chuyển động bằng cách kết hợp Deep Learning và các kỹ thuật tăng cường hình ảnh (Image Enhancement).
+            </p>
+            <div class="project-tags-list">
+              <span class="tech-pill">Computer Vision</span>
+              <span class="tech-pill">YOLO</span>
+              <span class="tech-pill">OpenCV</span>
+              <span class="tech-pill">Deep Learning</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/9826Florenzi/ALPR-in-Bad-Conditions" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> Mã nguồn GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: DNDB (Danh Nhân Bắc Đẩu) -->
+          <div class="spotlight-card project-card fade-up-element" data-delay="0.1">
+            <div class="project-card-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </div>
+              <div class="project-badges-group">
+                <span class="project-live-indicator">
+                  <span class="live-dot"></span> Live
+                </span>
+                <div class="project-stars-count">
+                  <i class="fa-solid fa-star"></i>&nbsp;1
+                </div>
+              </div>
+            </div>
+            <h3 class="project-title">DNDB - Danh Nhân Bắc Đẩu</h3>
+            <div class="project-lang-label">
+              <i class="fa-brands fa-js" style="color: #eab308"></i> TypeScript &middot; Next.js
+            </div>
+            <p class="project-description">
+              Nền tảng tra cứu và lưu trữ tư liệu, tiểu sử và niên biểu các nhân vật lịch sử Việt Nam. Hệ thống được tinh chỉnh giao diện người dùng hiện đại, tối ưu hóa tốc độ truy vấn cơ sở dữ liệu và hiện đang hoạt động trực tuyến trên tên miền chính thức.
+            </p>
+            <div class="project-tags-list">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Database</span>
+              <span class="tech-pill">Production</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/9826Florenzi/DNDB" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://www.danhnhanbacdau.io.vn/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Live Demo
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: POS App -->
+          <div class="spotlight-card project-card fade-up-element" data-delay="0.2">
+            <div class="project-card-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-cash-register"></i>
+              </div>
+              <div class="project-badges-group">
+                <div class="project-stars-count">
+                  <i class="fa-solid fa-star"></i>&nbsp;1
+                </div>
+              </div>
+            </div>
+            <h3 class="project-title">POS App for Mobile Shop</h3>
+            <div class="project-lang-label">
+              <i class="fa-brands fa-js" style="color: #eab308"></i> TypeScript &middot; MIT License
+            </div>
+            <p class="project-description">
+              Phần mềm quản lý bán hàng (Point-of-Sale) tùy biến chuyên sâu cho chuỗi cửa hàng bán lẻ điện thoại: quản lý danh mục IMEI/serial, theo dõi doanh thu thời gian thực, quản lý kho và báo cáo tài chính trực quan.
+            </p>
+            <div class="project-tags-list">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">POS Retail</span>
+              <span class="tech-pill">Inventory</span>
+              <span class="tech-pill">Open Source</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                <i class="fa-brands fa-github"></i> Mã nguồn GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-more-cta fade-up-element">
+          <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-brands fa-github"></i> Xem toàn bộ kho mã nguồn trên GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: AI MINDSET (TƯ DUY KỸ SƯ) ===== -->
+    <section id="mindset" class="content-section">
+      <div class="container-wide">
+        <div class="fade-up-element">
+          <span class="section-tag"><i class="fa-solid fa-brain"></i>&nbsp; Triết Lý &amp; Phương Pháp</span>
+          <h2 class="section-title">Tư Duy Kỹ Sư AI</h2>
+          <p class="section-subtitle">Cách tôi tiếp cận bài toán, liên tục học hỏi và hiện thực hóa các mô hình trí tuệ nhân tạo.</p>
+        </div>
+
+        <div class="bento-grid fade-up-element">
+          <!-- Cell 1: How I Think -->
+          <div class="spotlight-card bento-card">
+            <div class="bento-icon">&#129504;</div>
+            <div class="bento-header-label">Quy Trình Tiếp Cận</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+              Giải quyết bài toán AI có hệ thống từ nghiên cứu đến vận hành:
+            </p>
+            <div class="pipeline-container">
+              <span class="pipeline-step">Dữ liệu</span>
+              <span class="pipeline-arrow">&#8594;</span>
+              <span class="pipeline-step">Mô hình</span>
+              <span class="pipeline-arrow">&#8594;</span>
+              <span class="pipeline-step">Đánh giá</span>
+              <span class="pipeline-arrow">&#8594;</span>
+              <span class="pipeline-step">Triển khai</span>
+            </div>
+          </div>
+
+          <!-- Cell 2: Research Focus -->
+          <div class="spotlight-card bento-card">
+            <div class="bento-icon">&#128300;</div>
+            <div class="bento-header-label">Trọng Tâm Nghiên Cứu</div>
+            <ul class="research-list">
+              <li><i class="fa-solid fa-chevron-right"></i> Computer Vision &amp; Image Enhancement</li>
+              <li><i class="fa-solid fa-chevron-right"></i> Large Language Models &amp; RAG Systems</li>
+              <li><i class="fa-solid fa-chevron-right"></i> MLOps &amp; Automated Evaluation Pipelines</li>
+            </ul>
+          </div>
+
+          <!-- Cell 3: Currently Exploring -->
+          <div class="spotlight-card bento-card">
+            <div class="bento-icon">&#128218;</div>
+            <div class="bento-header-label">Đang Mở Rộng</div>
+            <p class="learning-text">
+              <strong>LLM Fine-tuning (LoRA/QLoRA)</strong> &middot; Agentic Workflows &middot; LangChain &amp; LlamaIndex &middot; Weights &amp; Biases &middot; High-throughput API Serving với FastAPI &amp; vLLM.
+            </p>
+          </div>
+
+          <!-- Cell 4: Daily Stack (Wide) -->
+          <div class="spotlight-card bento-card bento-card-wide">
+            <div class="bento-icon">&#128295;</div>
+            <div class="bento-header-label">Bộ Công Cụ Hàng Ngày (Daily Stack)</div>
+            <div class="stack-chips-group">
+              <span class="stack-chip sc-python"><i class="fa-brands fa-python"></i> Python 3.10+</span>
+              <span class="stack-chip sc-pytorch"><i class="fa-solid fa-fire"></i> PyTorch</span>
+              <span class="stack-chip sc-scikit"><i class="fa-solid fa-gears"></i> Scikit-learn</span>
+              <span class="stack-chip sc-fastapi"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+              <span class="stack-chip sc-git"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
+              <span class="stack-chip sc-linux"><i class="fa-brands fa-linux"></i> Linux &amp; Bash</span>
+            </div>
+          </div>
+
+          <!-- Cell 5: Philosophy -->
+          <div class="spotlight-card bento-card">
+            <div class="bento-icon">&#128172;</div>
+            <div class="bento-header-label">Kim Chỉ Nam Kỹ Thuật</div>
+            <blockquote class="philosophy-quote">
+              "Một mô hình AI giá trị không chỉ nằm ở độ chính xác trên tập dữ liệu thử nghiệm, mà phải giải quyết đúng bài toán, minh bạch và vận hành ổn định trong môi trường thực tế."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: CONTACT (LIÊN HỆ) ===== -->
+    <section id="contact" class="content-section">
+      <div class="container-narrow">
+        <div class="contact-container">
+          <div class="fade-up-element">
+            <span class="section-tag"><i class="fa-regular fa-handshake"></i>&nbsp; Hợp Tác &amp; Kết Nối</span>
+          </div>
+
+          <h2 class="contact-heading fade-up-element">
+            Bạn có dự án<br />cần hiện thực hóa?
+          </h2>
+
+          <p class="contact-text fade-up-element">
+            Tôi luôn hào hứng với những bài toán dữ liệu thách thức và các ý tưởng công nghệ mới. Hãy liên hệ với tôi để cùng tạo nên những giải pháp AI chất lượng cao.
+          </p>
+
+          <p class="contact-text-vn fade-up-element">
+            (Feel free to reach out for project collaboration, AI consulting, or technical discussions.)
+          </p>
+
+          <div class="fade-up-element">
+            <a href="mailto:9826.florenzi@gmail.com" class="contact-email-link">
+              <i class="fa-regular fa-paper-plane"></i> 9826.florenzi@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-buttons-group fade-up-element">
+            <a href="mailto:9826.florenzi@gmail.com" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i> Gửi Email Trực Tiếp
+            </a>
+            <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn btn-ghost">
+              <i class="fa-brands fa-github"></i> Ghé thăm GitHub
+            </a>
+          </div>
+
+          <div class="social-links-row fade-up-element">
+            <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:9826.florenzi@gmail.com" class="social-icon-btn" title="Gửi Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+
+          <footer class="site-footer fade-up-element">
+            <p class="footer-copy">
+              &copy; 2026 Nguyễn Hữu Nghĩa (9826.Florenzi). Bản quyền đã được bảo lưu.
+            </p>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SCRIPTS: SMOOTH SCROLL, SPOTLIGHT & INTERACTION
+       ========================================================================== -->
+  <script>
+    (function () {
+      // 1. THEME SWITCHER
+      const root = document.documentElement;
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio_theme', theme);
+        if (theme === 'dark') {
+          themeIcon.className = 'fa-solid fa-moon';
+        } else {
+          themeIcon.className = 'fa-solid fa-sun';
+        }
+      }
+
+      const savedTheme = localStorage.getItem('portfolio_theme');
+      const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      applyTheme(savedTheme || (systemPrefersLight ? 'light' : 'dark'));
+
+      themeBtn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+
+      // 2. LENIS SMOOTH SCROLL ENGINE
+      let lenis;
+      if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+          duration: 1.25,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1.05,
+          touchMultiplier: 1.5,
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Smooth navigation anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              e.preventDefault();
+              lenis.scrollTo(targetEl, { offset: -30, duration: 1.2 });
+            }
+          });
+        });
+      }
+
+      // 3. SCROLL PROGRESS & ACTIVE NAV HIGHLIGHT
+      const progressBar = document.getElementById('scroll-progress');
+      const scrollIndicator = document.getElementById('scroll-indicator');
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-menu a');
+
+      function onScrollUpdate() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (progressBar && maxScroll > 0) {
+          progressBar.style.width = (scrollY / maxScroll * 100) + '%';
+        }
+
+        if (scrollIndicator) {
+          scrollIndicator.classList.toggle('faded', scrollY > 70);
+        }
+
+        let currentSectionId = '';
+        sections.forEach(sec => {
+          if (scrollY >= sec.offsetTop - 120) {
+            currentSectionId = sec.id;
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + currentSectionId);
+        });
+      }
+
+      window.addEventListener('scroll', onScrollUpdate, { passive: true });
+
+      // 4. SPOTLIGHT GLOW ON MOUSEMOVE
+      const spotlightCards = document.querySelectorAll('.spotlight-card');
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', x + 'px');
+          card.style.setProperty('--mouse-y', y + 'px');
+        });
+      });
+
+      // 5. INTERSECTION OBSERVER FOR FADE-UP & SKILLS PROGRESS
+      const observerOptions = {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      };
+
+      const appearObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const delay = parseFloat(el.dataset.delay || '0') * 1000;
+
+          setTimeout(() => {
+            el.classList.add('in-view');
+
+            // Trigger skill bars animation
+            const skillFills = el.querySelectorAll('.skill-fill-progress');
+            skillFills.forEach(fill => {
+              fill.style.width = fill.dataset.target + '%';
+            });
+          }, delay);
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-up-element').forEach(el => appearObserver.observe(el));
+
+      // 6. TYPEWRITER EFFECT (Song ngữ / Chuyên môn)
+      const typewriterWords = [
+        'Kỹ sư Trí tuệ Nhân tạo (AI Engineer)',
+        'Machine Learning Specialist',
+        'Thị giác Máy tính (Computer Vision)',
+        'Nhà phát triển Giải pháp Dữ liệu'
+      ];
+      const twDisplay = document.getElementById('typewriter-display');
+      let wordIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+
+      function handleTypewriter() {
+        const currentWord = typewriterWords[wordIdx];
+
+        if (!isDeleting) {
+          twDisplay.textContent = currentWord.slice(0, ++charIdx);
+          if (charIdx === currentWord.length) {
+            isDeleting = true;
+            setTimeout(handleTypewriter, 2200);
+            return;
+          }
+        } else {
+          twDisplay.textContent = currentWord.slice(0, --charIdx);
+          if (charIdx === 0) {
+            isDeleting = false;
+            wordIdx = (wordIdx + 1) % typewriterWords.length;
+          }
+        }
+
+        setTimeout(handleTypewriter, isDeleting ? 40 : 85);
+      }
+      handleTypewriter();
+
+      // 7. PARTICLES CANVAS BACKGROUND
+      const canvas = document.getElementById('particles-canvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const particleCount = 70;
+
+        function resizeCanvas() {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.32,
+            vy: (Math.random() - 0.5) * 0.32,
+            radius: 1 + Math.random() * 1.5
+          });
+        }
+
+        function renderParticles() {
+          ctx.clearRect(0, 0, width, height);
+          const isDark = root.getAttribute('data-theme') !== 'light';
+          const pAlpha = isDark ? 0.38 : 0.2;
+          const lineAlpha = isDark ? 0.1 : 0.05;
+
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x < 0) p.x = width;
+            if (p.x > width) p.x = 0;
+            if (p.y < 0) p.y = height;
+            if (p.y > height) p.y = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(139, 92, 246, ' + pAlpha + ')';
+            ctx.fill();
+          });
+
+          for (let a = 0; a < particleCount; a++) {
+            for (let b = a + 1; b < particleCount; b++) {
+              const dx = particles[a].x - particles[b].x;
+              const dy = particles[a].y - particles[b].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+
+              if (dist < 135) {
+                ctx.beginPath();
+                ctx.moveTo(particles[a].x, particles[a].y);
+                ctx.lineTo(particles[b].x, particles[b].y);
+                ctx.strokeStyle = 'rgba(139, 92, 246, ' + (lineAlpha * (1 - dist / 135)) + ')';
+                ctx.lineWidth = 0.7;
+                ctx.stroke();
+              }
+            }
+          }
+
+          requestAnimationFrame(renderParticles);
+        }
+        renderParticles();
+      }
+    })();
+  </script>
+</body>
+</html>
