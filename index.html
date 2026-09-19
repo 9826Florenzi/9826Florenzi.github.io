@@ -1,327 +1,290 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9826.Florenzi | AI Engineer - Nguyen Huu Nghia</title>
-  <meta name="description" content="Portfolio of Nguyen Huu Nghia - AI Engineer specializing in Machine Learning, intelligent systems, and data-driven solutions." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
-  <style>
-    :root{--g:#38ef7d;--gd:#11998e;--am:#ffe066;--bg:#04100a;--card:rgba(7,22,14,0.72);--cb:rgba(56,239,125,0.18);--cg:rgba(56,239,125,0.07);--tp:#edfaf3;--tm:#94b8a8}
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--tp);background:var(--bg);overflow-x:hidden;line-height:1.65}
-    #cv{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;pointer-events:none}
-    .vo{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(2,8,5,.85) 100%)}
-    #sp{position:fixed;top:0;left:0;height:3px;width:0%;z-index:200;background:linear-gradient(90deg,var(--gd),var(--g),var(--am));box-shadow:0 0 12px var(--g);transition:width .08s linear}
-    nav{position:fixed;top:0;left:0;right:0;z-index:150;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(4,16,10,.7) 0%,transparent 100%)}
-    .nl{font-size:1.1rem;font-weight:800;letter-spacing:-.5px;color:var(--g);text-decoration:none}
-    ul.lk{display:flex;gap:2rem;list-style:none}
-    ul.lk a{font-size:.88rem;font-weight:500;color:var(--tm);text-decoration:none;transition:color .25s}
-    ul.lk a:hover{color:var(--g)}
-    .cw{position:relative;z-index:10}
-    .ss{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.5rem 5rem}
-    .cc{max-width:700px;width:100%;background:var(--card);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid var(--cb);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 40px var(--cg),inset 0 1px 0 rgba(255,255,255,.06);border-radius:28px;padding:3rem;opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),border-color .35s ease}
-    .cc.vis{opacity:1;transform:translateY(0)}
-    .cc:hover{border-color:rgba(56,239,125,.38)}
-    .wc{max-width:1100px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(56,239,125,.1);color:var(--g);border:1px solid rgba(56,239,125,.28);margin-bottom:1.3rem}
-    .sd{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:pd 2.2s ease-in-out infinite}
-    @keyframes pd{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
-    .mt{font-size:clamp(2.8rem,6vw,4.2rem);font-weight:800;letter-spacing:-2px;line-height:1.1;background:linear-gradient(125deg,#fff 30%,var(--g) 70%,var(--am) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.2rem}
-    .it{font-size:1.12rem;color:#ddf1e8;margin-bottom:.6rem}
-    .is{font-size:.88rem;color:var(--tm);margin-bottom:2rem;font-style:italic}
-    .ab{display:flex;gap:1rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border-radius:16px;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s cubic-bezier(.2,.8,.2,1);cursor:pointer;border:none}
-    .bp{background:linear-gradient(135deg,var(--gd) 0%,var(--g) 100%);color:#031508;box-shadow:0 8px 24px rgba(56,239,125,.35)}
-    .bp:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 36px rgba(56,239,125,.5)}
-    .bo{background:transparent;color:var(--g);border:1.5px solid var(--cb)}
-    .bo:hover{border-color:var(--g);background:rgba(56,239,125,.08);transform:translateY(-2px)}
-    .sh{margin-bottom:2.2rem}
-    .st{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;letter-spacing:-.5px;display:flex;align-items:center;gap:14px;margin-bottom:.5rem}
-    .st i{font-size:1.5rem;color:var(--g);background:rgba(56,239,125,.1);width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;border:1px solid rgba(56,239,125,.2)}
-    .ss2{color:var(--tm);font-size:.92rem}
-    .sg{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.4rem}
-    .si-info{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600;margin-bottom:7px}
-    .sv{color:var(--g)}
-    .pb{width:100%;height:7px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
-    .pf{height:100%;background:linear-gradient(90deg,var(--gd),var(--g));border-radius:99px;width:0%;box-shadow:0 0 10px rgba(56,239,125,.45);transition:width 1.2s cubic-bezier(.22,1,.36,1)}
-    .sl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-    .sc{background:rgba(10,28,18,.5);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.4rem;position:relative;overflow:hidden;transition:all .35s cubic-bezier(.2,.8,.2,1)}
-    .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(56,239,125,.4),transparent);opacity:0;transition:opacity .35s}
-    .sc:hover{transform:translateY(-8px);border-color:rgba(56,239,125,.35);background:rgba(10,28,18,.85);box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 20px rgba(56,239,125,.08)}
-    .sc:hover::before{opacity:1}
-    .sc.ft{border-color:rgba(56,239,125,.25);background:rgba(14,38,25,.65)}
-    .stop{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
-    .si{font-size:2rem;font-weight:800;color:rgba(255,255,255,.1);line-height:1}
-    .sbg{font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:8px;background:rgba(255,224,102,.13);color:var(--am);letter-spacing:.3px}
-    .sc h3{font-size:1.15rem;font-weight:700;margin-bottom:0}
-    .vnt{font-size:.82rem;color:var(--g);font-weight:500;margin-bottom:.7rem}
-    .sd2{font-size:.85rem;color:#cfe8d8;line-height:1.55}
-    .sd2v{font-size:.82rem;color:var(--tm);font-style:italic}
-    .ctc{text-align:center}
-    .ctc .st{justify-content:center;font-size:clamp(1.8rem,4vw,2.6rem)}
-    .cd{font-size:1.05rem;color:#ddf1e8;max-width:460px;margin:0 auto .6rem}
-    .cdv{font-size:.86rem;color:var(--tm);font-style:italic;margin-bottom:2rem}
-    .ctc .ab{justify-content:center}
-    .mh{margin-top:1.6rem;color:var(--am);font-size:.88rem;display:flex;align-items:center;justify-content:center;gap:8px}
-    footer{margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.8rem;color:var(--tm)}
-    #sh{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:50;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--tm);font-size:.75rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;opacity:1;transition:opacity .4s;pointer-events:none}
-    #sh.hid{opacity:0}
-    .sm{width:22px;height:34px;border:2px solid rgba(56,239,125,.4);border-radius:12px;display:flex;justify-content:center;padding-top:5px}
-    .sm::before{content:'';width:3px;height:7px;background:var(--g);border-radius:99px;animation:sa 1.8s ease-in-out infinite}
-    @keyframes sa{0%{transform:translateY(0);opacity:1}100%{transform:translateY(8px);opacity:0}}
-    @media(max-width:900px){.sl{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.cc{padding:2rem 1.5rem}ul.lk{display:none}}
-    @media(max-width:600px){.mt{font-size:2.4rem}.ss{padding:6rem 1rem 4rem}}
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>9826.Florenzi | Nguyen Huu Nghia &mdash; AI Engineer</title>
+<meta name="description" content="Portfolio of Nguyen Huu Nghia &mdash; AI Engineer specializing in Machine Learning, Computer Vision, and intelligent systems."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+:root{--bg:#080810;--bg2:#0e0e1a;--surf:rgba(255,255,255,.04);--surf-h:rgba(255,255,255,.07);--bdr:rgba(255,255,255,.08);--bdr-h:rgba(124,58,237,.5);--tx:#f1f5f9;--mu:#94a3b8;--sub:#475569;--ac:#7c3aed;--ac2:#2563eb;--gr:#10b981;--am:#f59e0b;--nav:rgba(8,8,16,.87);--shd:0 25px 50px -12px rgba(0,0,0,.5);--glow:0 0 40px rgba(124,58,237,.15)}
+[data-theme="light"]{--bg:#f8fafc;--bg2:#f1f5f9;--surf:rgba(255,255,255,.88);--surf-h:rgba(255,255,255,1);--bdr:rgba(0,0,0,.08);--bdr-h:rgba(124,58,237,.38);--tx:#0f172a;--mu:#64748b;--sub:#94a3b8;--nav:rgba(248,250,252,.9);--shd:0 25px 50px -12px rgba(0,0,0,.07);--glow:0 0 40px rgba(124,58,237,.07)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.65;transition:background .35s,color .35s}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);animation:blobF 14s ease-in-out infinite}
+.blob-1{width:650px;height:650px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);top:-250px;left:-200px}
+.blob-2{width:550px;height:550px;background:radial-gradient(circle,rgba(37,99,235,.13),transparent 70%);bottom:-180px;right:-120px;animation-delay:-5s}
+.blob-3{width:420px;height:420px;background:radial-gradient(circle,rgba(16,185,129,.09),transparent 70%);top:45%;left:48%;transform:translate(-50%,-50%);animation-delay:-10s}
+@keyframes blobF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-28px) scale(1.06)}66%{transform:translate(-18px,18px) scale(.95)}}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(148,163,184,.12) 1px,transparent 1px);background-size:32px 32px;transition:opacity .35s}
+[data-theme="light"] .grid-bg{opacity:.6}
+#progress{position:fixed;top:0;left:0;height:2px;z-index:600;background:linear-gradient(90deg,#7c3aed,#2563eb,#10b981);width:0%;transition:width .1s;box-shadow:0 0 10px rgba(124,58,237,.7)}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;background:var(--nav);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;transition:background .35s,border-color .35s}
+.nav-logo{font-size:1rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(135deg,#7c3aed,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.84rem;font-weight:500;color:var(--mu);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:linear-gradient(90deg,#7c3aed,#2563eb);transform:scaleX(0);transition:transform .2s;border-radius:2px}
+.nav-links a:hover,.nav-links a.active{color:var(--tx)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+#theme-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);color:var(--mu);cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+#theme-btn:hover{border-color:var(--bdr-h);color:var(--tx);background:var(--surf-h)}
+#sh{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:20;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--sub);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;opacity:1;transition:opacity .4s}
+#sh.hide{opacity:0}
+.sm{width:20px;height:30px;border:1.5px solid var(--sub);border-radius:10px;display:flex;justify-content:center;padding-top:4px}
+.sm::before{content:'';width:2px;height:5px;background:var(--sub);border-radius:99px;animation:sd 1.8s ease-in-out infinite}
+@keyframes sd{0%{transform:translateY(0);opacity:1}100%{transform:translateY(7px);opacity:0}}
+main{position:relative;z-index:10;padding-top:64px}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem 1.5rem}
+.ct{width:100%;max-width:1100px;margin:0 auto}
+.cts{width:100%;max-width:740px;margin:0 auto}
+.slbl{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.71rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);padding:4px 12px;border-radius:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.22);margin-bottom:1rem}
+.stit{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:.5rem}
+.ssub{font-size:.93rem;color:var(--mu);margin-bottom:2.5rem}
+.card{background:var(--surf);border:1px solid var(--bdr);border-radius:20px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:border-color .3s,box-shadow .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+.card:hover{border-color:var(--bdr-h);box-shadow:var(--shd),var(--glow);transform:translateY(-5px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:12px;font-weight:600;font-size:.88rem;text-decoration:none;cursor:pointer;border:none;transition:all .25s;font-family:'Inter',sans-serif}
+.bp{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;box-shadow:0 8px 24px rgba(124,58,237,.3)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(124,58,237,.45)}
+.bg{background:var(--surf);color:var(--tx);border:1px solid var(--bdr)}
+.bg:hover{border-color:var(--bdr-h);background:var(--surf-h);transform:translateY(-2px)}
+.bsm{padding:7px 15px;font-size:.78rem;border-radius:9px}
+.tag{font-size:.68rem;padding:3px 9px;border-radius:6px;background:rgba(124,58,237,.1);color:var(--ac);border:1px solid rgba(124,58,237,.16);font-family:'JetBrains Mono',monospace;font-weight:500}
+.fu{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.fu.in{opacity:1;transform:translateY(0)}
+.hg{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.5px;color:var(--gr);padding:5px 14px;border-radius:999px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);margin-bottom:1.4rem}
+.pdot{width:7px;height:7px;border-radius:50%;background:var(--gr);box-shadow:0 0 8px var(--gr);animation:pls 2.2s ease-in-out infinite}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.htit{font-size:clamp(3rem,7.5vw,5.8rem);font-weight:800;letter-spacing:-3px;line-height:1;background:linear-gradient(125deg,var(--tx) 35%,#7c3aed 65%,#2563eb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem}
+.htw{font-size:clamp(1rem,2.5vw,1.3rem);font-weight:500;color:var(--mu);margin-bottom:.8rem;min-height:1.8rem;display:flex;align-items:center;gap:6px}
+.tww{color:var(--ac);font-weight:700}
+.twc{width:2px;height:1.1em;background:var(--ac);border-radius:1px;animation:cur .75s step-end infinite}
+@keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+.hdesc{font-size:.98rem;color:var(--mu);line-height:1.75;margin-bottom:2rem;max-width:500px}
+.hdesc strong{color:var(--tx);font-weight:600}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap}
+.hav{width:170px;height:170px;border-radius:24px;object-fit:cover;border:2px solid var(--bdr);flex-shrink:0;box-shadow:var(--glow),0 0 0 6px rgba(124,58,237,.06)}
+.skg{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 3rem}
+.skh{display:flex;justify-content:space-between;font-size:.87rem;font-weight:600;margin-bottom:8px}
+.skp{color:var(--ac);font-family:'JetBrains Mono',monospace;font-size:.82rem}
+.skt{height:6px;background:var(--bdr);border-radius:99px;overflow:hidden}
+.skf{height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#7c3aed,#2563eb);box-shadow:0 0 10px rgba(124,58,237,.35);transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+.svg2{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.svc{padding:1.8rem;position:relative;overflow:hidden}
+.svc::before{content:'';position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.5),transparent);opacity:0;transition:opacity .3s}
+.svc:hover::before{opacity:1}
+.svct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem}
+.svcn{font-size:2.2rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--bdr);line-height:1;transition:color .3s}
+.svc:hover .svcn{color:rgba(124,58,237,.2)}
+.svcp{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:6px;background:rgba(245,158,11,.12);color:var(--am);font-family:'JetBrains Mono',monospace}
+.svcti{font-size:1.05rem;font-weight:700;margin-bottom:.2rem}
+.svcvn{font-size:.78rem;color:var(--gr);margin-bottom:.7rem;font-weight:500}
+.svcd{font-size:.82rem;color:var(--mu);line-height:1.55;margin-bottom:.25rem}
+.svcdv{font-size:.77rem;color:var(--sub);font-style:italic;line-height:1.5}
+.prjg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.prjc{padding:1.6rem;display:flex;flex-direction:column;gap:.45rem}
+.prjt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.prji{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(37,99,235,.18));border:1px solid rgba(124,58,237,.22);display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:var(--ac)}
+.prjs{display:flex;align-items:center;gap:4px;font-size:.73rem;color:var(--am);font-weight:600;font-family:'JetBrains Mono',monospace}
+.prjn{font-size:1rem;font-weight:700;line-height:1.25}
+.prjl{font-size:.72rem;color:var(--mu);font-family:'JetBrains Mono',monospace;margin-bottom:.2rem}
+.prjd{font-size:.82rem;color:var(--mu);line-height:1.58;flex:1}
+.prjtg{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.3rem}
+.prjf{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.7rem}
+.prjva{text-align:center;margin-top:2rem}
+.bn{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.bc{padding:1.6rem;border-radius:20px;background:var(--surf);border:1px solid var(--bdr);transition:border-color .3s,transform .3s}
+.bc:hover{border-color:var(--bdr-h);transform:translateY(-3px)}
+.bcw{grid-column:span 2}
+.bci{font-size:1.35rem;margin-bottom:.7rem}
+.bct{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mu);margin-bottom:.6rem;font-family:'JetBrains Mono',monospace}
+.bctx{font-size:.85rem;color:var(--tx);line-height:1.65}
+.bctx strong{color:var(--ac)}
+.bcq{font-size:.92rem;font-style:italic;color:var(--tx);line-height:1.65}
+.bcq::before{content:'"';font-size:2.5rem;color:rgba(124,58,237,.35);line-height:0;vertical-align:-.55rem;margin-right:2px}
+.pl{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.ps{font-size:.75rem;padding:4px 11px;border-radius:7px;font-family:'JetBrains Mono',monospace;font-weight:600;background:rgba(124,58,237,.12);color:var(--ac);border:1px solid rgba(124,58,237,.2)}
+.pa{color:var(--sub);font-size:.85rem}
+.il{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.il li{font-size:.84rem;color:var(--tx);display:flex;align-items:center;gap:.5rem}
+.il li::before{content:'\2192';color:var(--ac);font-weight:700}
+.sc2{display:flex;flex-wrap:wrap;gap:.45rem}
+.ch{font-size:.73rem;padding:4px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-weight:600}
+.cy{background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)}
+.co{background:rgba(234,88,12,.1);color:#fb923c;border:1px solid rgba(234,88,12,.2)}
+.cg{background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2)}
+.cp{background:rgba(124,58,237,.12);color:#a78bfa;border:1px solid rgba(124,58,237,.2)}
+.cr{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.ce{background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.2)}
+.cw{text-align:center}
+.ctit{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:1rem}
+.cd{font-size:.98rem;color:var(--mu);line-height:1.75;margin-bottom:.4rem}
+.ce2{font-family:'JetBrains Mono',monospace;color:var(--am);font-size:.88rem;margin-bottom:2rem}
+.cb{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.soc{display:flex;justify-content:center;gap:.7rem;margin-top:2rem}
+.sl2{width:40px;height:40px;border-radius:10px;border:1px solid var(--bdr);background:var(--surf);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:.9rem;text-decoration:none;transition:all .2s}
+.sl2:hover{border-color:var(--bdr-h);color:var(--ac);transform:translateY(-2px)}
+footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--bdr)}
+.ft{font-size:.77rem;color:var(--sub);text-align:center}
+@media(max-width:900px){.hg{grid-template-columns:1fr;text-align:center;gap:2rem}.hav{width:110px;height:110px;order:-1;margin:0 auto}.hbtns{justify-content:center}.hdesc{margin:0 auto 2rem}.svg2,.prjg{grid-template-columns:1fr}.skg{grid-template-columns:1fr}.bn{grid-template-columns:1fr 1fr}.bcw{grid-column:span 2}nav{padding:0 1.2rem}.nav-links{display:none}}
+@media(max-width:600px){.bn{grid-template-columns:1fr}.bcw{grid-column:span 1}section{padding:4rem 1rem}}
+</style>
 </head>
 <body>
-  <canvas id="cv"></canvas>
-  <div class="vo"></div>
-  <div id="sp"></div>
-  <nav>
-    <a href="#hero" class="nl">9826.Florenzi</a>
-    <ul class="lk">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <div id="sh"><div class="sm"></div>Scroll</div>
-  <main class="cw">
-    <section class="ss" id="hero">
-      <div class="cc">
-        <div class="badge"><span class="sd"></span>Available for Work</div>
-        <h1 class="mt">9826.Florenzi</h1>
-        <p class="it">Hi, I'm <strong>Nguyen Huu Nghia</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing data to life.</p>
-        <p class="is">(Chao ban, toi la Nguyen Huu Nghia. Toi la mot Ky su AI chuyen xay dung cac he thong thong minh, huan luyen mo hinh Machine Learning va dua du lieu vao thuc tien.)</p>
-        <div class="ab">
-          <a href="#contact" class="btn bp"><i class="fa-solid fa-envelope"></i><span>Contact Me</span></a>
-          <a href="#skills" class="btn bo"><i class="fa-solid fa-arrow-down"></i><span>Explore</span></a>
-        </div>
-      </div>
-    </section>
-    <section class="ss" id="skills">
-      <div class="cc">
-        <div class="sh">
-          <h2 class="st"><i class="fa-solid fa-code-branch"></i>Tools &amp; Languages</h2>
-          <p class="ss2">Proficiency in key tools for AI and software engineering.</p>
-        </div>
-        <div class="sg">
-          <div><div class="si-info"><span>Python</span><span class="sv">80%</span></div><div class="pb"><div class="pf" data-t="80"></div></div></div>
-          <div><div class="si-info"><span>Machine Learning</span><span class="sv">85%</span></div><div class="pb"><div class="pf" data-t="85"></div></div></div>
-          <div><div class="si-info"><span>PyTorch / TensorFlow</span><span class="sv">70%</span></div><div class="pb"><div class="pf" data-t="70"></div></div></div>
-          <div><div class="si-info"><span>Data Analysis</span><span class="sv">75%</span></div><div class="pb"><div class="pf" data-t="75"></div></div></div>
-          <div><div class="si-info"><span>SQL / Database</span><span class="sv">70%</span></div><div class="pb"><div class="pf" data-t="70"></div></div></div>
-          <div><div class="si-info"><span>HTML / CSS</span><span class="sv">20%</span></div><div class="pb"><div class="pf" data-t="20"></div></div></div>
-        </div>
-      </div>
-    </section>
-    <section class="ss" id="services">
-      <div class="cc wc">
-        <div class="sh">
-          <h2 class="st"><i class="fa-solid fa-microchip"></i>Freelance AI Services</h2>
-          <p class="ss2">Tailored AI solutions for your business needs.</p>
-        </div>
-        <div class="sl">
-          <div class="sc">
-            <div class="stop"><span class="si">01</span><span class="sbg">Let's talk</span></div>
-            <h3>Consulting &amp; Analysis</h3>
-            <p class="vnt">Tu van &amp; Phan tich</p>
-            <p class="sd2">Data assessment, AI/ML architecture consulting, roadmap creation.</p>
-            <p class="sd2v">Danh gia du lieu, tu van kien truc AI/ML, xay dung lo trinh.</p>
-          </div>
-          <div class="sc ft">
-            <div class="stop"><span class="si">02</span><span class="sbg">Custom</span></div>
-            <h3>ML Model Development</h3>
-            <p class="vnt">Xay dung Mo hinh ML</p>
-            <p class="sd2">Build and train custom AI models, hyperparameter tuning, API deployment.</p>
-            <p class="sd2v">Huan luyen mo hinh AI tuy chinh, tinh chinh tham so, trien khai API.</p>
-          </div>
-          <div class="sc">
-            <div class="stop"><span class="si">03</span><span class="sbg">On request</span></div>
-            <h3>Full AI Solution</h3>
-            <p class="vnt">Giai phap AI toan dien</p>
-            <p class="sd2">Complex AI systems integrated into your workflow, automated monitoring.</p>
-            <p class="sd2v">Tich hop he thong AI phuc tap vao quy trinh, giam sat tu dong.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="ss" id="contact">
-      <div class="cc ctc">
-        <div class="badge"><i class="fa-regular fa-handshake"></i>Collaborate</div>
-        <h2 class="st">Have a project in mind?</h2>
-        <p class="cd">Leave a message or send me an email to collaborate on high-quality AI solutions.</p>
-        <p class="cdv">(Hay de lai tin nhan hoac gui email cho toi de cung nhau tao ra nhung san pham AI chat luong.)</p>
-        <div class="ab"><a href="mailto:9826.florenzi@gmail.com" class="btn bp"><i class="fa-solid fa-envelope"></i><span>Send me an Email</span></a></div>
-        <div class="mh"><i class="fa-regular fa-paper-plane"></i>9826.florenzi@gmail.com</div>
-        <footer>&copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.</footer>
-      </div>
-    </section>
-  </main>
-  <script type="module">
-    import * as THREE from 'three';
-    const canvas=document.querySelector('#cv');
-    const scene=new THREE.Scene();
-    scene.fog=new THREE.FogExp2(0x061309,0.018);
-    scene.background=new THREE.Color(0x061309);
-    const camera=new THREE.PerspectiveCamera(50,innerWidth/innerHeight,0.1,800);
-    camera.position.set(0,4,18);
-    const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
-    renderer.setSize(innerWidth,innerHeight);
-    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-    renderer.shadowMap.enabled=true;
-    renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-    renderer.toneMapping=THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure=0.9;
-    scene.add(new THREE.HemisphereLight(0x7dc89a,0x0a1a0d,1.4));
-    const sun=new THREE.DirectionalLight(0xfff5d0,3.2);
-    sun.position.set(20,40,15);sun.castShadow=true;
-    sun.shadow.mapSize.set(2048,2048);
-    sun.shadow.camera.near=0.5;sun.shadow.camera.far=120;
-    sun.shadow.camera.left=sun.shadow.camera.bottom=-35;
-    sun.shadow.camera.right=sun.shadow.camera.top=35;
-    sun.shadow.bias=-0.001;scene.add(sun);
-    const fill=new THREE.DirectionalLight(0x1a4a6e,0.6);
-    fill.position.set(-15,10,-10);scene.add(fill);
-    const glow=new THREE.PointLight(0x38ef7d,3.5,25);
-    glow.position.set(0,5,2);scene.add(glow);
-    const warm=new THREE.PointLight(0xff9a3c,2.0,30);
-    warm.position.set(-12,3,-8);scene.add(warm);
-    function ty(x,z){return Math.sin(x*.09)*Math.cos(z*.09)*2.8+Math.sin(x*.04+z*.06)*4+Math.cos(x*.15-z*.12)*1.2}
-    const tg=new THREE.PlaneGeometry(160,160,110,110);tg.rotateX(-Math.PI/2);
-    const pa=tg.attributes.position;
-    for(let i=0;i<pa.count;i++) pa.setY(i,ty(pa.getX(i),pa.getZ(i))+(Math.random()-.5)*.25);
-    tg.computeVertexNormals();
-    const tm=new THREE.MeshStandardMaterial({color:0x0c2215,roughness:.92,metalness:.02});
-    const terr=new THREE.Mesh(tg,tm);terr.receiveShadow=true;scene.add(terr);
-    const trees=new THREE.Group();
-    const trM=new THREE.MeshStandardMaterial({color:0x1a0c04,roughness:.95});
-    const lMs=[
-      new THREE.MeshStandardMaterial({color:0x0e3318,roughness:.8,flatShading:true}),
-      new THREE.MeshStandardMaterial({color:0x153b20,roughness:.75,flatShading:true}),
-      new THREE.MeshStandardMaterial({color:0x1b4a28,roughness:.7,flatShading:true})
-    ];
-    function mkTree(x,z,s){
-      const g=new THREE.Group();
-      const tr=new THREE.Mesh(new THREE.CylinderGeometry(.18*s,.32*s,2.8*s,7),trM);
-      tr.position.y=1.4*s;tr.castShadow=true;g.add(tr);
-      const lv=3+(Math.random()>.5?1:0);
-      const lm=lMs[Math.floor(Math.random()*3)];
-      for(let i=0;i<lv;i++){
-        const c=new THREE.Mesh(new THREE.ConeGeometry((1.7-i*.3)*s,(2.4-i*.25)*s,7+Math.floor(Math.random()*3)),lm);
-        c.position.y=(2.2+i*1.35)*s;c.rotation.y=i*.9+Math.random()*.6;c.castShadow=true;g.add(c);
-      }
-      g.position.set(x,ty(x,z),z);g.rotation.y=Math.random()*Math.PI*2;
-      return g;
-    }
-    for(let i=0;i<160;i++){
-      const r=8+Math.random()*55,a=Math.random()*Math.PI*2;
-      trees.add(mkTree(Math.cos(a)*r,Math.sin(a)*r,.65+Math.random()*1));
-    }
-    scene.add(trees);
-    const bM=new THREE.MeshStandardMaterial({color:0x0e2a14,roughness:.9,flatShading:true});
-    for(let i=0;i<80;i++){
-      const r=3+Math.random()*40,a=Math.random()*Math.PI*2;
-      const x=Math.cos(a)*r,z=Math.sin(a)*r,s=.2+Math.random()*.5;
-      const b=new THREE.Mesh(new THREE.IcosahedronGeometry(s,1),bM);
-      b.position.set(x,ty(x,z)+s*.6,z);b.castShadow=true;scene.add(b);
-    }
-    const FC=280,fg=new THREE.BufferGeometry(),fp=new Float32Array(FC*3),fd=[];
-    for(let i=0;i<FC;i++){
-      const r=Math.random()*38,a=Math.random()*Math.PI*2;
-      const ox=Math.cos(a)*r,oz=Math.sin(a)*r,oy=ty(ox,oz)+.8+Math.random()*7;
-      fp[i*3]=ox;fp[i*3+1]=oy;fp[i*3+2]=oz;
-      fd.push({ox,oy,oz,ph:Math.random()*Math.PI*2,sx:(Math.random()-.5)*3,sy:(Math.random()-.5)*1.5,sz:(Math.random()-.5)*3});
-    }
-    fg.setAttribute('position',new THREE.BufferAttribute(fp,3));
-    const fc=document.createElement('canvas');fc.width=fc.height=64;
-    const fx=fc.getContext('2d'),fg2=fx.createRadialGradient(32,32,0,32,32,32);
-    fg2.addColorStop(0,'#fff');fg2.addColorStop(.2,'#ffe877');
-    fg2.addColorStop(.5,'rgba(56,239,125,.6)');fg2.addColorStop(1,'rgba(0,0,0,0)');
-    fx.fillStyle=fg2;fx.fillRect(0,0,64,64);
-    const fft=new THREE.CanvasTexture(fc);
-    const ffm=new THREE.PointsMaterial({size:.55,map:fft,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,sizeAttenuation:true});
-    const ffs=new THREE.Points(fg,ffm);scene.add(ffs);
-    const DC=600,dg=new THREE.BufferGeometry(),dp=new Float32Array(DC*3),dv=[];
-    for(let i=0;i<DC;i++){
-      dp[i*3]=(Math.random()-.5)*60;dp[i*3+1]=Math.random()*12;dp[i*3+2]=(Math.random()-.5)*60;
-      dv.push({vx:(Math.random()-.5)*.008,vy:.003+Math.random()*.006});
-    }
-    dg.setAttribute('position',new THREE.BufferAttribute(dp,3));
-    const dm=new THREE.PointsMaterial({size:.08,color:0xd4f5c2,transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false});
-    const dsts=new THREE.Points(dg,dm);scene.add(dsts);
-    const rm=new THREE.MeshBasicMaterial({color:0xfff5b0,transparent:true,opacity:.03,side:THREE.DoubleSide,depthWrite:false});
-    [{x:4,z:2},{x:-6,z:-4},{x:8,z:-8}].forEach(p=>{
-      const ray=new THREE.Mesh(new THREE.CylinderGeometry(.01,3.5,22,8,1,true),rm.clone());
-      ray.position.set(p.x,ty(p.x,p.z)+11,p.z);ray.rotation.y=Math.random()*Math.PI;scene.add(ray);
-    });
-    const wps=[
-      {p:new THREE.Vector3(0,4.5,18),l:new THREE.Vector3(0,2.5,0)},
-      {p:new THREE.Vector3(9,6,9),l:new THREE.Vector3(2,1.5,-4)},
-      {p:new THREE.Vector3(-10,5.5,-3),l:new THREE.Vector3(0,2.5,-14)},
-      {p:new THREE.Vector3(0,7.5,-16),l:new THREE.Vector3(0,2,-28)}
-    ];
-    let sT=0,mx=0,my=0;
-    const sp=document.getElementById('sp'),sh=document.getElementById('sh');
-    window.addEventListener('scroll',()=>{
-      const max=document.documentElement.scrollHeight-innerHeight;
-      sT=Math.max(0,Math.min(1,scrollY/(max||1)));
-      sp.style.width=sT*100+'%';
-      scrollY>80?sh.classList.add('hid'):sh.classList.remove('hid');
-    },{passive:true});
-    window.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-.5)*2;my=(e.clientY/innerHeight-.5)*2;});
-    const clk=new THREE.Clock(),tv=new THREE.Vector3(),lv=new THREE.Vector3();
-    function tick(){
-      requestAnimationFrame(tick);
-      const t=clk.getElapsedTime();
-      const fa=ffs.geometry.attributes.position.array;
-      for(let i=0;i<FC;i++){
-        const d=fd[i];
-        fa[i*3]=d.ox+Math.sin(t*.4+d.ph)*d.sx;
-        fa[i*3+1]=d.oy+Math.sin(t*.6+d.ph*1.3)*Math.abs(d.sy);
-        fa[i*3+2]=d.oz+Math.cos(t*.35+d.ph)*d.sz;
-      }
-      ffs.geometry.attributes.position.needsUpdate=true;
-      ffm.opacity=.65+Math.sin(t*1.8)*.25;
-      const da=dsts.geometry.attributes.position.array;
-      for(let i=0;i<DC;i++){da[i*3]+=dv[i].vx;da[i*3+1]+=dv[i].vy;if(da[i*3+1]>13)da[i*3+1]=.1;}
-      dsts.geometry.attributes.position.needsUpdate=true;
-      trees.children.forEach((tr,i)=>{tr.rotation.z=Math.sin(t*1.2+i*.7)*.013;});
-      glow.intensity=3+Math.sin(t*2.5)*1.2;
-      warm.intensity=1.8+Math.cos(t*1.7+1)*.8;
-      glow.position.set(Math.sin(t*.4)*4,4.5+Math.sin(t*.7),Math.cos(t*.4)*3);
-      const raw=sT*(wps.length-1),ia=Math.floor(raw),ib=Math.min(ia+1,wps.length-1),f=raw-ia;
-      tv.lerpVectors(wps[ia].p,wps[ib].p,f);
-      tv.x+=mx*.7;tv.y-=my*.4;
-      camera.position.lerp(tv,.055);
-      lv.lerpVectors(wps[ia].l,wps[ib].l,f);
-      camera.lookAt(lv);
-      renderer.render(scene,camera);
-    }
-    tick();
-    window.addEventListener('resize',()=>{
-      camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
-      renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-    });
-  </script>
-  <script>
-    const obs=new IntersectionObserver(es=>{
-      es.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('vis');
-          e.target.querySelectorAll('.pf').forEach(f=>{
-            const t=f.dataset.t;if(t)setTimeout(()=>{f.style.width=t+'%';},200);
-          });
-        }
-      });
-    },{threshold:.15});
-    document.querySelectorAll('.cc').forEach(c=>obs.observe(c));
-  </script>
-</body>
-</html>
+<canvas id="particles"></canvas>
+<div class="blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="grid-bg"></div>
+<div id="progress"></div>
+<nav>
+  <a href="#hero" class="nav-logo">9826.Florenzi</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#mindset">Mindset</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button id="theme-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
+</nav>
+<div id="sh"><div class="sm"></div>Scroll</div>
+<main>
+
+<section id="hero"><div class="ct"><div class="hg">
+<div>
+  <div class="hbadge fu"><span class="pdot"></span> Available for Work</div>
+  <h1 class="htit fu">9826.Florenzi</h1>
+  <div class="htw fu"><span style="color:var(--mu)">I'm an&nbsp;</span><span class="tww" id="tw"></span><span class="twc"></span></div>
+  <p class="hdesc fu">Hi, I'm <strong>Nguyen Huu Nghia</strong>. I build intelligent systems, train machine learning models, and deliver data-driven solutions &mdash; from research to production.</p>
+  <p class="hdesc fu" style="font-style:italic;font-size:.87rem;margin-top:-.8rem">(Chao ban, toi la Nguyen Huu Nghia &mdash; Ky su AI chuyen xay dung he thong thong minh va giai phap hoc may.)</p>
+  <div class="hbtns fu">
+    <a href="#contact" class="btn bp"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+    <a href="#projects" class="btn bg"><i class="fa-brands fa-github"></i> View Projects</a>
+  </div>
+</div>
+<img src="https://avatars.githubusercontent.com/u/211441746?v=4" alt="Nguyen Huu Nghia" class="hav fu" loading="eager" onerror="this.style.display='none'"/>
+</div></div></section>
+
+<section id="skills"><div class="cts">
+  <div class="fu"><span class="slbl"><i class="fa-solid fa-code-branch"></i>&nbsp;Expertise</span><h2 class="stit">Tools &amp; Languages</h2><p class="ssub">Proficiency in key tools for AI and software engineering.</p></div>
+  <div class="skg fu">
+    <div><div class="skh"><span>Python</span><span class="skp">80%</span></div><div class="skt"><div class="skf" data-w="80"></div></div></div>
+    <div><div class="skh"><span>Machine Learning</span><span class="skp">85%</span></div><div class="skt"><div class="skf" data-w="85"></div></div></div>
+    <div><div class="skh"><span>PyTorch / TensorFlow</span><span class="skp">70%</span></div><div class="skt"><div class="skf" data-w="70"></div></div></div>
+    <div><div class="skh"><span>Data Analysis</span><span class="skp">75%</span></div><div class="skt"><div class="skf" data-w="75"></div></div></div>
+    <div><div class="skh"><span>SQL / Database</span><span class="skp">70%</span></div><div class="skt"><div class="skf" data-w="70"></div></div></div>
+    <div><div class="skh"><span>HTML / CSS</span><span class="skp">20%</span></div><div class="skt"><div class="skf" data-w="20"></div></div></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="ct">
+  <div class="fu"><span class="slbl"><i class="fa-solid fa-microchip"></i>&nbsp;Services</span><h2 class="stit">Freelance AI Services</h2><p class="ssub">Tailored AI solutions for your business needs.</p></div>
+  <div class="svg2">
+    <div class="card svc fu"><div class="svct"><span class="svcn">01</span><span class="svcp">Let's talk</span></div><div class="svcti">Consulting &amp; Analysis</div><div class="svcvn">Tu van &amp; Phan tich</div><div class="svcd">Data assessment, AI/ML architecture consulting, roadmap creation.</div><div class="svcdv">Danh gia du lieu, tu van kien truc AI/ML, xay dung lo trinh.</div></div>
+    <div class="card svc fu" data-delay=".1"><div class="svct"><span class="svcn">02</span><span class="svcp">Custom</span></div><div class="svcti">ML Model Development</div><div class="svcvn">Xay dung Mo hinh ML</div><div class="svcd">Build and train custom AI models, hyperparameter tuning, API deployment.</div><div class="svcdv">Huan luyen mo hinh AI tuy chinh, tinh chinh tham so, trien khai API.</div></div>
+    <div class="card svc fu" data-delay=".2"><div class="svct"><span class="svcn">03</span><span class="svcp">On request</span></div><div class="svcti">Full AI Solution</div><div class="svcvn">Giai phap AI toan dien</div><div class="svcd">Complex AI systems integrated into your workflow, automated monitoring.</div><div class="svcdv">Tich hop he thong AI phuc tap vao quy trinh, giam sat tu dong.</div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="ct">
+  <div class="fu"><span class="slbl"><i class="fa-brands fa-github"></i>&nbsp;GitHub</span><h2 class="stit">Projects &amp; Work</h2><p class="ssub">A selection of real-world projects from my GitHub profile.</p></div>
+  <div class="prjg">
+    <div class="card prjc fu">
+      <div class="prjt"><div class="prji"><i class="fa-solid fa-car-burst"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
+      <div class="prjn">ALPR in Bad Conditions</div>
+      <div class="prjl"><i class="fa-brands fa-python" style="color:#3b82f6"></i>&nbsp; Python</div>
+      <div class="prjd">Optimizing automatic license plate recognition under challenging real-world conditions &mdash; rain, night, fog, and motion blur &mdash; using deep learning and image enhancement.</div>
+      <div class="prjtg"><span class="tag">Computer Vision</span><span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span></div>
+      <div class="prjf"><a href="https://github.com/9826Florenzi/ALPR-in-Bad-Conditions" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a></div>
+    </div>
+    <div class="card prjc fu" data-delay=".1">
+      <div class="prjt"><div class="prji"><i class="fa-solid fa-database"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
+      <div class="prjn">DNDB</div>
+      <div class="prjl"><i class="fa-brands fa-js" style="color:#eab308"></i>&nbsp; TypeScript</div>
+      <div class="prjd">A customized database management application built on an open-source foundation &mdash; extended with improved UI, query optimization, and deployed live on Vercel.</div>
+      <div class="prjtg"><span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Database</span><span class="tag">Vercel</span></div>
+      <div class="prjf"><a href="https://github.com/9826Florenzi/DNDB" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a><a href="https://dndb-sooty.vercel.app" target="_blank" rel="noopener" class="btn bp bsm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></div>
+    </div>
+    <div class="card prjc fu" data-delay=".2">
+      <div class="prjt"><div class="prji"><i class="fa-solid fa-cash-register"></i></div><div class="prjs"><i class="fa-solid fa-star"></i>&nbsp;1</div></div>
+      <div class="prjn">POS App for Mobile Shop</div>
+      <div class="prjl"><i class="fa-brands fa-js" style="color:#eab308"></i>&nbsp; TypeScript &middot; MIT</div>
+      <div class="prjd">A point-of-sale system customized for mobile phone retail &mdash; featuring inventory tracking, sales management, and reporting built on an open-source base.</div>
+      <div class="prjtg"><span class="tag">TypeScript</span><span class="tag">POS System</span><span class="tag">Retail</span><span class="tag">MIT</span></div>
+      <div class="prjf"><a href="https://github.com/9826Florenzi/Open-Sources-Pos-app-customize-for-Mobile-Shop" target="_blank" rel="noopener" class="btn bg bsm"><i class="fa-brands fa-github"></i> GitHub</a></div>
+    </div>
+  </div>
+  <div class="prjva fu"><a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn bg"><i class="fa-brands fa-github"></i> View all on GitHub</a></div>
+</div></section>
+
+<section id="mindset"><div class="ct">
+  <div class="fu"><span class="slbl"><i class="fa-solid fa-brain"></i>&nbsp;Philosophy</span><h2 class="stit">AI Mindset</h2><p class="ssub">How I think, learn, and build intelligent systems.</p></div>
+  <div class="bn fu">
+    <div class="bc"><div class="bci">&#129504;</div><div class="bct">How I Think</div><div class="pl"><span class="ps">Data</span><span class="pa">&#8594;</span><span class="ps">Model</span><span class="pa">&#8594;</span><span class="ps">Evaluate</span><span class="pa">&#8594;</span><span class="ps">Deploy</span></div></div>
+    <div class="bc"><div class="bci">&#128300;</div><div class="bct">Research Interests</div><ul class="il"><li>Computer Vision &amp; ALPR</li><li>Large Language Models</li><li>MLOps &amp; Production AI</li></ul></div>
+    <div class="bc"><div class="bci">&#128218;</div><div class="bct">Currently Learning</div><div class="bctx"><strong>LLM Fine-tuning</strong> &middot; RAG Pipelines &middot; LangChain &middot; Weights &amp; Biases &middot; FastAPI at scale</div></div>
+    <div class="bc bcw"><div class="bci">&#128295;</div><div class="bct">Daily Stack</div><div class="sc2"><span class="ch cy">Python</span><span class="ch co">PyTorch</span><span class="ch cg">Scikit-learn</span><span class="ch cp">FastAPI</span><span class="ch cr">Git</span><span class="ch ce">Linux</span></div></div>
+    <div class="bc"><div class="bci">&#128172;</div><div class="bct">Philosophy</div><div class="bcq">Good AI is not just accurate &mdash; it must be trustworthy, explainable, and genuinely useful.</div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="cts"><div class="cw">
+  <div class="fu"><span class="slbl"><i class="fa-regular fa-handshake"></i>&nbsp;Collaborate</span></div>
+  <h2 class="ctit fu">Have a project<br/>in mind?</h2>
+  <p class="cd fu">Leave a message or send me an email to collaborate on high-quality AI solutions.</p>
+  <p class="cd fu" style="font-style:italic;font-size:.86rem;margin-top:-.5rem">(Hay de lai tin nhan hoac gui email cho toi de cung nhau tao ra nhung san pham AI chat luong.)</p>
+  <p class="ce2 fu"><i class="fa-regular fa-paper-plane"></i>&nbsp; 9826.florenzi@gmail.com</p>
+  <div class="cb fu">
+    <a href="mailto:9826.florenzi@gmail.com" class="btn bp"><i class="fa-solid fa-envelope"></i> Send me an Email</a>
+    <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="btn bg"><i class="fa-brands fa-github"></i> GitHub</a>
+  </div>
+  <div class="soc fu">
+    <a href="https://github.com/9826Florenzi" target="_blank" rel="noopener" class="sl2" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="mailto:9826.florenzi@gmail.com" class="sl2" title="Email"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+  <footer class="fu"><p class="ft">&copy; 2026 Nguyen Huu Nghia (9826.Florenzi). All rights reserved.</p></footer>
+</div></div></section>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,icon=document.getElementById('theme-icon'),btn=document.getElementById('theme-btn');
+function setT(t){root.setAttribute('data-theme',t);localStorage.setItem('theme',t);icon.className=t==='dark'?'fa-solid fa-moon':'fa-solid fa-sun'}
+var sv=localStorage.getItem('theme'),sys=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+setT(sv||sys);
+btn.addEventListener('click',function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+var bar=document.getElementById('progress'),sh=document.getElementById('sh');
+var secs=document.querySelectorAll('section'),lks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){
+  var st=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.width=(st/max*100)+'%';
+  sh.classList.toggle('hide',st>80);
+  var cur='';secs.forEach(function(s){if(st>=s.offsetTop-100)cur=s.id});
+  lks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+},{passive:true});
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting)return;
+    var el=e.target,d=(parseFloat(el.dataset.delay||'0'))*1000;
+    setTimeout(function(){el.classList.add('in');el.querySelectorAll('.skf').forEach(function(f){f.style.width=f.dataset.w+'%'})},d);
+  });
+},{threshold:.12});
+document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
+var words=['AI Engineer','ML Specialist','Data Scientist','CV Developer'],tw=document.getElementById('tw'),wi=0,ci=0,del=false;
+function type(){var w=words[wi];if(!del){tw.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,2000);return}}else{tw.textContent=w.slice(0,--ci);if(ci===0){del=false;wi=(wi+1)%words.length}}setTimeout(type,del?55:105)}
+type();
+var cv=document.getElementById('particles'),ctx2=cv.getContext('2d'),W,H,pts=[];
+function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}rsz();window.addEventListener('resize',rsz);
+for(var i=0;i<75;i++)pts.push({x:Math.random()*1400,y:Math.random()*900,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:1+Math.random()*1.5});
+function draw(){ctx2.clearRect(0,0,W,H);var dk=root.getAttribute('data-theme')!=='light',pA=dk?.45:.22,lA=dk?.12:.06;
+pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx2.beginPath();ctx2.arc(p.x,p.y,p.r,0,Math.PI*2);ctx2.fillStyle='rgba(124,58,237,'+pA+')';ctx2.fill()});
+for(var a=0;a<75;a++)for(var b=a+1;b<75;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx2.beginPath();ctx2.moveTo(pts[a].x,pts[a].y);ctx2.lineTo(pts[b].x,pts[b].y);ctx2.strokeStyle='rgba(124,58,237,'+(lA*(1-d/130))+')';ctx2.lineWidth=.7;ctx2.stroke()}}
+requestAnimationFrame(draw)}draw();
+})();
+</script>
+</body></html>

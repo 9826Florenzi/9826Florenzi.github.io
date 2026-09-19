@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9826.Florenzi | Nguyễn Hữu Nghĩa - AI Engineer</title>
+  
+  <!-- Font chữ & biểu tượng FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Import Three.js qua Import Map -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Canvas hiển thị không gian thiên nhiên 3D -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Lớp phủ ánh sáng sương mù & đốm nắng -->
+  <div class="vignette-overlay"></div>
+
+  <!-- Thanh tiến trình cuộn trang -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <main class="content-wrapper">
+    <!-- Phân cảnh 1: Hero Section -->
+    <section class="scene-section hero-section" id="hero">
+      <div class="content-card hero-card">
+        <div class="badge pulse-badge">
+          <span class="status-dot"></span> Available for Work
+        </div>
+        <h1 class="main-title">9826.Florenzi</h1>
+        <p class="intro-text">
+          Hi, I'm <strong>Nguyễn Hữu Nghĩa</strong>. I am an <strong>AI Engineer</strong> specializing in building intelligent systems, training machine learning models, and bringing data to life.
+        </p>
+        <p class="intro-sub">
+          <em>(Chào bạn, tôi là Nguyễn Hữu Nghĩa. Tôi là một Kỹ sư AI chuyên xây dựng các hệ thống thông minh, huấn luyện mô hình Machine Learning và đưa dữ liệu vào thực tiễn.)</em>
+        </p>
+        <div class="action-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <span>Contact Me</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân cảnh 2: Tools & Languages -->
+    <section class="scene-section" id="skills">
+      <div class="content-card">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fa-solid fa-code-branch"></i> Tools & Languages</h2>
+          <p class="section-subtitle">Proficiency in key tools for AI and software engineering.</p>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Python</span>
+              <span class="skill-val">80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Machine Learning</span>
+              <span class="skill-val">85%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>PyTorch / TensorFlow</span>
+              <span class="skill-val">70%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>Data Analysis</span>
+              <span class="skill-val">75%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>SQL / Database</span>
+              <span class="skill-val">70%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <span>HTML / CSS</span>
+              <span class="skill-val">20%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân cảnh 3: Freelance AI Services -->
+    <section class="scene-section" id="services">
+      <div class="content-card wide-card">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fa-solid fa-microchip"></i> Freelance AI Services</h2>
+          <p class="section-subtitle">Tailored AI solutions for your business needs.</p>
+        </div>
+
+        <div class="services-list">
+          <div class="service-card">
+            <div class="service-top">
+              <span class="service-index">01</span>
+              <span class="service-badge">Let's talk</span>
+            </div>
+            <h3>Consulting & Analysis</h3>
+            <p class="vn-title">Tư vấn & Phân tích</p>
+            <p class="service-desc">Data assessment, AI/ML architecture consulting, roadmap creation.</p>
+            <p class="service-desc-vn">Đánh giá dữ liệu, tư vấn kiến trúc AI/ML, xây dựng lộ trình.</p>
+          </div>
+
+          <div class="service-card featured">
+            <div class="service-top">
+              <span class="service-index">02</span>
+              <span class="service-badge">Custom</span>
+            </div>
+            <h3>ML Model Development</h3>
+            <p class="vn-title">Xây dựng Mô hình ML</p>
+            <p class="service-desc">Build and train custom AI models, hyperparameter tuning, API deployment.</p>
+            <p class="service-desc-vn">Huấn luyện mô hình AI tùy chỉnh, tinh chỉnh tham số, triển khai API.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-top">
+              <span class="service-index">03</span>
+              <span class="service-badge">On request</span>
+            </div>
+            <h3>Full AI Solution</h3>
+            <p class="vn-title">Giải pháp AI toàn diện</p>
+            <p class="service-desc">Complex AI systems integrated into your workflow, automated monitoring.</p>
+            <p class="service-desc-vn">Tích hợp hệ thống AI phức tạp vào quy trình, giám sát tự động.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân cảnh 4: Contact -->
+    <section class="scene-section" id="contact">
+      <div class="content-card contact-card">
+        <div class="badge pulse-badge">
+          <i class="fa-regular fa-handshake"></i> Collaborate
+        </div>
+        <h2 class="section-title">Have a project in mind?</h2>
+        <p class="contact-desc">
+          Leave a message or send me an email to collaborate on high-quality AI solutions.
+        </p>
+        <p class="contact-desc-vn">
+          <em>(Hãy để lại tin nhắn hoặc gửi email cho tôi để cùng nhau tạo ra những sản phẩm AI chất lượng.)</em>
+        </p>
+        
+        <div class="action-buttons">
+          <a href="mailto:9826.florenzi@gmail.com" class="btn btn-primary btn-glow">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Send me an Email</span>
+          </a>
+        </div>
+        <div class="mail-hint">
+          <i class="fa-regular fa-paper-plane"></i> 9826.florenzi@gmail.com
+        </div>
+
+        <footer class="footer">
+          <p>© 2026 Nguyễn Hữu Nghĩa (9826.Florenzi). All rights reserved.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
