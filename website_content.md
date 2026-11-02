@@ -31,13 +31,14 @@ This document contains the official English content currently displayed on the p
 - **Title:** Tools & Languages
 - **Subtitle:** Demonstrated proficiency across key artificial intelligence, software engineering, and international communication toolchains.
 - **Skills Matrix:**
-  - Python (Core & Ecosystem): 85%
-  - Machine Learning & Algorithms: 85%
+  - Python (Core & Ecosystem): 80%
+  - Machine Learning & Algorithms: 80%
   - PyTorch / Deep Learning: 75%
-  - Data Engineering & Analytics: 80%
+  - Data Engineering & Analytics: 78%
   - SQL & Database Architecture: 75%
-  - **English (Professional Working Proficiency): 85%** *(Special badge)*
+  - **English (Professional Working Proficiency): 80%** *(Special badge)*
   - MLOps & API Serving (FastAPI, Docker): 70%
+  - OS & Platforms (iOS, macOS, Windows): 85%
   - Frontend UI Integration (HTML/CSS/JS): 35%
 
 ---
@@ -58,11 +59,10 @@ This document contains the official English content currently displayed on the p
    - Tags: Computer Vision, YOLO, OpenCV, Deep Learning
    - Repository: https://github.com/9826Florenzi/ALPR-in-Bad-Conditions
 
-2. **DNDB &mdash; Danh Nhan Bac Dau** *(TypeScript &middot; Next.js &middot; 1 Star &middot; Live)*
+2. **DNDB &mdash; Danh Nhan Bac Dau** *(TypeScript &middot; Next.js &middot; 1 Star)*
    - Biographical reference and historical archive platform for Vietnamese figures. Modern interface with fast full-text search and optimized database queries.
    - Tags: TypeScript, Next.js, Database, Production
    - Repository: https://github.com/9826Florenzi/DNDB
-   - **Live Production:** https://www.danhnhanbacdau.io.vn/
 
 3. **Mobile Shop POS System** *(TypeScript &middot; MIT License &middot; 1 Star)*
    - Point-of-Sale (POS) software customized for mobile phone retail with serial/IMEI inventory tracking, real-time sales reporting, and analytics.
@@ -78,7 +78,7 @@ This document contains the official English content currently displayed on the p
   - Large Language Models & Agentic Architectures
   - MLOps, CI/CD & Model Monitoring Pipelines
 - **Continuous Learning:** LLM Fine-tuning (LoRA/QLoRA), RAG, LangChain, Weights & Biases, FastAPI & vLLM.
-- **Daily Stack:** Python 3.10+, PyTorch, Scikit-learn, FastAPI, Docker, Git, Linux/Bash.
+- **Daily Stack:** Python 3.10+, PyTorch, Scikit-learn, FastAPI, Docker, Git & GitHub, iOS / macOS / Linux.
 - **Core Philosophy:** "Great AI is not just about achieving high test-set metrics &mdash; it must solve genuine operational bottlenecks, maintain explainability, and run reliably in real-world environments."
 
 ---
